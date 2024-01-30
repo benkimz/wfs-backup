@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/MilesAhead/obj/Debug/net7.0
+/src/MilesAhead/MilesAhead/MilesAhead.Blazor/obj
+/src/MilesAhead/MilesAhead/MilesAhead.Blazor/bin/Debug/net7.0
+/src/MilesAhead/MilesAhead/.vs/MilesAhead
+/.vs/Repo/v17
+/.vs
