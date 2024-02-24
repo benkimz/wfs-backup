@@ -15,6 +15,8 @@ builder.Services.AddDbContext<WireFramesDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("AzureDB"), b => b.MigrationsAssembly("MilesAhead.Web"));
 });
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddTransient<IWireFramesRepository, WireFramesRepository>();
 
 builder.Services.AddSingleton<WireframeParser>();
 // ~ benkimz: end custom services
