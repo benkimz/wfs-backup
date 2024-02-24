@@ -11,6 +11,6 @@ public class BaseWireFrame : IBaseWireFrame
     public string Name { get; set; } = "Dynamic Component";
     [MaxLength(64)]
     public required string Segment { get; set; } // target component or html element
-    public Dictionary<string, string>? Attributes { get; set; } // segment attributes
+    public List<WireFrameAttribute>? Attributes { get; set; } // segment attributes
     public RenderData? Data { get; set; } // data to be rendered
 }

@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using MilesAhead.Components;
 using MilesAhead.Web;
 using MilesAhead.Web.Components;
 
@@ -9,7 +11,13 @@ builder.Services.AddRazorComponents()
 
 
 // ~ benkimz: more custom services
+builder.Services.AddDbContext<WireFramesDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AzureDB"), b => b.MigrationsAssembly("MilesAhead.Web"));
+});
+
 builder.Services.AddSingleton<WireframeParser>();
+// ~ benkimz: end custom services
 
 var app = builder.Build();
 

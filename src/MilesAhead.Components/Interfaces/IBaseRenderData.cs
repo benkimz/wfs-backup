@@ -1,4 +1,6 @@
-﻿namespace MilesAhead.Components;
+﻿using System.Text.Json;
+
+namespace MilesAhead.Components;
 
 public interface IBaseRenderData
 {
@@ -8,8 +10,8 @@ public interface IBaseRenderData
     public string? Source { get; set; }
 
     // Optional: Case where we have to call an API with parameters
-    public Dictionary<string, string>? Parameters { get; set; }
+    public List<DataField>? Parameters { get; set; }
 
     // data to be rendered of no source is provided
-    public Dictionary<string, string>? FallbackRenderData { get; set; }
+    public List<RenderDataItem>? FallbackRenderData { get; set; }
 }
