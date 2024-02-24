@@ -35,7 +35,7 @@ namespace MilesAhead.Web.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Value = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RenderDataId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
@@ -56,7 +56,7 @@ namespace MilesAhead.Web.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Value = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RenderDataId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
@@ -76,7 +76,11 @@ namespace MilesAhead.Web.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Discriminator = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
                     WireFrameId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    MetaDataId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    ExternalStyleSheets = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ExternalScripts = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Segment = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     DataId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
@@ -89,6 +93,12 @@ namespace MilesAhead.Web.Migrations
                         column: x => x.DataId,
                         principalSchema: "render",
                         principalTable: "RenderData",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_WireFrames_WireFrames_MetaDataId",
+                        column: x => x.MetaDataId,
+                        principalSchema: "render",
+                        principalTable: "WireFrames",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_WireFrames_WireFrames_WireFrameId",
@@ -105,7 +115,7 @@ namespace MilesAhead.Web.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Value = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    Value = table.Column<string>(type: "nvarchar(320)", maxLength: 320, nullable: true),
                     WireFrameId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
@@ -142,6 +152,12 @@ namespace MilesAhead.Web.Migrations
                 schema: "render",
                 table: "WireFrames",
                 column: "DataId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_WireFrames_MetaDataId",
+                schema: "render",
+                table: "WireFrames",
+                column: "MetaDataId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_WireFrames_WireFrameId",

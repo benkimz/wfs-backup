@@ -12,5 +12,6 @@ public class WireFramesDbContext : DbContext
     {
         modelBuilder.HasDefaultSchema("render");
     }
+    public DbSet<PrimeRoot> PrimeRoots { get; set; }
     public DbSet<WireFrame> WireFrames { get; set; }
 }

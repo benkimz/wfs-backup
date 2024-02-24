@@ -12,7 +12,7 @@ using MilesAhead.Components;
 namespace MilesAhead.Web.Migrations
 {
     [DbContext(typeof(WireFramesDbContext))]
-    [Migration("20240224083501_InitialDB")]
+    [Migration("20240224104359_InitialDB")]
     partial class InitialDB
     {
         /// <inheritdoc />
@@ -41,8 +41,7 @@ namespace MilesAhead.Web.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Value")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -84,9 +83,7 @@ namespace MilesAhead.Web.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Value")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -103,6 +100,11 @@ namespace MilesAhead.Web.Migrations
 
                     b.Property<Guid?>("DataId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(13)
+                        .HasColumnType("nvarchar(13)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -124,6 +126,10 @@ namespace MilesAhead.Web.Migrations
                     b.HasIndex("WireFrameId");
 
                     b.ToTable("WireFrames", "render");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("WireFrame");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("MilesAhead.Components.WireFrameAttribute", b =>
@@ -138,8 +144,8 @@ namespace MilesAhead.Web.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Value")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(320)
+                        .HasColumnType("nvarchar(320)");
 
                     b.Property<Guid?>("WireFrameId")
                         .HasColumnType("uniqueidentifier");
@@ -149,6 +155,26 @@ namespace MilesAhead.Web.Migrations
                     b.HasIndex("WireFrameId");
 
                     b.ToTable("WireFrameAttribute", "render");
+                });
+
+            modelBuilder.Entity("MilesAhead.Components.PrimeRoot", b =>
+                {
+                    b.HasBaseType("MilesAhead.Components.WireFrame");
+
+                    b.Property<string>("ExternalScripts")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExternalStyleSheets")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("MetaDataId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasIndex("MetaDataId");
+
+                    b.HasDiscriminator().HasValue("PrimeRoot");
                 });
 
             modelBuilder.Entity("MilesAhead.Components.DataField", b =>
@@ -183,6 +209,15 @@ namespace MilesAhead.Web.Migrations
                     b.HasOne("MilesAhead.Components.WireFrame", null)
                         .WithMany("Attributes")
                         .HasForeignKey("WireFrameId");
+                });
+
+            modelBuilder.Entity("MilesAhead.Components.PrimeRoot", b =>
+                {
+                    b.HasOne("MilesAhead.Components.WireFrame", "MetaData")
+                        .WithMany()
+                        .HasForeignKey("MetaDataId");
+
+                    b.Navigation("MetaData");
                 });
 
             modelBuilder.Entity("MilesAhead.Components.RenderData", b =>
