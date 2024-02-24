@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilesAhead.Web", "MilesAhead.Web\MilesAhead.Web.csproj", "{093247C8-BFF0-48B2-9915-DF05D2371CC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilesAhead.Components", "MilesAhead.Components\MilesAhead.Components.csproj", "{F3AA91C3-6CDF-49BF-B5F9-C61DFE41B94E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{093247C8-BFF0-48B2-9915-DF05D2371CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{093247C8-BFF0-48B2-9915-DF05D2371CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{093247C8-BFF0-48B2-9915-DF05D2371CC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3AA91C3-6CDF-49BF-B5F9-C61DFE41B94E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3AA91C3-6CDF-49BF-B5F9-C61DFE41B94E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3AA91C3-6CDF-49BF-B5F9-C61DFE41B94E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3AA91C3-6CDF-49BF-B5F9-C61DFE41B94E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
