@@ -1,3 +1,4 @@
+using MilesAhead.Web;
 using MilesAhead.Web.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+
+// ~ benkimz: more custom services
+builder.Services.AddSingleton<WireframeParser>();
 
 var app = builder.Build();
 
