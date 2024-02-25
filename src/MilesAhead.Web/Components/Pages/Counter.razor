@@ -1,19 +1,33 @@
 ﻿@page "/counter"
-@rendermode InteractiveServer
+@* @rendermode InteractiveServer *@
 
-<PageTitle>Counter</PageTitle>
+@layout PlainLayout
 
-<h1>Counter</h1>
-
-<p role="status">Current count: @currentCount</p>
-
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+@inject WireframeParser WireframeParser
 
 @code {
-    private int currentCount = 0;
+    // we will be testing the HomePrimeRoot in this page
+    private PrimeRoot Root = new HomePrimeRoot().Build();
+}
 
-    private void IncrementCount()
+@if (Root.MetaData != null)
+{
+    <HeadContent>
+    @foreach (var node in Root.MetaData.Children)
+        {
+            @WireframeParser.RenderWireFrame(node)
+        }
+        @* @foreach (string css in Root.ExternalStyleSheets)
     {
-        currentCount++;
-    }
+    <link href="@css" rel="stylesheet" />
+    } *@
+    </HeadContent>
+}
+
+@WireframeParser.RenderWireFrame(Root)
+
+
+@foreach (var script in Root.BodyScripts)
+{
+    <script src="@script" type="text/javascript"></script>
 }

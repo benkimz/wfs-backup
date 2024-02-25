@@ -17,8 +17,4 @@
     <ProjectReference Include="..\MilesAhead.Components\MilesAhead.Components.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="RenderFactory/HomePage/" />
-  </ItemGroup>
-
 </Project>
