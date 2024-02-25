@@ -78,12 +78,15 @@ namespace MilesAhead.Web.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Discriminator = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
                     WireFrameId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    RootName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MetaDataId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     ExternalStyleSheets = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ExternalScripts = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HeadScripts = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BodyScripts = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Segment = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
-                    DataId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    DataId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    IsOpenTag = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

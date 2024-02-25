@@ -2,6 +2,15 @@
 
 @layout PlainLayout
 
+@code {
+    public HomePrimeRoot Root { get; set; } = new HomePrimeRoot();
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        Root.Build();
+    }
+}
+
 <!DOCTYPE html>
 <html lang="en">
 

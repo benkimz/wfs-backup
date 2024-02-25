@@ -12,7 +12,7 @@ using MilesAhead.Components;
 namespace MilesAhead.Web.Migrations
 {
     [DbContext(typeof(WireFramesDbContext))]
-    [Migration("20240224104359_InitialDB")]
+    [Migration("20240225060932_InitialDB")]
     partial class InitialDB
     {
         /// <inheritdoc />
@@ -106,6 +106,9 @@ namespace MilesAhead.Web.Migrations
                         .HasMaxLength(13)
                         .HasColumnType("nvarchar(13)");
 
+                    b.Property<bool>("IsOpenTag")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -161,7 +164,7 @@ namespace MilesAhead.Web.Migrations
                 {
                     b.HasBaseType("MilesAhead.Components.WireFrame");
 
-                    b.Property<string>("ExternalScripts")
+                    b.Property<string>("BodyScripts")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -169,8 +172,16 @@ namespace MilesAhead.Web.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("HeadScripts")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<Guid?>("MetaDataId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("RootName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasIndex("MetaDataId");
 
