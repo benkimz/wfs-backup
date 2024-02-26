@@ -21,7 +21,7 @@ public class WireframeParser
             {
                 foreach (var data in wireFrame.Data.FallbackRenderData)
                 {
-                    builder.AddContent(2, data.Value);
+                    builder.AddContent(2, (MarkupString)(data.Value ?? string.Empty));
                 }
             }
             foreach (var child in wireFrame.Children)

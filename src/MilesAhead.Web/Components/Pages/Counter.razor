@@ -1,33 +1,42 @@
 ﻿@page "/counter"
-@* @rendermode InteractiveServer *@
-
+@rendermode InteractiveServer
 @layout PlainLayout
 
 @inject WireframeParser WireframeParser
+@inject IJSRuntime JSRuntime
 
 @code {
-    // we will be testing the HomePrimeRoot in this page
-    private PrimeRoot Root = new HomePrimeRoot().Build();
-}
-
-@if (Root.MetaData != null)
-{
-    <HeadContent>
-    @foreach (var node in Root.MetaData.Children)
-        {
-            @WireframeParser.RenderWireFrame(node)
-        }
-        @* @foreach (string css in Root.ExternalStyleSheets)
+    private PrimeRoot? Root { get; set; }
+    protected override void OnInitialized()
     {
-    <link href="@css" rel="stylesheet" />
-    } *@
-    </HeadContent>
+        base.OnInitialized();
+        // we will be testing the HomePrimeRoot in this page
+        Root = new HomePrimeRoot().Build(); // this will change to query from database
+    }
 }
 
-@WireframeParser.RenderWireFrame(Root)
-
-
-@foreach (var script in Root.BodyScripts)
+@if (Root is not null)
 {
-    <script src="@script" type="text/javascript"></script>
+    @if (Root.MetaData != null)
+    {
+        <HeadContent>
+    @foreach (var node in Root.MetaData.Children)
+            {
+                @WireframeParser.RenderWireFrame(node)
+            }
+            @foreach (string css in Root.ExternalStyleSheets)
+            {
+                <link href="@css" rel="stylesheet" />
+            }
+            <script src="custom/js/main.js" type="text/javascript"></script>
+        </HeadContent>
+    }
+
+    @WireframeParser.RenderWireFrame(Root)
+
+
+    @foreach (var script in Root.BodyScripts)
+    {
+        <script src="@script" type="text/javascript"></script>
+    }
 }
