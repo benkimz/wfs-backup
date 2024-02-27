@@ -103,9 +103,6 @@ namespace MilesAhead.Web.Migrations
                         .HasMaxLength(13)
                         .HasColumnType("nvarchar(13)");
 
-                    b.Property<bool>("IsOpenTag")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -178,9 +175,13 @@ namespace MilesAhead.Web.Migrations
 
                     b.Property<string>("RootName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasIndex("MetaDataId");
+
+                    b.HasIndex("RootName")
+                        .IsUnique()
+                        .HasFilter("[RootName] IS NOT NULL");
 
                     b.HasDiscriminator().HasValue("PrimeRoot");
                 });
