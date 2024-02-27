@@ -17,6 +17,7 @@ builder.Services.AddDbContext<WireFramesDbContext>(options =>
 });
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddTransient<IWireFramesRepository, WireFramesRepository>();
+builder.Services.AddTransient<IPrimeRootRepository, PrimeRootRepository>();
 
 builder.Services.AddSingleton<WireframeParser>();
 // ~ benkimz: end custom services
