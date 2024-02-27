@@ -11,5 +11,4 @@ public class BaseWireFrame : IBaseWireFrame
     public string Segment { get; set; } = "div"; // target component or html element
     public List<WireFrameAttribute>? Attributes { get; set; } // segment attributes
     public RenderData? Data { get; set; } // data to be rendered
-    public bool IsOpenTag { get; set; } = false; // is the component an open or close tag
 }

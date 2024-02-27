@@ -12,7 +12,7 @@ using MilesAhead.Components;
 namespace MilesAhead.Web.Migrations
 {
     [DbContext(typeof(WireFramesDbContext))]
-    [Migration("20240227173149_InitialDB")]
+    [Migration("20240227180732_InitialDB")]
     partial class InitialDB
     {
         /// <inheritdoc />

@@ -2,9 +2,12 @@
 
 public interface IGenericRepository<T>
 {
+    Task<T?> Add(T entity);
+    Task<T?> Delete(int id);
+    Task<T?> FilterSingle(Func<T, bool> predicate);
     Task<IEnumerable<T>?> GetAll();
     Task<T?> GetById(int id);
-    Task<T?> Add(T entity);
     Task<T?> Update(T entity);
-    Task<T?> Delete(int id);
+    Task<T?> Upsert(T entity);
+
 }

@@ -36,6 +36,11 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         return Task.FromResult<T?>(null);
     }
 
+    public Task<T?> FilterSingle(Func<T, bool> predicate)
+    {
+        return Task.FromResult(_dbSet.Where(predicate).FirstOrDefault());
+    }
+
     public Task<IEnumerable<T>?> GetAll()
     {
         return Task.FromResult(_dbSet.AsEnumerable() ?? null);
@@ -55,5 +60,22 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
             return Task.FromResult(result.Entity ?? null);
         }
         return Task.FromResult<T?>(null);
+    }
+
+    public Task<T?> Upsert(T entity)
+    {
+        var entry = _dbSet.Entry(entity);
+        switch (entry.State)
+        {
+            case EntityState.Detached:
+                entry = _dbSet.Add(entity);
+                break;
+            case EntityState.Modified:
+                entry = _dbSet.Update(entity);
+                break;
+            default: break;
+        }
+        _context.SaveChanges();
+        return Task.FromResult(entry.Entity ?? null);
     }
 }

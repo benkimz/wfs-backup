@@ -1,4 +1,5 @@
 ﻿
+
 namespace MilesAhead.Components;
 
 public class WireFramesRepository : IWireFramesRepository
@@ -12,26 +13,36 @@ public class WireFramesRepository : IWireFramesRepository
 
     public Task<WireFrame?> Add(WireFrame entity)
     {
-        throw new NotImplementedException();
+        return _genericRepository.Add(entity);
     }
 
     public Task<WireFrame?> Delete(int id)
     {
-        throw new NotImplementedException();
+        return _genericRepository.Delete(id);
+    }
+
+    public Task<WireFrame?> FilterSingle(Func<WireFrame, bool> predicate)
+    {
+        return _genericRepository.FilterSingle(predicate);
     }
 
     public Task<IEnumerable<WireFrame>?> GetAll()
     {
-        throw new NotImplementedException();
+        return _genericRepository.GetAll();
     }
 
     public Task<WireFrame?> GetById(int id)
     {
-        throw new NotImplementedException();
+        return _genericRepository.GetById(id);
     }
 
     public Task<WireFrame?> Update(WireFrame entity)
     {
-        throw new NotImplementedException();
+        return _genericRepository.Update(entity);
+    }
+
+    public Task<WireFrame?> Upsert(WireFrame entity)
+    {
+        return _genericRepository.Upsert(entity);
     }
 }
