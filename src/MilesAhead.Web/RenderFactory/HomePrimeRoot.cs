@@ -76,10 +76,10 @@ public class HomePrimeRoot
         WireFrame RootBody = new WireFrame { Name = $"{Root.RootName} Body", Segment = "body" };
 
         RootBody.Children.AddRange([
-            new PagePreloader().Build(), // Page Preloader
-            new BodyOverLay().Build(), // Body Overlay
-            new SearchPopUp().Build(), // Search Popup
-            new BodyMain().Build(), // Main Section
+            new PagePreloader().Build(),
+            new BodyOverLay().Build(),
+            new SearchPopUp().Build(),
+            new BodyMain().Build(),
             new WireFrame
             {
                 Name = "Back to Top",
