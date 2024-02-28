@@ -3,7 +3,5 @@
 public enum DataSource
 {
     Api,
-    Database,
-    File,
-    Other
+    File
 }

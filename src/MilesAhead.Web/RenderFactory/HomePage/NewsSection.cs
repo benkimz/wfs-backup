@@ -6,7 +6,7 @@ public class NewsSection
 {
     public WireFrame Build()
     {
-        WireFrame NewsFrame = new WireFrame
+        return new WireFrame
         {
             Name = "News Section",
             Segment = "section",
@@ -72,26 +72,12 @@ public class NewsSection
                                                             Value = "subtitle"
                                                         }
                                                     ],
-                                                    Data = new RenderData{
-                                                        FallbackRenderData = [
-                                                            new RenderDataItem{
-                                                                Name = "text",
-                                                                Value = "EDUPLAN UPDATES"
-                                                            }
-                                                        ]
-                                                    }
+                                                    Content = "EDUPLAN UPDATES"
                                                 },
                                                 new WireFrame{
                                                     Name = "Title",
                                                     Segment = "h4",
-                                                    Data = new RenderData{
-                                                        FallbackRenderData = [
-                                                            new RenderDataItem{
-                                                                Name = "text",
-                                                                Value = "Eduplan Latest Blog"
-                                                            }
-                                                        ]
-                                                    }
+                                                    Content = "Eduplan Latest Blog"
                                                 }
                                             ]
                                         }
@@ -191,26 +177,12 @@ public class NewsSection
                                                                 new WireFrame{
                                                                     Name = "Date",
                                                                     Segment = "li",
-                                                                    Data = new RenderData{
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem{
-                                                                                Name = "text",
-                                                                                Value = "19th Jan 2022"
-                                                                            }
-                                                                        ]
-                                                                    }
+                                                                    Content = "19th Jan 2022"
                                                                 },
                                                                 new WireFrame{
                                                                     Name = "Time",
                                                                     Segment = "li",
-                                                                    Data = new RenderData{
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem{
-                                                                                Name = "text",
-                                                                                Value = "12 noon to 4 pm"
-                                                                            }
-                                                                        ]
-                                                                    }
+                                                                    Content = "12 noon to 4 pm"
                                                                 }
                                                             ]
                                                         },
@@ -224,14 +196,7 @@ public class NewsSection
                                                                     Value = "title"
                                                                 }
                                                             ],
-                                                            Data = new RenderData{
-                                                                FallbackRenderData = [
-                                                                    new RenderDataItem{
-                                                                        Name = "text",
-                                                                        Value = "Overseas Education Fair Amravati 2023"
-                                                                    }
-                                                                ]
-                                                            }
+                                                            Content = "Overseas Education Fair Amravati 2023"
                                                         },
                                                         new WireFrame{
                                                             Name = "Button",
@@ -259,14 +224,7 @@ public class NewsSection
                                                                             Value = "more-btn"
                                                                         }
                                                                     ],
-                                                                    Data = new RenderData{
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem{
-                                                                                Name = "text",
-                                                                                Value = "Read More"
-                                                                            }
-                                                                        ]
-                                                                    },
+                                                                    Content = "Read More",
                                                                     Children = [
                                                                         new WireFrame{
                                                                             Name = "Icon",
@@ -365,14 +323,7 @@ public class NewsSection
                                                                 new WireFrame{
                                                                     Name = "Date",
                                                                     Segment = "li",
-                                                                    Data = new RenderData{
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem{
-                                                                                Name = "text",
-                                                                                Value = "19th Jan 2022"
-                                                                            }
-                                                                        ]
-                                                                    },
+                                                                    Content = "19th Jan 2022",
                                                                     Children = [
                                                                         new WireFrame{
                                                                             Name = "Icon",
@@ -395,14 +346,7 @@ public class NewsSection
                                                                 new WireFrame{
                                                                     Name = "Time",
                                                                     Segment = "li",
-                                                                    Data = new RenderData{
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem{
-                                                                                Name = "text",
-                                                                                Value = "12 noon to 4 pm"
-                                                                            }
-                                                                        ]
-                                                                    }
+                                                                    Content = "12 noon to 4 pm"
                                                                 }
                                                             ]
                                                         },
@@ -416,14 +360,7 @@ public class NewsSection
                                                                     Value = "title"
                                                                 }
                                                             ],
-                                                            Data = new RenderData{
-                                                                FallbackRenderData = [
-                                                                    new RenderDataItem{
-                                                                        Name = "text",
-                                                                        Value = "Overseas Education Fair Amravati 2023"
-                                                                    }
-                                                                ]
-                                                            }
+                                                            Content = "Overseas Education Fair Amravati 2023"
                                                         },
                                                         new WireFrame{
                                                             Name = "Button",
@@ -451,14 +388,7 @@ public class NewsSection
                                                                             Value = "more-btn"
                                                                         }
                                                                     ],
-                                                                    Data = new RenderData{
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem{
-                                                                                Name = "text",
-                                                                                Value = "Read More"
-                                                                            }
-                                                                        ]
-                                                                    },
+                                                                    Content = "Read More",
                                                                     Children = [
                                                                         new WireFrame{
                                                                             Name = "Icon",
@@ -557,14 +487,7 @@ public class NewsSection
                                                                 new WireFrame{
                                                                     Name = "Date",
                                                                     Segment = "li",
-                                                                    Data = new RenderData{
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem{
-                                                                                Name = "text",
-                                                                                Value = "19th Jan 2022"
-                                                                            }
-                                                                        ]
-                                                                    },
+                                                                    Content = "19th Jan 2022",
                                                                     Children = [
                                                                         new WireFrame{
                                                                             Name = "Icon",
@@ -587,14 +510,7 @@ public class NewsSection
                                                                 new WireFrame{
                                                                     Name = "Time",
                                                                     Segment = "li",
-                                                                    Data = new RenderData{
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem{
-                                                                                Name = "text",
-                                                                                Value = "12 noon to 4 pm"
-                                                                            }
-                                                                        ]
-                                                                    }
+                                                                    Content = "12 noon to 4 pm"
                                                                 }
                                                             ]
                                                         },
@@ -608,14 +524,7 @@ public class NewsSection
                                                                     Value = "title"
                                                                 }
                                                             ],
-                                                            Data = new RenderData{
-                                                                FallbackRenderData = [
-                                                                    new RenderDataItem{
-                                                                        Name = "text",
-                                                                        Value = "Overseas Education Fair Amravati 2023"
-                                                                    }
-                                                                ]
-                                                            }
+                                                            Content = "Overseas Education Fair Amravati 2023"
                                                         },
                                                         new WireFrame{
                                                             Name = "Button",
@@ -643,14 +552,7 @@ public class NewsSection
                                                                             Value = "more-btn"
                                                                         }
                                                                     ],
-                                                                    Data = new RenderData{
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem{
-                                                                                Name = "text",
-                                                                                Value = "Read More"
-                                                                            }
-                                                                        ]
-                                                                    },
+                                                                    Content = "Read More",
                                                                     Children = [
                                                                         new WireFrame{
                                                                             Name = "Icon",
@@ -679,7 +581,5 @@ public class NewsSection
                 }
             ]
         };
-
-        return NewsFrame;
     }
 }

@@ -4,11 +4,13 @@ namespace MilesAhead.Components;
 
 public class BaseWireFrame : IBaseWireFrame
 {
-    public Guid Id { get; set; }
+    public int Id { get; set; }
     [MaxLength(255)]
     public string Name { get; set; } = "Dynamic Component";
     [MaxLength(64)]
     public string Segment { get; set; } = "div"; // target component or html element
-    public List<WireFrameAttribute>? Attributes { get; set; } // segment attributes
-    public RenderData? Data { get; set; } // data to be rendered
+    public virtual List<WireFrameAttribute>? Attributes { get; set; } // segment attributes
+    public DataSource DataSource { get; set; } // data source
+    public string? Content { get; set; } // content to be rendered
+    public virtual FetchData? FetchContent { get; set; } // data to be rendered
 }

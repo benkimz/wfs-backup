@@ -67,23 +67,13 @@ public class FeaturesSection
                                                                 Name = "title",
                                                                 Segment = "h4",
                                                                 Attributes = [new WireFrameAttribute { Name = "class", Value = "title" }],
-                                                                Data = new RenderData
-                                                                {
-                                                                    FallbackRenderData = [
-                                                                        new RenderDataItem { Name = "Title", Value = "One Stop Study Solution" }
-                                                                    ]
-                                                                }
+                                                                Content = "One Stop Study Solution"
                                                             },
                                                             new WireFrame
                                                             {
                                                                 Name = "p",
                                                                 Segment = "p",
-                                                                Data = new RenderData
-                                                                {
-                                                                    FallbackRenderData = [
-                                                                        new RenderDataItem { Name = "Title", Value = "Get a full view so you know where to save. Track spending, deta keep tab subscription lorem ipsum text" }
-                                                                    ]
-                                                                }
+                                                                Content = "Get a full view so you know where to save. Track spending, deta keep tab subscription lorem ipsum text"
                                                             }
                                                         ]
                                                     },
@@ -98,12 +88,7 @@ public class FeaturesSection
                                                                 Name = "a",
                                                                 Segment = "a",
                                                                 Attributes = [new WireFrameAttribute { Name = "href", Value = "#0" }, new WireFrameAttribute { Name = "class", Value = "more-btn" }],
-                                                                Data = new RenderData
-                                                                {
-                                                                    FallbackRenderData = [
-                                                                        new RenderDataItem { Name = "Title", Value = "Learn More" }
-                                                                    ]
-                                                                }
+                                                                Content = "Learn More"
                                                             }
                                                         ]
                                                     }
@@ -148,23 +133,13 @@ public class FeaturesSection
                                                                 Name = "title",
                                                                 Segment = "h4",
                                                                 Attributes = [new WireFrameAttribute { Name = "class", Value = "title" }],
-                                                                Data = new RenderData
-                                                                {
-                                                                    FallbackRenderData = [
-                                                                        new RenderDataItem { Name = "Title", Value = "One To One Discussion" }
-                                                                    ]
-                                                                }
+                                                                Content = "One To One Discussion"
                                                             },
                                                             new WireFrame
                                                             {
                                                                 Name = "p",
                                                                 Segment = "p",
-                                                                Data = new RenderData
-                                                                {
-                                                                    FallbackRenderData = [
-                                                                        new RenderDataItem { Name = "Title", Value = "Get a full view so you know where to save. Track spending, deta keep tab subscription lorem ipsum text" }
-                                                                    ]
-                                                                }
+                                                                Content = "Get a full view so you know where to save. Track spending, deta keep tab subscription lorem ipsum text"
                                                             }
                                                         ]
                                                     },
@@ -179,12 +154,7 @@ public class FeaturesSection
                                                                 Name = "a",
                                                                 Segment = "a",
                                                                 Attributes = [new WireFrameAttribute { Name = "href", Value = "#0" }, new WireFrameAttribute { Name = "class", Value = "more-btn" }],
-                                                                Data = new RenderData
-                                                                {
-                                                                    FallbackRenderData = [
-                                                                        new RenderDataItem { Name = "Title", Value = "Learn More" }
-                                                                    ]
-                                                                }
+                                                                Content = "Learn More"
                                                             }
                                                         ]
                                                     }
@@ -229,23 +199,13 @@ public class FeaturesSection
                                                                 Name = "title",
                                                                 Segment = "h4",
                                                                 Attributes = [new WireFrameAttribute { Name = "class", Value = "title" }],
-                                                                Data = new RenderData
-                                                                {
-                                                                    FallbackRenderData = [
-                                                                        new RenderDataItem { Name = "Title", Value = "End To End Support" }
-                                                                    ]
-                                                                }
+                                                                Content = "End To End Support"
                                                             },
                                                             new WireFrame
                                                             {
                                                                 Name = "p",
                                                                 Segment = "p",
-                                                                Data = new RenderData
-                                                                {
-                                                                    FallbackRenderData = [
-                                                                        new RenderDataItem { Name = "Title", Value = "Get a full view so you know where to save. Track spending, deta keep tab subscription lorem ipsum text" }
-                                                                    ]
-                                                                }
+                                                                Content = "Get a full view so you know where to save. Track spending, deta keep tab subscription lorem ipsum text"
                                                             }
                                                         ]
                                                     },
@@ -260,12 +220,7 @@ public class FeaturesSection
                                                                 Name = "a",
                                                                 Segment = "a",
                                                                 Attributes = [new WireFrameAttribute { Name = "href", Value = "#0" }, new WireFrameAttribute { Name = "class", Value = "more-btn" }],
-                                                                Data = new RenderData
-                                                                {
-                                                                    FallbackRenderData = [
-                                                                        new RenderDataItem { Name = "Title", Value = "Learn More" }
-                                                                    ]
-                                                                }
+                                                                Content = "Learn More"
                                                             }
                                                         ]
                                                     }

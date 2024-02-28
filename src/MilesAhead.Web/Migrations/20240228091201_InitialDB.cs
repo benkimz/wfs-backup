@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -15,17 +14,17 @@ namespace MilesAhead.Web.Migrations
                 name: "render");
 
             migrationBuilder.CreateTable(
-                name: "RenderData",
+                name: "FetchData",
                 schema: "render",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DataSource = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Source = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RenderData", x => x.Id);
+                    table.PrimaryKey("PK_FetchData", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -33,40 +32,20 @@ namespace MilesAhead.Web.Migrations
                 schema: "render",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RenderDataId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    FetchDataId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DataField", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_DataField_RenderData_RenderDataId",
-                        column: x => x.RenderDataId,
+                        name: "FK_DataField_FetchData_FetchDataId",
+                        column: x => x.FetchDataId,
                         principalSchema: "render",
-                        principalTable: "RenderData",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "RenderDataItem",
-                schema: "render",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RenderDataId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_RenderDataItem", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_RenderDataItem_RenderData_RenderDataId",
-                        column: x => x.RenderDataId,
-                        principalSchema: "render",
-                        principalTable: "RenderData",
+                        principalTable: "FetchData",
                         principalColumn: "Id");
                 });
 
@@ -75,26 +54,29 @@ namespace MilesAhead.Web.Migrations
                 schema: "render",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Discriminator = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
-                    WireFrameId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    WireFrameId = table.Column<int>(type: "int", nullable: true),
                     RootName = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    MetaDataId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    MetaDataId = table.Column<int>(type: "int", nullable: true),
                     ExternalStyleSheets = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     HeadScripts = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BodyScripts = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Segment = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
-                    DataId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    DataSource = table.Column<int>(type: "int", nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FetchContentId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_WireFrames", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_WireFrames_RenderData_DataId",
-                        column: x => x.DataId,
+                        name: "FK_WireFrames_FetchData_FetchContentId",
+                        column: x => x.FetchContentId,
                         principalSchema: "render",
-                        principalTable: "RenderData",
+                        principalTable: "FetchData",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_WireFrames_WireFrames_MetaDataId",
@@ -115,10 +97,11 @@ namespace MilesAhead.Web.Migrations
                 schema: "render",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Value = table.Column<string>(type: "nvarchar(320)", maxLength: 320, nullable: true),
-                    WireFrameId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    WireFrameId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -132,16 +115,10 @@ namespace MilesAhead.Web.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_DataField_RenderDataId",
+                name: "IX_DataField_FetchDataId",
                 schema: "render",
                 table: "DataField",
-                column: "RenderDataId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_RenderDataItem_RenderDataId",
-                schema: "render",
-                table: "RenderDataItem",
-                column: "RenderDataId");
+                column: "FetchDataId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_WireFrameAttribute_WireFrameId",
@@ -150,10 +127,10 @@ namespace MilesAhead.Web.Migrations
                 column: "WireFrameId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_WireFrames_DataId",
+                name: "IX_WireFrames_FetchContentId",
                 schema: "render",
                 table: "WireFrames",
-                column: "DataId");
+                column: "FetchContentId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_WireFrames_MetaDataId",
@@ -184,10 +161,6 @@ namespace MilesAhead.Web.Migrations
                 schema: "render");
 
             migrationBuilder.DropTable(
-                name: "RenderDataItem",
-                schema: "render");
-
-            migrationBuilder.DropTable(
                 name: "WireFrameAttribute",
                 schema: "render");
 
@@ -196,7 +169,7 @@ namespace MilesAhead.Web.Migrations
                 schema: "render");
 
             migrationBuilder.DropTable(
-                name: "RenderData",
+                name: "FetchData",
                 schema: "render");
         }
     }

@@ -68,14 +68,7 @@ public class AboutSection
                                                         Value = "subtitle"
                                                     }
                                                 ],
-                                                Data = new RenderData{
-                                                    FallbackRenderData = [
-                                                        new RenderDataItem{
-                                                            Name = "text",
-                                                            Value = "ABOUT US & EXPERIENCE"
-                                                        }
-                                                    ]
-                                                }
+                                                Content="ABOUT US & EXPERIENCE"
                                             },
                                             new WireFrame{
                                                 Name = "Title",
@@ -86,14 +79,7 @@ public class AboutSection
                                                         Value = "title"
                                                     }
                                                 ],
-                                                Data = new RenderData{
-                                                    FallbackRenderData = [
-                                                        new RenderDataItem{
-                                                            Name = "text",
-                                                            Value = "Moving beyond product innovation to gain a competitive advantage"
-                                                        }
-                                                    ]
-                                                }
+                                                Content = "Moving beyond product innovation to gain a competitive advantage"
                                             }
                                         ]
                                     },
@@ -110,26 +96,12 @@ public class AboutSection
                                             new WireFrame{
                                                 Name = "Paragraph",
                                                 Segment = "p",
-                                                Data = new RenderData{
-                                                    FallbackRenderData = [
-                                                        new RenderDataItem{
-                                                            Name = "text",
-                                                            Value = "Ouya Education, which is based in Victoria, British Columbia, Canada, frequently deals with issues of employment (recruitment and retention) for temporary foreign workers (TFW), as well as temporary and permanent residency applications and other general immigration matters with Canadian federal departments (IRCC and CBSA)."
-                                                        }
-                                                    ]
-                                                }
+                                                Content = "Ouya Education, which is based in Victoria, British Columbia, Canada, frequently deals with issues of employment (recruitment and retention) for temporary foreign workers (TFW), as well as temporary and permanent residency applications and other general immigration matters with Canadian federal departments (IRCC and CBSA)."
                                             },
                                             new WireFrame{
                                                 Name = "Paragraph",
                                                 Segment = "p",
-                                                Data = new RenderData{
-                                                    FallbackRenderData = [
-                                                        new RenderDataItem{
-                                                            Name = "text",
-                                                            Value = "Education also provides educational consulting services for student- clients who want to study in Canada, and require help with the application process."
-                                                        }
-                                                    ]
-                                                }
+                                                Content = "Education also provides educational consulting services for student- clients who want to study in Canada, and require help with the application process."
                                             },
                                             new WireFrame{
                                                 Name = "Core Strength",
@@ -153,7 +125,6 @@ public class AboutSection
                                             }
                                         ],
                                         Children = [
-                                            // start single-counterup color-01
                                             new WireFrame{
                                                 Name = "Single Counterup",
                                                 Segment = "div",
@@ -197,14 +168,7 @@ public class AboutSection
                                                                                 Value = "15"
                                                                             }
                                                                         ],
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem{
-                                                                                    Name = "text",
-                                                                                    Value = "0"
-                                                                                }
-                                                                            ]
-                                                                        }
+                                                                        Content = "0"
                                                                     },
                                                                 ]
                                                             },
@@ -227,14 +191,7 @@ public class AboutSection
                                                                                 Value = "subtitle"
                                                                             }
                                                                         ],
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem{
-                                                                                    Name = "text",
-                                                                                    Value = "Years Experience"
-                                                                                }
-                                                                            ]
-                                                                        }
+                                                                        Content = "Years Experience"
                                                                     }
                                                                 ]
                                                             }
@@ -288,14 +245,7 @@ public class AboutSection
                                                                                 Value = "875"
                                                                             }
                                                                         ],
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem{
-                                                                                    Name = "text",
-                                                                                    Value = "0"
-                                                                                }
-                                                                            ]
-                                                                        }
+                                                                        Content = "0"
                                                                     },
                                                                 ]
                                                             },
@@ -318,14 +268,7 @@ public class AboutSection
                                                                                 Value = "subtitle"
                                                                             },
                                                                         ],
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem{
-                                                                                    Name = "text",
-                                                                                    Value = "VISAs Approved"
-                                                                                }
-                                                                            ]
-                                                                        }
+                                                                        Content = "VISAs Approved"
                                                                     }
                                                                 ]
                                                             }
@@ -379,26 +322,12 @@ public class AboutSection
                                                                                 Value = "96"
                                                                             }
                                                                         ],
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem{
-                                                                                    Name = "text",
-                                                                                    Value = "0"
-                                                                                }
-                                                                            ]
-                                                                        }
+                                                                        Content = "0"
                                                                     },
                                                                     new WireFrame{
                                                                         Name = "Title",
                                                                         Segment = "h3",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem{
-                                                                                    Name = "text",
-                                                                                    Value = "%"
-                                                                                }
-                                                                            ]
-                                                                        }
+                                                                        Content = "%",
                                                                     }
                                                                 ]
                                                             },
@@ -421,14 +350,7 @@ public class AboutSection
                                                                                 Value = "subtitle"
                                                                             },
                                                                         ],
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem{
-                                                                                    Name = "text",
-                                                                                    Value = "Admission success"
-                                                                                }
-                                                                            ]
-                                                                        }
+                                                                        Content = "Admission Success"
                                                                     }
                                                                 ]
                                                             }
@@ -462,14 +384,7 @@ public class AboutSection
                                                         Value = "btn-common fill-btn"
                                                     }
                                                 ],
-                                                Data = new RenderData{
-                                                    FallbackRenderData = [
-                                                        new RenderDataItem{
-                                                            Name = "text",
-                                                            Value = "Get Free Consultation"
-                                                        }
-                                                    ]
-                                                }
+                                                Content = "Get Free Consultation",
                                             }
                                         ]
                                     }

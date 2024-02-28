@@ -2,12 +2,10 @@
 
 namespace MilesAhead.Components;
 
-public class RenderData : IBaseRenderData
+public class FetchData : IBaseFetchData
 {
-    public Guid Id { get; set; }
-    public DataSource DataSource { get; set; }
+    public int Id { get; set; }
     [MaxLength(255)]
     public string? Source { get; set; }
     public List<DataField>? Parameters { get; set; }
-    public List<RenderDataItem>? FallbackRenderData { get; set; }
 }

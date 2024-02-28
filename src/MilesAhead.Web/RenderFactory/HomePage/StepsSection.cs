@@ -62,26 +62,12 @@ public class StepsSection
                                             new WireFrame{
                                                 Name = "Subtitle",
                                                 Segment = "span",
-                                                Data = new RenderData{
-                                                    FallbackRenderData = [
-                                                        new RenderDataItem{
-                                                            Name = "text",
-                                                            Value = "STEPS"
-                                                        }
-                                                    ]
-                                                }
+                                                Content = "STEPS"
                                             },
                                             new WireFrame{
                                                 Name = "Title",
                                                 Segment = "h4",
-                                                Data = new RenderData{
-                                                    FallbackRenderData = [
-                                                        new RenderDataItem{
-                                                            Name = "text",
-                                                            Value = "Steps to Get your Destination"
-                                                        }
-                                                    ]
-                                                }
+                                                Content = "Steps to Get your Destination"
                                             }
                                         ]
                                     }
@@ -144,14 +130,7 @@ public class StepsSection
                                                 Value = "name"
                                             }
                                         ],
-                                        Data = new RenderData{
-                                            FallbackRenderData = [
-                                                new RenderDataItem{
-                                                    Name = "text",
-                                                    Value = "Identify course <br> country & collage"
-                                                }
-                                            ]
-                                        }
+                                        Content = "Identify course <br> country & collage"
                                     }
                                 ]
                             },
@@ -200,14 +179,7 @@ public class StepsSection
                                                 Value = "name"
                                             }
                                         ],
-                                        Data = new RenderData{
-                                            FallbackRenderData = [
-                                                new RenderDataItem{
-                                                    Name = "text",
-                                                    Value = "science <br> & professional"
-                                                }
-                                            ]
-                                        }
+                                        Content = "science <br> & professional"
                                     }
                                 ]
                             },
@@ -256,14 +228,7 @@ public class StepsSection
                                                 Value = "name"
                                             }
                                         ],
-                                        Data = new RenderData{
-                                            FallbackRenderData = [
-                                                new RenderDataItem{
-                                                    Name = "text",
-                                                    Value = "Art, Design & <br> Culture"
-                                                }
-                                            ]
-                                        }
+                                        Content = "Art, Design & <br> Culture"
                                     }
                                 ]
                             },
@@ -312,14 +277,7 @@ public class StepsSection
                                                 Value = "name"
                                             }
                                         ],
-                                        Data = new RenderData{
-                                            FallbackRenderData = [
-                                                new RenderDataItem{
-                                                    Name = "text",
-                                                    Value = "Business & <br> Management"
-                                                }
-                                            ]
-                                        }
+                                        Content = "Business & <br> Management"
                                     }
                                 ]
                             },
@@ -368,14 +326,7 @@ public class StepsSection
                                                 Value = "name"
                                             }
                                         ],
-                                        Data = new RenderData{
-                                            FallbackRenderData = [
-                                                new RenderDataItem{
-                                                    Name = "text",
-                                                    Value = "Computer <br> Science & IT"
-                                                }
-                                            ]
-                                        }
+                                        Content = "Computer <br> Science & IT"
                                     }
                                 ]
                             }

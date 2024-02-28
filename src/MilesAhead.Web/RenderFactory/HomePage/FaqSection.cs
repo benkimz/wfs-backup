@@ -41,18 +41,14 @@ public class FaqSection
                                                     Name = "Subtitle",
                                                     Segment = "span",
                                                     Attributes = [new WireFrameAttribute { Name = "class", Value = "subtitle" }],
-                                                    Data = new RenderData{
-                                                        FallbackRenderData = [new RenderDataItem { Name = "text", Value = "FAQ" }]
-                                                    }
+                                                    Content = "FAQ"
                                                 },
                                                 new WireFrame
                                                 {
                                                     Name = "Title",
                                                     Segment = "h4",
                                                     Attributes = [new WireFrameAttribute { Name = "class", Value = "title" }],
-                                                    Data = new RenderData{
-                                                        FallbackRenderData = [new RenderDataItem { Name = "text", Value = "Frequently asked question" }]
-                                                    }
+                                                    Content = "Frequently asked question"
                                                 }
                                             ]
                                         },
@@ -67,9 +63,7 @@ public class FaqSection
                                                     Name = "Subtitle",
                                                     Segment = "h6",
                                                     Attributes = [new WireFrameAttribute { Name = "class", Value = "subtitle" }],
-                                                    Data = new RenderData{
-                                                        FallbackRenderData = [new RenderDataItem { Name = "text", Value = "Still do you have any questions to know? <br> Feel free to ask our experts here." }]
-                                                    }
+                                                    Content = "Still do you have any questions to know? <br> Feel free to ask our experts here."
                                                 },
                                                 new WireFrame
                                                 {
@@ -82,9 +76,7 @@ public class FaqSection
                                                             Name = "Button",
                                                             Segment = "a",
                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "#0" }, new WireFrameAttribute { Name = "class", Value = "btn-common flat-btn" }],
-                                                            Data = new RenderData{
-                                                                FallbackRenderData = [new RenderDataItem { Name = "text", Value = "ASK YOUR QUESTIONS" }]
-                                                            }
+                                                            Content = "ASK YOUR QUESTIONS"
                                                         }
                                                     ]
                                                 }
@@ -133,9 +125,7 @@ public class FaqSection
                                                                                     Name = "Anchor",
                                                                                     Segment = "a",
                                                                                     Attributes = [new WireFrameAttribute { Name = "class", Value = "collapsed" }, new WireFrameAttribute { Name = "role", Value = "button" }, new WireFrameAttribute { Name = "data-bs-toggle", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-target", Value = "#collapseOne" }, new WireFrameAttribute { Name = "aria-expanded", Value = "false" }, new WireFrameAttribute { Name = "aria-controls", Value = "collapseOne" }],
-                                                                                    Data = new RenderData{
-                                                                                        FallbackRenderData = [new RenderDataItem { Name = "text", Value = "1. How is get admission in abroad university?" }]
-                                                                                    }
+                                                                                    Content = "1. How is get admission in abroad university?",
                                                                                 }
                                                                             ]
                                                                         }
@@ -152,9 +142,7 @@ public class FaqSection
                                                                             Name = "Card Body",
                                                                             Segment = "div",
                                                                             Attributes = [new WireFrameAttribute { Name = "class", Value = "card-body" }],
-                                                                            Data = new RenderData{
-                                                                                FallbackRenderData = [new RenderDataItem { Name = "text", Value = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study." }]
-                                                                            }
+                                                                            Content = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study."
                                                                         }
                                                                     ]
                                                                 }
@@ -183,9 +171,7 @@ public class FaqSection
                                                                                     Name = "Anchor",
                                                                                     Segment = "a",
                                                                                     Attributes = [new WireFrameAttribute { Name = "class", Value = "collapsed" }, new WireFrameAttribute { Name = "role", Value = "button" }, new WireFrameAttribute { Name = "data-bs-toggle", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-target", Value = "#collapseTwo" }, new WireFrameAttribute { Name = "aria-expanded", Value = "false" }, new WireFrameAttribute { Name = "aria-controls", Value = "collapseTwo" }],
-                                                                                    Data = new RenderData{
-                                                                                        FallbackRenderData = [new RenderDataItem { Name = "text", Value = "2. Do you offer complete solution for students?" }]
-                                                                                    }
+                                                                                    Content = "2. Do you offer complete solution for students?"
                                                                                 }
                                                                             ]
                                                                         }
@@ -202,9 +188,7 @@ public class FaqSection
                                                                             Name = "Card Body",
                                                                             Segment = "div",
                                                                             Attributes = [new WireFrameAttribute { Name = "class", Value = "card-body" }],
-                                                                            Data = new RenderData{
-                                                                                FallbackRenderData = [new RenderDataItem { Name = "text", Value = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study." }]
-                                                                            }
+                                                                            Content = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study."
                                                                         }
                                                                     ]
                                                                 }
@@ -233,9 +217,7 @@ public class FaqSection
                                                                                     Name = "Anchor",
                                                                                     Segment = "a",
                                                                                     Attributes = [new WireFrameAttribute { Name = "class", Value = "collapsed" }, new WireFrameAttribute { Name = "role", Value = "button" }, new WireFrameAttribute { Name = "data-bs-toggle", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-target", Value = "#collapseThree" }, new WireFrameAttribute { Name = "aria-expanded", Value = "false" }, new WireFrameAttribute { Name = "aria-controls", Value = "collapseThree" }],
-                                                                                    Data = new RenderData{
-                                                                                        FallbackRenderData = [new RenderDataItem { Name = "text", Value = "3. Which country is safe and better for higher study?" }]
-                                                                                    }
+                                                                                    Content = "3. Which country is safe and better for higher study?"
                                                                                 }
                                                                             ]
                                                                         }
@@ -252,9 +234,7 @@ public class FaqSection
                                                                             Name = "Card Body",
                                                                             Segment = "div",
                                                                             Attributes = [new WireFrameAttribute { Name = "class", Value = "card-body" }],
-                                                                            Data = new RenderData{
-                                                                                FallbackRenderData = [new RenderDataItem { Name = "text", Value = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study." }]
-                                                                            }
+                                                                            Content = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study."
                                                                         }
                                                                     ]
                                                                 }
@@ -283,9 +263,7 @@ public class FaqSection
                                                                                     Name = "Anchor",
                                                                                     Segment = "a",
                                                                                     Attributes = [new WireFrameAttribute { Name = "class", Value = "collapsed" }, new WireFrameAttribute { Name = "role", Value = "button" }, new WireFrameAttribute { Name = "data-bs-toggle", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-target", Value = "#collapseFour" }, new WireFrameAttribute { Name = "aria-expanded", Value = "false" }, new WireFrameAttribute { Name = "aria-controls", Value = "collapseFour" }],
-                                                                                    Data = new RenderData{
-                                                                                        FallbackRenderData = [new RenderDataItem { Name = "text", Value = "4. Which country offer PR after study getting job?" }]
-                                                                                    }
+                                                                                    Content = "4. Which country offer PR after study getting job?"
                                                                                 }
                                                                             ]
                                                                         }
@@ -302,9 +280,7 @@ public class FaqSection
                                                                             Name = "Card Body",
                                                                             Segment = "div",
                                                                             Attributes = [new WireFrameAttribute { Name = "class", Value = "card-body" }],
-                                                                            Data = new RenderData{
-                                                                                FallbackRenderData = [new RenderDataItem { Name = "text", Value = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study." }]
-                                                                            }
+                                                                            Content = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study."
                                                                         }
                                                                     ]
                                                                 }
@@ -333,9 +309,7 @@ public class FaqSection
                                                                                     Name = "Anchor",
                                                                                     Segment = "a",
                                                                                     Attributes = [new WireFrameAttribute { Name = "class", Value = "collapsed" }, new WireFrameAttribute { Name = "role", Value = "button" }, new WireFrameAttribute { Name = "data-bs-toggle", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-target", Value = "#collapseFive" }, new WireFrameAttribute { Name = "aria-expanded", Value = "false" }, new WireFrameAttribute { Name = "aria-controls", Value = "collapseFive" }],
-                                                                                    Data = new RenderData{
-                                                                                        FallbackRenderData = [new RenderDataItem { Name = "text", Value = "5. Can i get scholarship with my low cGPA?" }]
-                                                                                    }
+                                                                                    Content = "5. Can i get scholarship with my low cGPA?"
                                                                                 }
                                                                             ]
                                                                         }
@@ -352,9 +326,7 @@ public class FaqSection
                                                                             Name = "Card Body",
                                                                             Segment = "div",
                                                                             Attributes = [new WireFrameAttribute { Name = "class", Value = "card-body" }],
-                                                                            Data = new RenderData{
-                                                                                FallbackRenderData = [new RenderDataItem { Name = "text", Value = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study." }]
-                                                                            }
+                                                                            Content = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study."
                                                                         }
                                                                     ]
                                                                 }
@@ -383,9 +355,7 @@ public class FaqSection
                                                                                     Name = "Anchor",
                                                                                     Segment = "a",
                                                                                     Attributes = [new WireFrameAttribute { Name = "class", Value = "collapsed" }, new WireFrameAttribute { Name = "role", Value = "button" }, new WireFrameAttribute { Name = "data-bs-toggle", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-target", Value = "#collapseSix" }, new WireFrameAttribute { Name = "aria-expanded", Value = "false" }, new WireFrameAttribute { Name = "aria-controls", Value = "collapseSix" }],
-                                                                                    Data = new RenderData{
-                                                                                        FallbackRenderData = [new RenderDataItem { Name = "text", Value = "6. Do you allow accomadation for students in abroad?" }]
-                                                                                    }
+                                                                                    Content = "6. Do you allow accomadation for students in abroad?"
                                                                                 }
                                                                             ]
                                                                         }
@@ -402,9 +372,7 @@ public class FaqSection
                                                                             Name = "Card Body",
                                                                             Segment = "div",
                                                                             Attributes = [new WireFrameAttribute { Name = "class", Value = "card-body" }],
-                                                                            Data = new RenderData{
-                                                                                FallbackRenderData = [new RenderDataItem { Name = "text", Value = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study." }]
-                                                                            }
+                                                                            Content = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study."
                                                                         }
                                                                     ]
                                                                 }

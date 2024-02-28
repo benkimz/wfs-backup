@@ -17,12 +17,9 @@ public class WireframeParser
                     builder.AddAttribute(1, attribute.Name, attribute.Value);
                 }
             }
-            if (wireFrame.Data != null && wireFrame.Data.FallbackRenderData != null)
+            if (wireFrame.Content != null)
             {
-                foreach (var data in wireFrame.Data.FallbackRenderData)
-                {
-                    builder.AddContent(2, (MarkupString)(data.Value ?? string.Empty));
-                }
+                builder.AddContent(2, (MarkupString)(wireFrame.Content ?? string.Empty));
             }
             foreach (var child in wireFrame.Children)
             {

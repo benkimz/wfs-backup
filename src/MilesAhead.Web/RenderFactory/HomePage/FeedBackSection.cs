@@ -40,24 +40,14 @@ public class FeedBackSection
                                                     Name = "subtitle",
                                                     Segment = "span",
                                                     Attributes = [new WireFrameAttribute { Name = "class", Value = "subtitle" }],
-                                                    Data = new RenderData
-                                                    {
-                                                        FallbackRenderData = [
-                                                            new RenderDataItem { Name = "Subtitle", Value = "FEEDBACKS" }
-                                                        ]
-                                                    }
+                                                    Content = "FEEDBACKS"
                                                 },
                                                 new WireFrame
                                                 {
                                                     Name = "title",
                                                     Segment = "h4",
                                                     Attributes = [new WireFrameAttribute { Name = "class", Value = "title" }],
-                                                    Data = new RenderData
-                                                    {
-                                                        FallbackRenderData = [
-                                                            new RenderDataItem { Name = "Title", Value = "Our students shared their <br> visa success stories" }
-                                                        ]
-                                                    },
+                                                    Content = "Our students shared their <br> visa success stories",
                                                     Children = [
                                                         new WireFrame
                                                         {
@@ -183,23 +173,13 @@ public class FeedBackSection
                                                                     Name = "Title",
                                                                     Segment = "h6",
                                                                     Attributes = [new WireFrameAttribute { Name = "class", Value = "title" }],
-                                                                    Data = new RenderData
-                                                                    {
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem { Name = "Title", Value = "Annette Black" }
-                                                                        ]
-                                                                    }
+                                                                    Content = "Annette Black"
                                                                 },
                                                                 new WireFrame
                                                                 {
                                                                     Name = "Paragraph",
                                                                     Segment = "p",
-                                                                    Data = new RenderData
-                                                                    {
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem { Name = "Paragraph", Value = "University of Alberta ~ Canada" }
-                                                                        ]
-                                                                    }
+                                                                    Content = "University of Alberta ~ Canada"
                                                                 }
                                                             ]
                                                         }
@@ -266,23 +246,13 @@ public class FeedBackSection
                                                                     Name = "Title",
                                                                     Segment = "h6",
                                                                     Attributes = [new WireFrameAttribute { Name = "class", Value = "title" }],
-                                                                    Data = new RenderData
-                                                                    {
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem { Name = "Title", Value = "Robert Fox" }
-                                                                        ]
-                                                                    }
+                                                                    Content = "Robert Fox"
                                                                 },
                                                                 new WireFrame
                                                                 {
                                                                     Name = "Paragraph",
                                                                     Segment = "p",
-                                                                    Data = new RenderData
-                                                                    {
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem { Name = "Paragraph", Value = "University of Alberta ~ Canada" }
-                                                                        ]
-                                                                    }
+                                                                    Content = "University of Alberta ~ Canada"
                                                                 }
                                                             ]
                                                         }
@@ -349,23 +319,13 @@ public class FeedBackSection
                                                                     Name = "Title",
                                                                     Segment = "h6",
                                                                     Attributes = [new WireFrameAttribute { Name = "class", Value = "title" }],
-                                                                    Data = new RenderData
-                                                                    {
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem { Name = "Title", Value = "Leslie Alexander" }
-                                                                        ]
-                                                                    }
+                                                                    Content = "Leslie Alexander"
                                                                 },
                                                                 new WireFrame
                                                                 {
                                                                     Name = "Paragraph",
                                                                     Segment = "p",
-                                                                    Data = new RenderData
-                                                                    {
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem { Name = "Paragraph", Value = "University of Alberta ~ Canada" }
-                                                                        ]
-                                                                    }
+                                                                    Content = "University of Alberta ~ Canada"
                                                                 }
                                                             ]
                                                         }
@@ -432,23 +392,13 @@ public class FeedBackSection
                                                                     Name = "Title",
                                                                     Segment = "h6",
                                                                     Attributes = [new WireFrameAttribute { Name = "class", Value = "title" }],
-                                                                    Data = new RenderData
-                                                                    {
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem { Name = "Title", Value = "Kristin Watson" }
-                                                                        ]
-                                                                    }
+                                                                    Content = "Kristin Watson"
                                                                 },
                                                                 new WireFrame
                                                                 {
                                                                     Name = "Paragraph",
                                                                     Segment = "p",
-                                                                    Data = new RenderData
-                                                                    {
-                                                                        FallbackRenderData = [
-                                                                            new RenderDataItem { Name = "Paragraph", Value = "University of Alberta ~ Canada" }
-                                                                        ]
-                                                                    }
+                                                                    Content = "University of Alberta ~ Canada"
                                                                 }
                                                             ]
                                                         }

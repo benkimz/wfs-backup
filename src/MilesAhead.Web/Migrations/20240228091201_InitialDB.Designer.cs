@@ -12,7 +12,7 @@ using MilesAhead.Components;
 namespace MilesAhead.Web.Migrations
 {
     [DbContext(typeof(WireFramesDbContext))]
-    [Migration("20240227180732_InitialDB")]
+    [Migration("20240228091201_InitialDB")]
     partial class InitialDB
     {
         /// <inheritdoc />
@@ -28,36 +28,37 @@ namespace MilesAhead.Web.Migrations
 
             modelBuilder.Entity("MilesAhead.Components.DataField", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("FetchDataId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<Guid?>("RenderDataId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RenderDataId");
+                    b.HasIndex("FetchDataId");
 
                     b.ToTable("DataField", "render");
                 });
 
-            modelBuilder.Entity("MilesAhead.Components.RenderData", b =>
+            modelBuilder.Entity("MilesAhead.Components.FetchData", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("DataSource")
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Source")
                         .HasMaxLength(255)
@@ -65,46 +66,30 @@ namespace MilesAhead.Web.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RenderData", "render");
-                });
-
-            modelBuilder.Entity("MilesAhead.Components.RenderDataItem", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<Guid?>("RenderDataId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RenderDataId");
-
-                    b.ToTable("RenderDataItem", "render");
+                    b.ToTable("FetchData", "render");
                 });
 
             modelBuilder.Entity("MilesAhead.Components.WireFrame", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<Guid?>("DataId")
-                        .HasColumnType("uniqueidentifier");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DataSource")
+                        .HasColumnType("int");
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
                         .HasMaxLength(13)
                         .HasColumnType("nvarchar(13)");
+
+                    b.Property<int?>("FetchContentId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -116,12 +101,12 @@ namespace MilesAhead.Web.Migrations
                         .HasMaxLength(64)
                         .HasColumnType("nvarchar(64)");
 
-                    b.Property<Guid?>("WireFrameId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("WireFrameId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DataId");
+                    b.HasIndex("FetchContentId");
 
                     b.HasIndex("WireFrameId");
 
@@ -134,9 +119,11 @@ namespace MilesAhead.Web.Migrations
 
             modelBuilder.Entity("MilesAhead.Components.WireFrameAttribute", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -147,8 +134,8 @@ namespace MilesAhead.Web.Migrations
                         .HasMaxLength(320)
                         .HasColumnType("nvarchar(320)");
 
-                    b.Property<Guid?>("WireFrameId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("WireFrameId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -173,8 +160,8 @@ namespace MilesAhead.Web.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("MetaDataId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("MetaDataId")
+                        .HasColumnType("int");
 
                     b.Property<string>("RootName")
                         .IsRequired()
@@ -191,29 +178,22 @@ namespace MilesAhead.Web.Migrations
 
             modelBuilder.Entity("MilesAhead.Components.DataField", b =>
                 {
-                    b.HasOne("MilesAhead.Components.RenderData", null)
+                    b.HasOne("MilesAhead.Components.FetchData", null)
                         .WithMany("Parameters")
-                        .HasForeignKey("RenderDataId");
-                });
-
-            modelBuilder.Entity("MilesAhead.Components.RenderDataItem", b =>
-                {
-                    b.HasOne("MilesAhead.Components.RenderData", null)
-                        .WithMany("FallbackRenderData")
-                        .HasForeignKey("RenderDataId");
+                        .HasForeignKey("FetchDataId");
                 });
 
             modelBuilder.Entity("MilesAhead.Components.WireFrame", b =>
                 {
-                    b.HasOne("MilesAhead.Components.RenderData", "Data")
+                    b.HasOne("MilesAhead.Components.FetchData", "FetchContent")
                         .WithMany()
-                        .HasForeignKey("DataId");
+                        .HasForeignKey("FetchContentId");
 
                     b.HasOne("MilesAhead.Components.WireFrame", null)
                         .WithMany("Children")
                         .HasForeignKey("WireFrameId");
 
-                    b.Navigation("Data");
+                    b.Navigation("FetchContent");
                 });
 
             modelBuilder.Entity("MilesAhead.Components.WireFrameAttribute", b =>
@@ -232,10 +212,8 @@ namespace MilesAhead.Web.Migrations
                     b.Navigation("MetaData");
                 });
 
-            modelBuilder.Entity("MilesAhead.Components.RenderData", b =>
+            modelBuilder.Entity("MilesAhead.Components.FetchData", b =>
                 {
-                    b.Navigation("FallbackRenderData");
-
                     b.Navigation("Parameters");
                 });
 

@@ -73,15 +73,14 @@ public class FooterSection
                                                                             Name = "Title",
                                                                             Segment = "h4",
                                                                             Attributes = [new WireFrameAttribute { Name = "class", Value = "title" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Subscribe our newsletter"}]}
+                                                                            Content = "Subscribe Our Newsletter"
                                                                         },
                                                                         new WireFrame
                                                                         {
                                                                             Name = "Paragraph",
                                                                             Segment = "p",
                                                                             Attributes = [],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Enter your mail address to get our updates, offer and study abroad related all updates"}]
-                                                                        }
+                                                                            Content = "Enter your mail address to get our updates, offer and study abroad related all updates"
                                                                         }
                                                                     ]
                                                                 }
@@ -127,7 +126,7 @@ public class FooterSection
                                                                                         {
                                                                                             Name = "Text",
                                                                                             Segment = "text",
-                                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="subscribe"}]}
+                                                                                            Content = "subscribe"
                                                                                         }
                                                                                     ]
                                                                                 }
@@ -174,8 +173,7 @@ public class FooterSection
                                                             Name = "Headline",
                                                             Segment = "h4",
                                                             Attributes = [new WireFrameAttribute { Name = "class", Value = "widget-headline" }],
-                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Important Links"}]
-                                                        }
+                                                            Content = "Important Links"
                                                         },
                                                         new WireFrame{
                                                             Name = "Links List",
@@ -189,21 +187,7 @@ public class FooterSection
                                                                             Name = "Anchor",
                                                                             Segment = "a",
                                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Terms and conditions"}]
-                                                                        }
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                new WireFrame{
-                                                                    Name = "List Item",
-                                                                    Segment = "li",
-                                                                    Children = [
-                                                                        new WireFrame{
-                                                                            Name = "Anchor",
-                                                                            Segment = "a",
-                                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Disclaimer and copyright"}]
-                                                                        }
+                                                                            Content="Terms and conditions"
                                                                         }
                                                                     ]
                                                                 },
@@ -215,21 +199,7 @@ public class FooterSection
                                                                             Name = "Anchor",
                                                                             Segment = "a",
                                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Cookie policy"}]
-                                                                        }
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                new WireFrame{
-                                                                    Name = "List Item",
-                                                                    Segment = "li",
-                                                                    Children = [
-                                                                        new WireFrame{
-                                                                            Name = "Anchor",
-                                                                            Segment = "a",
-                                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Privacy policy"}]
-                                                                        }
+                                                                            Content="Disclaimer and copyright"
                                                                         }
                                                                     ]
                                                                 },
@@ -241,8 +211,7 @@ public class FooterSection
                                                                             Name = "Anchor",
                                                                             Segment = "a",
                                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Equality and diversity"}]
-                                                                        }
+                                                                            Content = "Cookie policy"
                                                                         }
                                                                     ]
                                                                 },
@@ -254,8 +223,31 @@ public class FooterSection
                                                                             Name = "Anchor",
                                                                             Segment = "a",
                                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Complaints procedure"}]
+                                                                            Content = "Privacy policy"
                                                                         }
+                                                                    ]
+                                                                },
+                                                                new WireFrame{
+                                                                    Name = "List Item",
+                                                                    Segment = "li",
+                                                                    Children = [
+                                                                        new WireFrame{
+                                                                            Name = "Anchor",
+                                                                            Segment = "a",
+                                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
+                                                                            Content = "Equality and diversity"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                new WireFrame{
+                                                                    Name = "List Item",
+                                                                    Segment = "li",
+                                                                    Children = [
+                                                                        new WireFrame{
+                                                                            Name = "Anchor",
+                                                                            Segment = "a",
+                                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
+                                                                            Content = "Complaints procedure"
                                                                         }
                                                                     ]
                                                                 }
@@ -282,8 +274,7 @@ public class FooterSection
                                                             Name = "Headline",
                                                             Segment = "h4",
                                                             Attributes = [new WireFrameAttribute { Name = "class", Value = "widget-headline" }],
-                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Site Highlight"}]
-                                                        }
+                                                            Content = "Site Highlight"
                                                         },
                                                         new WireFrame{
                                                             Name = "Links List",
@@ -297,21 +288,7 @@ public class FooterSection
                                                                             Name = "Anchor",
                                                                             Segment = "a",
                                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Student videos"}]
-                                                                        }
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                new WireFrame{
-                                                                    Name = "List Item",
-                                                                    Segment = "li",
-                                                                    Children = [
-                                                                        new WireFrame{
-                                                                            Name = "Anchor",
-                                                                            Segment = "a",
-                                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Photo gallery"}]
-                                                                        }
+                                                                            Content = "Student videos"
                                                                         }
                                                                     ]
                                                                 },
@@ -323,21 +300,7 @@ public class FooterSection
                                                                             Name = "Anchor",
                                                                             Segment = "a",
                                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="TSC prospectus"}]
-                                                                        }
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                new WireFrame{
-                                                                    Name = "List Item",
-                                                                    Segment = "li",
-                                                                    Children = [
-                                                                        new WireFrame{
-                                                                            Name = "Anchor",
-                                                                            Segment = "a",
-                                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Student newsletter"}]
-                                                                        }
+                                                                            Content = "Photo gallery"
                                                                         }
                                                                     ]
                                                                 },
@@ -349,8 +312,31 @@ public class FooterSection
                                                                             Name = "Anchor",
                                                                             Segment = "a",
                                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Student portal"}]
+                                                                            Content = "TSC prospectus"
                                                                         }
+                                                                    ]
+                                                                },
+                                                                new WireFrame{
+                                                                    Name = "List Item",
+                                                                    Segment = "li",
+                                                                    Children = [
+                                                                        new WireFrame{
+                                                                            Name = "Anchor",
+                                                                            Segment = "a",
+                                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
+                                                                            Content = "Student newsletter"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                new WireFrame{
+                                                                    Name = "List Item",
+                                                                    Segment = "li",
+                                                                    Children = [
+                                                                        new WireFrame{
+                                                                            Name = "Anchor",
+                                                                            Segment = "a",
+                                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
+                                                                            Content = "Student portal"
                                                                         }
                                                                     ]
                                                                 }
@@ -377,8 +363,7 @@ public class FooterSection
                                                             Name = "Headline",
                                                             Segment = "h4",
                                                             Attributes = [new WireFrameAttribute { Name = "class", Value = "widget-headline" }],
-                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Help Center"}]
-                                                        }
+                                                            Content = "Help Center"
                                                         },
                                                         new WireFrame{
                                                             Name = "Links List",
@@ -392,21 +377,7 @@ public class FooterSection
                                                                             Name = "Anchor",
                                                                             Segment = "a",
                                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Courses"}]
-                                                                        }
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                new WireFrame{
-                                                                    Name = "List Item",
-                                                                    Segment = "li",
-                                                                    Children = [
-                                                                        new WireFrame{
-                                                                            Name = "Anchor",
-                                                                            Segment = "a",
-                                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="How to apply for admission"}]
-                                                                        }
+                                                                            Content = "Courses"
                                                                         }
                                                                     ]
                                                                 },
@@ -418,21 +389,7 @@ public class FooterSection
                                                                             Name = "Anchor",
                                                                             Segment = "a",
                                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Admission Documents"}]
-                                                                        }
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                new WireFrame{
-                                                                    Name = "List Item",
-                                                                    Segment = "li",
-                                                                    Children = [
-                                                                        new WireFrame{
-                                                                            Name = "Anchor",
-                                                                            Segment = "a",
-                                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Frequently asked questions"}]
-                                                                        }
+                                                                            Content = "How to apply for admission"
                                                                         }
                                                                     ]
                                                                 },
@@ -444,8 +401,7 @@ public class FooterSection
                                                                             Name = "Anchor",
                                                                             Segment = "a",
                                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Student accommodation"}]
-                                                                        }
+                                                                            Content = "Admission Documents"
                                                                         }
                                                                     ]
                                                                 },
@@ -457,8 +413,31 @@ public class FooterSection
                                                                             Name = "Anchor",
                                                                             Segment = "a",
                                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Student Jobs"}]
+                                                                            Content = "Frequently asked questions"
                                                                         }
+                                                                    ]
+                                                                },
+                                                                new WireFrame{
+                                                                    Name = "List Item",
+                                                                    Segment = "li",
+                                                                    Children = [
+                                                                        new WireFrame{
+                                                                            Name = "Anchor",
+                                                                            Segment = "a",
+                                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
+                                                                            Content = "Student accommodation"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                new WireFrame{
+                                                                    Name = "List Item",
+                                                                    Segment = "li",
+                                                                    Children = [
+                                                                        new WireFrame{
+                                                                            Name = "Anchor",
+                                                                            Segment = "a",
+                                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
+                                                                            Content = "Student Jobs"
                                                                         }
                                                                     ]
                                                                 }
@@ -485,8 +464,7 @@ public class FooterSection
                                                             Name = "Headline",
                                                             Segment = "h4",
                                                             Attributes = [new WireFrameAttribute { Name = "class", Value = "widget-headline" }],
-                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Services"}]
-                                                        }
+                                                            Content = "Services"
                                                         },
                                                         new WireFrame{
                                                             Name = "Links List",
@@ -500,21 +478,7 @@ public class FooterSection
                                                                             Name = "Anchor",
                                                                             Segment = "a",
                                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Counselling"}]
-                                                                        }
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                new WireFrame{
-                                                                    Name = "List Item",
-                                                                    Segment = "li",
-                                                                    Children = [
-                                                                        new WireFrame{
-                                                                            Name = "Anchor",
-                                                                            Segment = "a",
-                                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Test Preparation"}]
-                                                                        }
+                                                                            Content = "Counselling"
                                                                         }
                                                                     ]
                                                                 },
@@ -526,21 +490,7 @@ public class FooterSection
                                                                             Name = "Anchor",
                                                                             Segment = "a",
                                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Admission"}]
-                                                                        }
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                new WireFrame{
-                                                                    Name = "List Item",
-                                                                    Segment = "li",
-                                                                    Children = [
-                                                                        new WireFrame{
-                                                                            Name = "Anchor",
-                                                                            Segment = "a",
-                                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Education Loan"}]
-                                                                        }
+                                                                            Content = "Test Preparation"
                                                                         }
                                                                     ]
                                                                 },
@@ -552,8 +502,31 @@ public class FooterSection
                                                                             Name = "Anchor",
                                                                             Segment = "a",
                                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Visa Processing"}]
+                                                                            Content="Admission"
                                                                         }
+                                                                    ]
+                                                                },
+                                                                new WireFrame{
+                                                                    Name = "List Item",
+                                                                    Segment = "li",
+                                                                    Children = [
+                                                                        new WireFrame{
+                                                                            Name = "Anchor",
+                                                                            Segment = "a",
+                                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
+                                                                            Content="Education Loan"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                new WireFrame{
+                                                                    Name = "List Item",
+                                                                    Segment = "li",
+                                                                    Children = [
+                                                                        new WireFrame{
+                                                                            Name = "Anchor",
+                                                                            Segment = "a",
+                                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }],
+                                                                            Content="Visa Processing"
                                                                         }
                                                                     ]
                                                                 }
@@ -580,8 +553,7 @@ public class FooterSection
                                                             Name = "Headline",
                                                             Segment = "h4",
                                                             Attributes = [new WireFrameAttribute { Name = "class", Value = "widget-headline" }],
-                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Location"}]
-                                                        }
+                                                            Content = "Location"
                                                         },
                                                         new WireFrame{
                                                             Name = "Contact Info List",
@@ -609,8 +581,7 @@ public class FooterSection
                                                                             Name = "Details",
                                                                             Segment = "div",
                                                                             Attributes = [new WireFrameAttribute { Name = "class", Value = "details" }],
-                                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="8502 Preston Rd. Inglewood, Maine Bangladesh"}]
-                                                                            }
+                                                                            Content = "8502 Preston Rd. Inglewood, Maine Bangladesh"
                                                                         }
                                                                     ]
                                                                 },
@@ -697,15 +668,7 @@ public class FooterSection
                                                     Name = "Paragraph",
                                                     Segment = "p",
                                                     Attributes = [],
-                                                    Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="© 2022 Eduplan. All rights reserved | Developed By "}]},
-                                                    Children = [
-                                                        new WireFrame
-                                                        {
-                                                            Name = "Span",
-                                                            Segment = "span",
-                                                            Data = new RenderData{FallbackRenderData = [new RenderDataItem{Name="text", Value="Themeim"}]}
-                                                        }
-                                                    ]
+                                                    Content = "© 2022 Eduplan. All rights reserved | Developed By <span>Themeim</span>"
                                                 },
                                                 new WireFrame
                                                 {

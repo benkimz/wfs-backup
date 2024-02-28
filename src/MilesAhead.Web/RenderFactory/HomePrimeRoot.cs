@@ -51,11 +51,7 @@ public class HomePrimeRoot
                     Name = "content",
                     Value = "ie=edge"
                 }]},
-                new WireFrame { Name = "title", Segment = "title", Data = new RenderData{
-                    FallbackRenderData = [
-                        new RenderDataItem { Name = "Title", Value = "Eduplan HTML-5 Template" }
-                    ]
-                }},
+                new WireFrame { Name = "title", Segment = "title", Content = "Eduplan HTML-5 Template"},
                 new WireFrame { Name = "favicon", Segment = "link", Attributes = [
                     new WireFrameAttribute{
                     Name = "rel",

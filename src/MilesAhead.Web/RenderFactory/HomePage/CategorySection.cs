@@ -72,26 +72,12 @@ public class CategorySection
                                                     new WireFrame{
                                                         Name = "Subtitle",
                                                         Segment = "span",
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "CATEGORIES"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "CATEGORIES"
                                                     },
                                                     new WireFrame{
                                                         Name = "Title",
                                                         Segment = "h4",
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Popular Discipline & Collage"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Popular Discipline & Collage"
                                                     }
                                                 ]
                                             },
@@ -136,14 +122,7 @@ public class CategorySection
                                                                         Value = "#discipline"
                                                                     }
                                                                 ],
-                                                                Data = new RenderData{
-                                                                    FallbackRenderData = [
-                                                                        new RenderDataItem{
-                                                                            Name = "text",
-                                                                            Value = "Discipline"
-                                                                        }
-                                                                    ]
-                                                                }
+                                                                Content = "Discipline"
                                                             }
                                                         ]
                                                     },
@@ -178,14 +157,7 @@ public class CategorySection
                                                                         Value = "#collage"
                                                                     }
                                                                 ],
-                                                                Data = new RenderData{
-                                                                    FallbackRenderData = [
-                                                                        new RenderDataItem{
-                                                                            Name = "text",
-                                                                            Value = "Collage"
-                                                                        }
-                                                                    ]
-                                                                }
+                                                                Content = "Collage"
                                                             }
                                                         ]
                                                     }
@@ -276,14 +248,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Agriculture & Foresty"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Agriculture & Foresty"
                                                     }
                                                 ]
                                             },
@@ -332,14 +297,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "science & professional"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Science & Professional"
                                                     }
                                                 ]
                                             },
@@ -388,14 +346,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Art, Design & Culture"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Art, Design & Culture"
                                                     }
                                                 ]
                                             },
@@ -444,14 +395,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Business & Management"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Business & Management"
                                                     }
                                                 ]
                                             },
@@ -500,14 +444,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Computer Science & IT"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Computer Science & IT"
                                                     }
                                                 ]
                                             },
@@ -556,14 +493,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Education & Training"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Education & Training"
                                                     }
                                                 ]
                                             },
@@ -612,14 +542,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Engeneering & Technology"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Engeneering & Technology"
                                                     }
                                                 ]
                                             },
@@ -668,14 +591,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Hopitality & Sports"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Hopitality & Sports"
                                                     }
                                                 ]
                                             },
@@ -724,14 +640,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Journalism & Media"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Journalism & Media"
                                                     }
                                                 ]
                                             },
@@ -780,14 +689,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Medicine & Health"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Medicine & Health"
                                                     }
                                                 ]
                                             },
@@ -836,14 +738,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Law"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Law"
                                                     }
                                                 ]
                                             },
@@ -892,14 +787,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Social Science"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Social Science"
                                                     }
                                                 ]
                                             },
@@ -948,14 +836,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Humanities"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Humanities"
                                                     }
                                                 ]
                                             },
@@ -1004,14 +885,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Enviromental Studies"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Enviromental Studies"
                                                     }
                                                 ]
                                             }
@@ -1088,14 +962,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Hopitality & Sports"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Hopitality & Sports"
                                                     }
                                                 ]
                                             },
@@ -1144,14 +1011,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Journalism & Media"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Journalism & Media"
                                                     }
                                                 ]
                                             },
@@ -1200,14 +1060,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Medicine & Health"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Medicine & Health"
                                                     }
                                                 ]
                                             },
@@ -1256,14 +1109,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Law"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Law"
                                                     }
                                                 ]
                                             },
@@ -1312,14 +1158,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Social Science"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Social Science"
                                                     }
                                                 ]
                                             },
@@ -1368,14 +1207,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Humanities"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Humanities"
                                                     }
                                                 ]
                                             },
@@ -1424,14 +1256,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Enviromental Studies"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Enviromental Studies"
                                                     }
                                                 ]
                                             },
@@ -1480,14 +1305,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Agriculture & Foresty"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Agriculture & Foresty"
                                                     }
                                                 ]
                                             },
@@ -1536,14 +1354,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "science & professional"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Science & Professional"
                                                     }
                                                 ]
                                             },
@@ -1592,14 +1403,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Art, Design & Culture"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Art, Design & Culture"
                                                     }
                                                 ]
                                             },
@@ -1648,14 +1452,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Business & Management"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Business & Management"
                                                     }
                                                 ]
                                             },
@@ -1704,14 +1501,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem{
-                                                                    Name = "text",
-                                                                    Value = "Computer Science & IT"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Computer Science & IT"
                                                     }
                                                 ]
                                             },
@@ -1767,16 +1557,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData
-                                                        {
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem
-                                                                {
-                                                                    Name = "text",
-                                                                    Value = "Education & Training"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Education & Training"
                                                     }
                                                 ]
                                             },
@@ -1834,16 +1615,7 @@ public class CategorySection
                                                                 Value = "name"
                                                             }
                                                         ],
-                                                        Data = new RenderData
-                                                        {
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem
-                                                                {
-                                                                    Name = "text",
-                                                                    Value = "Engeneering & Technology"
-                                                                }
-                                                            ]
-                                                        }
+                                                        Content = "Engeneering & Technology"
                                                     }
                                                 ]
                                             },

@@ -93,20 +93,13 @@ public class DestinationsSection
                                                         Attributes = [
                                                             new WireFrameAttribute { Name = "class", Value = "title" }
                                                         ],
-                                                        Data = new RenderData {FallbackRenderData = [
-                                                            new RenderDataItem{Name="text", Value="Top Destinations"}
-                                                        ]
-                                                        }
-
+                                                        Content = "Top Destinations"
                                                     },
                                                     new WireFrame
                                                     {
                                                         Name = "Paragraph",
                                                         Segment = "p",
-                                                        Data = new RenderData {FallbackRenderData = [
-                                                            new RenderDataItem{Name="text", Value="We have quality partners in variety of destinations around the globe."}
-                                                        ]
-                                                        }
+                                                        Content = "We have quality partners in variety of destinations around the globe."
                                                     }
                                                 ]
                                             }
@@ -148,10 +141,7 @@ public class DestinationsSection
                                             new WireFrame{
                                                 Name = "Name",
                                                 Segment = "h6",
-                                                Data = new RenderData {FallbackRenderData = [
-                                                    new RenderDataItem{Name="text", Value="Canada"}
-                                                ]
-                                                }
+                                                Content = "Canada"
                                             }
                                         ]
                                     },
@@ -182,10 +172,7 @@ public class DestinationsSection
                                             new WireFrame{
                                                 Name = "Name",
                                                 Segment = "h6",
-                                                Data = new RenderData {FallbackRenderData = [
-                                                    new RenderDataItem{Name="text", Value="America"}
-                                                ]
-                                                }
+                                                Content = "America"
                                             }
                                         ]
                                     },
@@ -216,10 +203,7 @@ public class DestinationsSection
                                             new WireFrame{
                                                 Name = "Name",
                                                 Segment = "h6",
-                                                Data = new RenderData {FallbackRenderData = [
-                                                    new RenderDataItem{Name="text", Value="London"}
-                                                ]
-                                                }
+                                                Content = "London"
                                             }
                                         ]
                                     },
@@ -250,10 +234,7 @@ public class DestinationsSection
                                             new WireFrame{
                                                 Name = "Name",
                                                 Segment = "h6",
-                                                Data = new RenderData {FallbackRenderData = [
-                                                    new RenderDataItem{Name="text", Value="Spain"}
-                                                ]
-                                                }
+                                                Content = "Spain"
                                             }
                                         ]
                                     },
@@ -284,10 +265,7 @@ public class DestinationsSection
                                             new WireFrame{
                                                 Name = "Name",
                                                 Segment = "h6",
-                                                Data = new RenderData {FallbackRenderData = [
-                                                    new RenderDataItem{Name="text", Value="French"}
-                                                ]
-                                                }
+                                                Content = "French"
                                             }
                                         ]
                                     },
@@ -318,10 +296,7 @@ public class DestinationsSection
                                             new WireFrame{
                                                 Name = "Name",
                                                 Segment = "h6",
-                                                Data = new RenderData {FallbackRenderData = [
-                                                    new RenderDataItem{Name="text", Value="Sweden"}
-                                                ]
-                                                }
+                                                Content = "Sweden"
                                             }
                                         ]
                                     },
@@ -352,10 +327,7 @@ public class DestinationsSection
                                             new WireFrame{
                                                 Name = "Name",
                                                 Segment = "h6",
-                                                Data = new RenderData {FallbackRenderData = [
-                                                    new RenderDataItem{Name="text", Value="Italy"}
-                                                ]
-                                                }
+                                                Content = "Italy"
                                             }
                                         ]
                                     }
@@ -377,10 +349,7 @@ public class DestinationsSection
                                             new WireFrameAttribute { Name = "href", Value = "contact.html" },
                                             new WireFrameAttribute { Name = "class", Value = "btn-common fill-btn style-01" }
                                         ],
-                                        Data = new RenderData {FallbackRenderData = [
-                                            new RenderDataItem{Name="text", Value="apply online"}
-                                        ]
-                                        }
+                                        Content = "apply online"
                                     }
                                 ]
                             }

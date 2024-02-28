@@ -106,11 +106,7 @@ public class TopNavigationBar
                                                     new WireFrame{
                                                         Name = "Home Text",
                                                         Segment = "a",
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem { Name = "Title", Value = "Home" }
-                                                            ]
-                                                        }
+                                                        Content = "Home"
                                                     }
                                                 ]
                                             },
@@ -133,11 +129,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "Home One Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "Home One" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "Home One"
                                                                     }
                                                                 ]
                                                             }
@@ -156,11 +148,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "Home Two Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "Home Two" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "Home Two"
                                                                     }
                                                                 ]
                                                             }
@@ -183,11 +171,7 @@ public class TopNavigationBar
                                                     new WireFrame{
                                                         Name = "About Us Text",
                                                         Segment = "a",
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem { Name = "Title", Value = "About Us" }
-                                                            ]
-                                                        }
+                                                        Content = "About Us"
                                                     }
                                                 ]
                                             }
@@ -208,11 +192,7 @@ public class TopNavigationBar
                                                     new WireFrame{
                                                         Name = "Pages Text",
                                                         Segment = "a",
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem { Name = "Title", Value = "Pages" }
-                                                            ]
-                                                        }
+                                                        Content = "Pages"
                                                     }
                                                 ]
                                             },
@@ -235,11 +215,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "Our Services Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "Our Services" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "Our Services"
                                                                     }
                                                                 ]
                                                             }
@@ -258,11 +234,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "Services Details Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "Services Details" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "Services Details"
                                                                     }
                                                                 ]
                                                             }
@@ -281,11 +253,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "Team Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "Team" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "Team"
                                                                     }
                                                                 ]
                                                             }
@@ -304,11 +272,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "Instructors Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "Instructors" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "Instructors"
                                                                     }
                                                                 ]
                                                             }
@@ -327,11 +291,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "About Instructor Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "About Instructor" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "About Instructor"
                                                                     }
                                                                 ]
                                                             }
@@ -350,11 +310,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "Country Details Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "Country Details" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "Country Details"
                                                                     }
                                                                 ]
                                                             }
@@ -373,11 +329,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "All Course Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "All Course" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "All Course"
                                                                     }
                                                                 ]
                                                             }
@@ -396,11 +348,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "All Course Widget Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "All Course with widget" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "All Course Widget"
                                                                     }
                                                                 ]
                                                             }
@@ -419,11 +367,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "Course Details Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "Course Details" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "Course Details"
                                                                     }
                                                                 ]
                                                             }
@@ -442,11 +386,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "Apply Online Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "Apply Online" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "Apply Online"
                                                                     }
                                                                 ]
                                                             }
@@ -465,11 +405,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "Shop Cart Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "Shop Cart" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "Shop Cart"
                                                                     }
                                                                 ]
                                                             }
@@ -488,11 +424,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "FAQ Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "FAQ" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "FAQ"
                                                                     }
                                                                 ]
                                                             }
@@ -511,11 +443,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "404 Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "404" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "404"
                                                                     }
                                                                 ]
                                                             }
@@ -534,11 +462,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "Cart Empty Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "Cart Empty" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "Cart Empty"
                                                                     }
                                                                 ]
                                                             }
@@ -563,11 +487,7 @@ public class TopNavigationBar
                                                     new WireFrame{
                                                         Name = "Blog Text",
                                                         Segment = "a",
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem { Name = "Title", Value = "Blog" }
-                                                            ]
-                                                        }
+                                                        Content = "Blog"
                                                     }
                                                 ]
                                             },
@@ -590,11 +510,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "Blog Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "Blog" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "Blog"
                                                                     }
                                                                 ]
                                                             }
@@ -613,11 +529,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "Blog Classic Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "Blog Classic" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "Blog Classic"
                                                                     }
                                                                 ]
                                                             }
@@ -636,11 +548,7 @@ public class TopNavigationBar
                                                                     new WireFrame{
                                                                         Name = "Blog Single Text",
                                                                         Segment = "a",
-                                                                        Data = new RenderData{
-                                                                            FallbackRenderData = [
-                                                                                new RenderDataItem { Name = "Title", Value = "Blog Single" }
-                                                                            ]
-                                                                        }
+                                                                        Content = "Blog Single"
                                                                     }
                                                                 ]
                                                             }
@@ -663,11 +571,7 @@ public class TopNavigationBar
                                                     new WireFrame{
                                                         Name = "Contact Us Text",
                                                         Segment = "a",
-                                                        Data = new RenderData{
-                                                            FallbackRenderData = [
-                                                                new RenderDataItem { Name = "Title", Value = "Contact Us" }
-                                                            ]
-                                                        }
+                                                        Content = "Contact Us"
                                                     }
                                                 ]
                                             }
@@ -738,11 +642,7 @@ public class TopNavigationBar
                                             new WireFrame{
                                                 Name = "Button Text",
                                                 Segment = "a",
-                                                Data = new RenderData{
-                                                    FallbackRenderData = [
-                                                        new RenderDataItem { Name = "Title", Value = "Free consultation" }
-                                                    ]
-                                                }
+                                                Content = "Free consultation"
                                             }
                                         ]
                                     }

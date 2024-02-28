@@ -40,29 +40,17 @@ public class BannerSection
                                                         new WireFrame{
                                                             Name = "Subtitle",
                                                             Segment = "p",
-                                                            Data = new RenderData{
-                                                                FallbackRenderData = [
-                                                                    new RenderDataItem { Name = "Subtitle", Value = "SPECIAL OFFER FIRST CUSTOMER" }
-                                                                ]
-                                                            }
+                                                            Content = "SPECIAL OFFER FIRST CUSTOMER"
                                                         },
                                                         new WireFrame{
                                                             Name = "Title",
                                                             Segment = "h1",
-                                                            Data = new RenderData{
-                                                                FallbackRenderData = [
-                                                                    new RenderDataItem { Name = "Title", Value = "Your <span>success</span> journey start with us!" }
-                                                                ]
-                                                            }
+                                                            Content = "Your <span>success</span> journey start with us!"
                                                         },
                                                         new WireFrame{
                                                             Name = "Paragraph",
                                                             Segment = "p",
-                                                            Data = new RenderData{
-                                                                FallbackRenderData = [
-                                                                    new RenderDataItem { Name = "Paragraph", Value = "Eduplan Education Can Fulfil Your International Education Dream <br> As Per Your Best Fit with world top universities and collages." }
-                                                                ]
-                                                            }
+                                                            Content = "Eduplan Education Can Fulfil Your International Education Dream <br> As Per Your Best Fit with world top universities and collages."
                                                         },
                                                         new WireFrame{
                                                             Name = "Header Button",
@@ -78,11 +66,7 @@ public class BannerSection
                                                                             Name = "Apply Online",
                                                                             Segment = "a",
                                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "#0" }, new WireFrameAttribute { Name = "class", Value = "btn-common flat-btn btn-active" }],
-                                                                            Data = new RenderData{
-                                                                                FallbackRenderData = [
-                                                                                    new RenderDataItem { Name = "Apply Online", Value = "apply online" }
-                                                                                ]
-                                                                            }
+                                                                            Content = "apply online"
                                                                         }
                                                                     ]
                                                                 },
@@ -95,11 +79,7 @@ public class BannerSection
                                                                             Name = "Discover",
                                                                             Segment = "a",
                                                                             Attributes = [new WireFrameAttribute { Name = "href", Value = "contact.html" }, new WireFrameAttribute { Name = "class", Value = "btn-common fill-btn" }],
-                                                                            Data = new RenderData{
-                                                                                FallbackRenderData = [
-                                                                                    new RenderDataItem { Name = "Discover", Value = "Discover" }
-                                                                                ]
-                                                                            }
+                                                                            Content = "Discover",
                                                                         }
                                                                     ]
                                                                 }
