@@ -8,5 +8,5 @@ public interface IBaseWireFrame
     public string? Attributes { get; set; } // segment attributes as a JSON string
     public DataSource DataSource { get; set; } // data source
     public string? Content { get; set; } // content to be rendered
-    public FetchData? FetchContent { get; set; } // data to be fetched and rendered
+    public string? FetchData { get; set; } // a JSON string of the data to be fetched
 }

@@ -12,7 +12,7 @@ using MilesAhead.Components;
 namespace MilesAhead.Web.Migrations
 {
     [DbContext(typeof(WireFramesDbContext))]
-    [Migration("20240229132548_Alpha")]
+    [Migration("20240229164039_Alpha")]
     partial class Alpha
     {
         /// <inheritdoc />
@@ -25,49 +25,6 @@ namespace MilesAhead.Web.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("MilesAhead.Components.DataField", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("FetchDataId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FetchDataId");
-
-                    b.ToTable("DataField", "render");
-                });
-
-            modelBuilder.Entity("MilesAhead.Components.FetchData", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Source")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("FetchData", "render");
-                });
 
             modelBuilder.Entity("MilesAhead.Components.WireFrame", b =>
                 {
@@ -92,8 +49,8 @@ namespace MilesAhead.Web.Migrations
                         .HasMaxLength(13)
                         .HasColumnType("nvarchar(13)");
 
-                    b.Property<int?>("FetchContentId")
-                        .HasColumnType("int");
+                    b.Property<string>("FetchData")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -109,8 +66,6 @@ namespace MilesAhead.Web.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("FetchContentId");
 
                     b.HasIndex("WireFrameId");
 
@@ -154,29 +109,11 @@ namespace MilesAhead.Web.Migrations
                     b.HasDiscriminator().HasValue("PrimeRoot");
                 });
 
-            modelBuilder.Entity("MilesAhead.Components.DataField", b =>
-                {
-                    b.HasOne("MilesAhead.Components.FetchData", null)
-                        .WithMany("Parameters")
-                        .HasForeignKey("FetchDataId");
-                });
-
             modelBuilder.Entity("MilesAhead.Components.WireFrame", b =>
                 {
-                    b.HasOne("MilesAhead.Components.FetchData", "FetchContent")
-                        .WithMany()
-                        .HasForeignKey("FetchContentId");
-
                     b.HasOne("MilesAhead.Components.WireFrame", null)
                         .WithMany("Children")
                         .HasForeignKey("WireFrameId");
-
-                    b.Navigation("FetchContent");
-                });
-
-            modelBuilder.Entity("MilesAhead.Components.FetchData", b =>
-                {
-                    b.Navigation("Parameters");
                 });
 
             modelBuilder.Entity("MilesAhead.Components.WireFrame", b =>

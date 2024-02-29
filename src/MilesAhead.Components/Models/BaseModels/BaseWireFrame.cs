@@ -13,5 +13,6 @@ public class BaseWireFrame : IBaseWireFrame
     public string? Attributes { get; set; } // segment attributes as a JSON string
     public DataSource DataSource { get; set; } // data source
     public string? Content { get; set; } // content to be rendered
-    public virtual FetchData? FetchContent { get; set; } // data to be rendered
+    // must have parameters: source (string), parameters (json string )
+    public string? FetchData { get; set; } // a JSON string of the data to be fetched
 }

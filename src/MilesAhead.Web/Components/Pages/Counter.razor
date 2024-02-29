@@ -4,6 +4,7 @@
 
 @inject WireframeParser WireframeParser
 @inject IJSRuntime JSRuntime
+@* @inject IPrimeRootRepository PrimeRootRepository *@
 
 @code {
     private PrimeRoot? Root { get; set; }
@@ -11,6 +12,7 @@
     {
         base.OnInitialized();
         Root = new HomePrimeRoot().Build();
+        @* PrimeRootRepository.Add(Root).GetAwaiter().GetResult(); *@
     }
 }
 
