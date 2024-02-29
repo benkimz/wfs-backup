@@ -8,10 +8,10 @@
 
 @code {
     private PrimeRoot? Root { get; set; }
-    protected override void OnInitialized()
+    protected override async void OnInitialized()
     {
         base.OnInitialized();
-        Root = RecursiveRootReader.BuildAsync("HomePrimeRoot").Result;
+        Root = await RecursiveRootReader.BuildAsync("HomePrimeRoot");
     }
 }
 
@@ -25,6 +25,10 @@
         @foreach (string css in Root.ExternalStyleSheets)
         {
             <link href="@css" rel="stylesheet" />
+        }
+        @foreach (string scriptUrl in Root.HeadScripts)
+        {
+            <script src="@scriptUrl" type="text/javascript"></script>
         }
     </HeadContent>
 
