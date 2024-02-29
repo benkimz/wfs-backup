@@ -1,5 +1,7 @@
 ﻿
 
+using System.Linq.Expressions;
+
 namespace MilesAhead.Components;
 
 public class PrimeRootRepository : IPrimeRootRepository
@@ -41,8 +43,4 @@ public class PrimeRootRepository : IPrimeRootRepository
         return _genericRepository.Update(entity);
     }
 
-    public Task<PrimeRoot?> Upsert(PrimeRoot entity)
-    {
-        return _genericRepository.Upsert(entity);
-    }
 }

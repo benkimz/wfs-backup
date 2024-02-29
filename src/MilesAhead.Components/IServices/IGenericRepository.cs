@@ -1,4 +1,6 @@
-﻿namespace MilesAhead.Components;
+﻿using System.Linq.Expressions;
+
+namespace MilesAhead.Components;
 
 public interface IGenericRepository<T>
 {
@@ -8,6 +10,4 @@ public interface IGenericRepository<T>
     Task<IEnumerable<T>?> GetAll();
     Task<T?> GetById(int id);
     Task<T?> Update(T entity);
-    Task<T?> Upsert(T entity);
-
 }

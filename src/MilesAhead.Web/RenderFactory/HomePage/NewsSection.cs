@@ -2,7 +2,7 @@
 
 namespace MilesAhead.Web;
 
-public class NewsSection
+public class NewsSection : BaseBuilder
 {
     public WireFrame Build()
     {
@@ -10,68 +10,32 @@ public class NewsSection
         {
             Name = "News Section",
             Segment = "section",
-            Attributes = [
-                new WireFrameAttribute
-                {
-                    Name = "class",
-                    Value = "news-section-area margin-top-110"
-                }
-            ],
+            Attributes = AsJson(new { @class = "news-section-area margin-top-110" }),
             Children = [
                 new WireFrame{
                     Name = "Container",
                     Segment = "div",
-                    Attributes = [
-                        new WireFrameAttribute
-                        {
-                            Name = "class",
-                            Value = "container custom-container-01"
-                        }
-                    ],
+                    Attributes = AsJson(new { @class = "container custom-container-01" }),
                     Children = [
                         new WireFrame{
                             Name = "Row",
                             Segment = "div",
-                            Attributes = [
-                                new WireFrameAttribute
-                                {
-                                    Name = "class",
-                                    Value = "row justify-content-center"
-                                }
-                            ],
+                            Attributes = AsJson(new { @class = "row justify-content-center" }),
                             Children = [
                                 new WireFrame{
                                     Name = "Column",
                                     Segment = "div",
-                                    Attributes = [
-                                        new WireFrameAttribute
-                                        {
-                                            Name = "class",
-                                            Value = "col-lg-12"
-                                        }
-                                    ],
+                                    Attributes = AsJson(new { @class = "col-lg-12" }),
                                     Children = [
                                         new WireFrame{
                                             Name = "Title",
                                             Segment = "div",
-                                            Attributes = [
-                                                new WireFrameAttribute
-                                                {
-                                                    Name = "class",
-                                                    Value = "theme-section-title desktop-center text-center"
-                                                }
-                                            ],
+                                            Attributes = AsJson(new { @class = "theme-section-title desktop-center text-center" }),
                                             Children = [
                                                 new WireFrame{
                                                     Name = "Subtitle",
                                                     Segment = "span",
-                                                    Attributes = [
-                                                        new WireFrameAttribute
-                                                        {
-                                                            Name = "class",
-                                                            Value = "subtitle"
-                                                        }
-                                                    ],
+                                                    Attributes = AsJson(new { @class = "subtitle" }),
                                                     Content = "EDUPLAN UPDATES"
                                                 },
                                                 new WireFrame{
@@ -88,91 +52,39 @@ public class NewsSection
                         new WireFrame{
                             Name = "Row",
                             Segment = "div",
-                            Attributes = [
-                                new WireFrameAttribute
-                                {
-                                    Name = "class",
-                                    Value = "row"
-                                }
-                            ],
+                            Attributes = AsJson(new { @class = "row" }),
                             Children = [
                                 new WireFrame{
                                     Name = "Column",
                                     Segment = "div",
-                                    Attributes = [
-                                        new WireFrameAttribute
-                                        {
-                                            Name = "class",
-                                            Value = "col-md-6 col-lg-4"
-                                        }
-                                    ],
+                                    Attributes = AsJson(new { @class = "col-md-6 col-lg-4" }),
                                     Children = [
                                         new WireFrame{
                                             Name = "Blog Item",
                                             Segment = "div",
-                                            Attributes = [
-                                                new WireFrameAttribute
-                                                {
-                                                    Name = "class",
-                                                    Value = "blog-grid-item"
-                                                }
-                                            ],
+                                            Attributes = AsJson(new { @class = "blog-grid-item" }),
                                             Children = [
                                                 new WireFrame{
                                                     Name = "Thumbnail",
                                                     Segment = "div",
-                                                    Attributes = [
-                                                        new WireFrameAttribute
-                                                        {
-                                                            Name = "class",
-                                                            Value = "thumbnail"
-                                                        }
-                                                    ],
+                                                    Attributes = AsJson(new { @class = "thumbnail" }),
                                                     Children = [
                                                         new WireFrame{
                                                             Name = "Image",
                                                             Segment = "img",
-                                                            Attributes = [
-                                                                new WireFrameAttribute
-                                                                {
-                                                                    Name = "src",
-                                                                    Value = "assets/img/h-blog/01.png"
-                                                                },
-                                                                new WireFrameAttribute
-                                                                {
-                                                                    Name = "alt",
-                                                                    Value = ""
-                                                                },
-                                                                new WireFrameAttribute
-                                                                {
-                                                                    Name = "class",
-                                                                    Value = "border-radius-20"
-                                                                }
-                                                            ]
+                                                            Attributes = AsJson(new { src = "assets/img/h-blog/01.png", @class = "border-radius-20" })
                                                         }
                                                     ]
                                                 },
                                                 new WireFrame{
                                                     Name = "Content",
                                                     Segment = "div",
-                                                    Attributes = [
-                                                        new WireFrameAttribute
-                                                        {
-                                                            Name = "class",
-                                                            Value = "content"
-                                                        }
-                                                    ],
+                                                    Attributes = AsJson(new { @class = "content" }),
                                                     Children = [
                                                         new WireFrame{
                                                             Name = "Categories",
                                                             Segment = "ul",
-                                                            Attributes = [
-                                                                new WireFrameAttribute
-                                                                {
-                                                                    Name = "class",
-                                                                    Value = "post-categories"
-                                                                }
-                                                            ],
+                                                            Attributes = AsJson(new { @class = "post-categories" }),
                                                             Children = [
                                                                 new WireFrame{
                                                                     Name = "Date",
@@ -189,53 +101,24 @@ public class NewsSection
                                                         new WireFrame{
                                                             Name = "Title",
                                                             Segment = "h4",
-                                                            Attributes = [
-                                                                new WireFrameAttribute
-                                                                {
-                                                                    Name = "class",
-                                                                    Value = "title"
-                                                                }
-                                                            ],
+                                                            Attributes = AsJson(new { @class = "title" }),
                                                             Content = "Overseas Education Fair Amravati 2023"
                                                         },
                                                         new WireFrame{
                                                             Name = "Button",
                                                             Segment = "div",
-                                                            Attributes = [
-                                                                new WireFrameAttribute
-                                                                {
-                                                                    Name = "class",
-                                                                    Value = "btn-wrap"
-                                                                }
-                                                            ],
+                                                            Attributes = AsJson(new { @class = "btn-wrap" }),
                                                             Children = [
                                                                 new WireFrame{
                                                                     Name = "Read More",
                                                                     Segment = "a",
-                                                                    Attributes = [
-                                                                        new WireFrameAttribute
-                                                                        {
-                                                                            Name = "href",
-                                                                            Value = "#0"
-                                                                        },
-                                                                        new WireFrameAttribute
-                                                                        {
-                                                                            Name = "class",
-                                                                            Value = "more-btn"
-                                                                        }
-                                                                    ],
+                                                                    Attributes = AsJson(new { href = "#0", @class = "more-btn" }),
                                                                     Content = "Read More",
                                                                     Children = [
                                                                         new WireFrame{
                                                                             Name = "Icon",
                                                                             Segment = "i",
-                                                                            Attributes = [
-                                                                                new WireFrameAttribute
-                                                                                {
-                                                                                    Name = "class",
-                                                                                    Value = "fa-solid fa-angle-right icon"
-                                                                                }
-                                                                            ]
+                                                                            Attributes = AsJson(new { @class = "fa-solid fa-angle-right icon" })
                                                                         }
                                                                     ]
                                                                 }
@@ -250,75 +133,34 @@ public class NewsSection
                                 new WireFrame{
                                     Name = "Column",
                                     Segment = "div",
-                                    Attributes = [
-                                        new WireFrameAttribute
-                                        {
-                                            Name = "class",
-                                            Value = "col-md-6 col-lg-4"
-                                        }
-                                    ],
+                                    Attributes = AsJson(new { @class = "col-md-6 col-lg-4" }),
                                     Children = [
                                         new WireFrame{
                                             Name = "Blog Item",
                                             Segment = "div",
-                                            Attributes = [
-                                                new WireFrameAttribute
-                                                {
-                                                    Name = "class",
-                                                    Value = "blog-grid-item"
-                                                }
-                                            ],
+                                            Attributes = AsJson(new { @class = "blog-grid-item" }),
                                             Children = [
                                                 new WireFrame{
                                                     Name = "Thumbnail",
                                                     Segment = "div",
-                                                    Attributes = [
-                                                        new WireFrameAttribute
-                                                        {
-                                                            Name = "class",
-                                                            Value = "thumbnail"
-                                                        }
-                                                    ],
+                                                    Attributes = AsJson(new { @class = "thumbnail" }),
                                                     Children = [
                                                         new WireFrame{
                                                             Name = "Image",
                                                             Segment = "img",
-                                                            Attributes = [
-                                                                new WireFrameAttribute
-                                                                {
-                                                                    Name = "src",
-                                                                    Value = "assets/img/h-blog/02.png"
-                                                                },
-                                                                new WireFrameAttribute
-                                                                {
-                                                                    Name = "alt",
-                                                                    Value = ""
-                                                                }
-                                                            ]
+                                                            Attributes = AsJson(new { src = "assets/img/h-blog/02.png" })
                                                         }
                                                     ]
                                                 },
                                                 new WireFrame{
                                                     Name = "Content",
                                                     Segment = "div",
-                                                    Attributes = [
-                                                        new WireFrameAttribute
-                                                        {
-                                                            Name = "class",
-                                                            Value = "content"
-                                                        }
-                                                    ],
+                                                    Attributes = AsJson(new { @class = "content" }),
                                                     Children = [
                                                         new WireFrame{
                                                             Name = "Categories",
                                                             Segment = "ul",
-                                                            Attributes = [
-                                                                new WireFrameAttribute
-                                                                {
-                                                                    Name = "class",
-                                                                    Value = "post-categories"
-                                                                }
-                                                            ],
+                                                            Attributes = AsJson(new { @class = "post-categories" }),
                                                             Children = [
                                                                 new WireFrame{
                                                                     Name = "Date",
@@ -328,18 +170,7 @@ public class NewsSection
                                                                         new WireFrame{
                                                                             Name = "Icon",
                                                                             Segment = "img",
-                                                                            Attributes = [
-                                                                                new WireFrameAttribute
-                                                                                {
-                                                                                    Name = "src",
-                                                                                    Value = "assets/img/icon/calander.png"
-                                                                                },
-                                                                                new WireFrameAttribute
-                                                                                {
-                                                                                    Name = "alt",
-                                                                                    Value = ""
-                                                                                }
-                                                                            ]
+                                                                            Attributes = AsJson(new { src = "assets/img/icon/calander.png", @class = "icon" })
                                                                         }
                                                                     ]
                                                                 },
@@ -353,53 +184,24 @@ public class NewsSection
                                                         new WireFrame{
                                                             Name = "Title",
                                                             Segment = "h4",
-                                                            Attributes = [
-                                                                new WireFrameAttribute
-                                                                {
-                                                                    Name = "class",
-                                                                    Value = "title"
-                                                                }
-                                                            ],
+                                                            Attributes = AsJson(new { @class = "title" }),
                                                             Content = "Overseas Education Fair Amravati 2023"
                                                         },
                                                         new WireFrame{
                                                             Name = "Button",
                                                             Segment = "div",
-                                                            Attributes = [
-                                                                new WireFrameAttribute
-                                                                {
-                                                                    Name = "class",
-                                                                    Value = "btn-wrap"
-                                                                }
-                                                            ],
+                                                            Attributes = AsJson(new { @class = "btn-wrap" }),
                                                             Children = [
                                                                 new WireFrame{
                                                                     Name = "Read More",
                                                                     Segment = "a",
-                                                                    Attributes = [
-                                                                        new WireFrameAttribute
-                                                                        {
-                                                                            Name = "href",
-                                                                            Value = "#0"
-                                                                        },
-                                                                        new WireFrameAttribute
-                                                                        {
-                                                                            Name = "class",
-                                                                            Value = "more-btn"
-                                                                        }
-                                                                    ],
+                                                                    Attributes = AsJson(new { href = "#0", @class = "more-btn" }),
                                                                     Content = "Read More",
                                                                     Children = [
                                                                         new WireFrame{
                                                                             Name = "Icon",
                                                                             Segment = "i",
-                                                                            Attributes = [
-                                                                                new WireFrameAttribute
-                                                                                {
-                                                                                    Name = "class",
-                                                                                    Value = "fa-solid fa-angle-right icon"
-                                                                                }
-                                                                            ]
+                                                                            Attributes = AsJson(new { @class = "fa-solid fa-angle-right icon" })
                                                                         }
                                                                     ]
                                                                 }
@@ -414,75 +216,34 @@ public class NewsSection
                                 new WireFrame{
                                     Name = "Column",
                                     Segment = "div",
-                                    Attributes = [
-                                        new WireFrameAttribute
-                                        {
-                                            Name = "class",
-                                            Value = "col-md-6 col-lg-4"
-                                        }
-                                    ],
+                                    Attributes = AsJson(new { @class = "col-md-6 col-lg-4" }),
                                     Children = [
                                         new WireFrame{
                                             Name = "Blog Item",
                                             Segment = "div",
-                                            Attributes = [
-                                                new WireFrameAttribute
-                                                {
-                                                    Name = "class",
-                                                    Value = "blog-grid-item"
-                                                }
-                                            ],
+                                            Attributes = AsJson(new { @class = "blog-grid-item" }),
                                             Children = [
                                                 new WireFrame{
                                                     Name = "Thumbnail",
                                                     Segment = "div",
-                                                    Attributes = [
-                                                        new WireFrameAttribute
-                                                        {
-                                                            Name = "class",
-                                                            Value = "thumbnail"
-                                                        }
-                                                    ],
+                                                    Attributes = AsJson(new { @class = "thumbnail" }),
                                                     Children = [
                                                         new WireFrame{
                                                             Name = "Image",
                                                             Segment = "img",
-                                                            Attributes = [
-                                                                new WireFrameAttribute
-                                                                {
-                                                                    Name = "src",
-                                                                    Value = "assets/img/h-blog/03.png"
-                                                                },
-                                                                new WireFrameAttribute
-                                                                {
-                                                                    Name = "alt",
-                                                                    Value = ""
-                                                                }
-                                                            ]
+                                                            Attributes = AsJson(new { src = "assets/img/h-blog/03.png", alt = "" })
                                                         }
                                                     ]
                                                 },
                                                 new WireFrame{
                                                     Name = "Content",
                                                     Segment = "div",
-                                                    Attributes = [
-                                                        new WireFrameAttribute
-                                                        {
-                                                            Name = "class",
-                                                            Value = "content"
-                                                        }
-                                                    ],
+                                                    Attributes = AsJson(new { @class = "content" }),
                                                     Children = [
                                                         new WireFrame{
                                                             Name = "Categories",
                                                             Segment = "ul",
-                                                            Attributes = [
-                                                                new WireFrameAttribute
-                                                                {
-                                                                    Name = "class",
-                                                                    Value = "post-categories"
-                                                                }
-                                                            ],
+                                                            Attributes = AsJson(new { @class = "post-categories" }),
                                                             Children = [
                                                                 new WireFrame{
                                                                     Name = "Date",
@@ -492,18 +253,7 @@ public class NewsSection
                                                                         new WireFrame{
                                                                             Name = "Icon",
                                                                             Segment = "img",
-                                                                            Attributes = [
-                                                                                new WireFrameAttribute
-                                                                                {
-                                                                                    Name = "src",
-                                                                                    Value = "assets/img/icon/calander.png"
-                                                                                },
-                                                                                new WireFrameAttribute
-                                                                                {
-                                                                                    Name = "alt",
-                                                                                    Value = ""
-                                                                                }
-                                                                            ]
+                                                                            Attributes = AsJson(new { src = "assets/img/icon/calander.png", @class = "icon" })
                                                                         }
                                                                     ]
                                                                 },
@@ -517,53 +267,24 @@ public class NewsSection
                                                         new WireFrame{
                                                             Name = "Title",
                                                             Segment = "h4",
-                                                            Attributes = [
-                                                                new WireFrameAttribute
-                                                                {
-                                                                    Name = "class",
-                                                                    Value = "title"
-                                                                }
-                                                            ],
+                                                            Attributes = AsJson(new { @class = "title" }),
                                                             Content = "Overseas Education Fair Amravati 2023"
                                                         },
                                                         new WireFrame{
                                                             Name = "Button",
                                                             Segment = "div",
-                                                            Attributes = [
-                                                                new WireFrameAttribute
-                                                                {
-                                                                    Name = "class",
-                                                                    Value = "btn-wrap"
-                                                                }
-                                                            ],
+                                                            Attributes = AsJson(new { @class = "btn-wrap" }),
                                                             Children = [
                                                                 new WireFrame{
                                                                     Name = "Read More",
                                                                     Segment = "a",
-                                                                    Attributes = [
-                                                                        new WireFrameAttribute
-                                                                        {
-                                                                            Name = "href",
-                                                                            Value = "#0"
-                                                                        },
-                                                                        new WireFrameAttribute
-                                                                        {
-                                                                            Name = "class",
-                                                                            Value = "more-btn"
-                                                                        }
-                                                                    ],
+                                                                    Attributes = AsJson(new { href = "#0", @class = "more-btn" }),
                                                                     Content = "Read More",
                                                                     Children = [
                                                                         new WireFrame{
                                                                             Name = "Icon",
                                                                             Segment = "i",
-                                                                            Attributes = [
-                                                                                new WireFrameAttribute
-                                                                                {
-                                                                                    Name = "class",
-                                                                                    Value = "fa-solid fa-angle-right icon"
-                                                                                }
-                                                                            ]
+                                                                            Attributes = AsJson(new { @class = "fa-solid fa-angle-right icon" })
                                                                         }
                                                                     ]
                                                                 }

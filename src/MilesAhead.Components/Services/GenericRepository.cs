@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 
 namespace MilesAhead.Components;
 
@@ -19,7 +20,9 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         if (result.State == EntityState.Added)
         {
             await _context.SaveChangesAsync();
-            return result.Entity;
+            entity = result.Entity;
+            _context.Entry(entity).State = EntityState.Detached;
+            return entity;
         }
         return null;
     }
@@ -31,6 +34,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         {
             _dbSet.Remove(entity);
             _context.SaveChanges();
+            _context.Entry(entity).State = EntityState.Detached;
             return Task.FromResult(entity ?? null);
         }
         return Task.FromResult<T?>(null);
@@ -38,17 +42,22 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
 
     public Task<T?> FilterSingle(Func<T, bool> predicate)
     {
-        return Task.FromResult(_dbSet.Where(predicate).FirstOrDefault());
+        return Task.FromResult(_dbSet.AsNoTracking().Where(predicate).FirstOrDefault());
     }
 
     public Task<IEnumerable<T>?> GetAll()
     {
-        return Task.FromResult(_dbSet.AsEnumerable() ?? null);
+        return Task.FromResult(_dbSet.AsNoTracking().AsEnumerable() ?? null);
     }
 
     public Task<T?> GetById(int id)
     {
-        return Task.FromResult(_dbSet.Find(id) ?? null);
+        var entity = _dbSet.Find(id);
+        if (entity is not null)
+        {
+            _context.Entry(entity).State = EntityState.Detached;
+        }
+        return Task.FromResult(entity ?? null);
     }
 
     public Task<T?> Update(T entity)
@@ -57,25 +66,11 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         if (result.State == EntityState.Modified)
         {
             _context.SaveChanges();
-            return Task.FromResult(result.Entity ?? null);
+            entity = result.Entity;
+            _context.Entry(entity).State = EntityState.Detached;
+            return Task.FromResult(entity ?? null);
         }
         return Task.FromResult<T?>(null);
     }
 
-    public Task<T?> Upsert(T entity)
-    {
-        var entry = _dbSet.Entry(entity);
-        switch (entry.State)
-        {
-            case EntityState.Detached:
-                entry = _dbSet.Add(entity);
-                break;
-            case EntityState.Modified:
-                entry = _dbSet.Update(entity);
-                break;
-            default: break;
-        }
-        _context.SaveChanges();
-        return Task.FromResult(entry.Entity ?? null);
-    }
 }

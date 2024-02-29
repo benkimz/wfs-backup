@@ -4,31 +4,29 @@
 
 @inject WireframeParser WireframeParser
 @inject IJSRuntime JSRuntime
+@inject IRecursiveRootReader RecursiveRootReader
 
 @code {
     private PrimeRoot? Root { get; set; }
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        Root = new HomePrimeRoot().Build();
+        Root = RecursiveRootReader.BuildAsync("HomePrimeRoot").Result;
     }
 }
 
 @if (Root is not null)
 {
-    @if (Root.MetaData != null)
+    @if (Root.PageTitle is not null)
     {
-        <HeadContent>
-    @foreach (var node in Root.MetaData.Children)
-            {
-                @WireframeParser.RenderWireFrame(node)
-            }
-            @foreach (string css in Root.ExternalStyleSheets)
-            {
-                <link href="@css" rel="stylesheet" />
-            }
-        </HeadContent>
+        <PageTitle>@Root.PageTitle</PageTitle>
     }
+    <HeadContent>
+        @foreach (string css in Root.ExternalStyleSheets)
+        {
+            <link href="@css" rel="stylesheet" />
+        }
+    </HeadContent>
 
     @WireframeParser.RenderWireFrame(Root)
 

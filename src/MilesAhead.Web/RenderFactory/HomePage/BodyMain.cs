@@ -2,7 +2,7 @@
 
 namespace MilesAhead.Web;
 
-public class BodyMain
+public class BodyMain : BaseBuilder
 {
     public WireFrame Build()
     {
@@ -10,7 +10,7 @@ public class BodyMain
         {
             Name = "Body Main: page-wrapper",
             Segment = "main",
-            Attributes = [new WireFrameAttribute { Name = "class", Value = "page-wrapper" }],
+            Attributes = AsJson(new { @class = "page-wrapper" }),
             Children = [
                 new TopNavigationBar().Build(),
                 new BannerSection().Build(),

@@ -2,7 +2,7 @@
 
 namespace MilesAhead.Web;
 
-public class FaqSection
+public class FaqSection : BaseBuilder
 {
     public WireFrame Build()
     {
@@ -10,44 +10,44 @@ public class FaqSection
         {
             Name = "FAQ Section",
             Segment = "section",
-            Attributes = [new WireFrameAttribute { Name = "class", Value = "faq-section-area margin-top-90" }],
+            Attributes = AsJson(new { @class = "faq-section-area margin-top-90" }),
             Children = [
                 new WireFrame
                 {
                     Name = "Container",
                     Segment = "div",
-                    Attributes = [new WireFrameAttribute { Name = "class", Value = "container custom-container-01" }],
+                    Attributes = AsJson(new { @class = "container custom-container-01" }),
                     Children = [
                         new WireFrame
                         {
                             Name = "Row",
                             Segment = "div",
-                            Attributes = [new WireFrameAttribute { Name = "class", Value = "row" }],
+                            Attributes = AsJson(new { @class = "row" }),
                             Children = [
                                 new WireFrame
                                 {
                                     Name = "Column",
                                     Segment = "div",
-                                    Attributes = [new WireFrameAttribute { Name = "class", Value = "col-lg-6" }],
+                                    Attributes = AsJson(new { @class = "col-lg-6" }),
                                     Children = [
                                         new WireFrame
                                         {
                                             Name = "Theme Section Title",
                                             Segment = "div",
-                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "theme-section-title" }],
+                                            Attributes = AsJson(new { @class = "theme-section-title" }),
                                             Children = [
                                                 new WireFrame
                                                 {
                                                     Name = "Subtitle",
                                                     Segment = "span",
-                                                    Attributes = [new WireFrameAttribute { Name = "class", Value = "subtitle" }],
+                                                    Attributes = AsJson(new { @class = "subtitle" }),
                                                     Content = "FAQ"
                                                 },
                                                 new WireFrame
                                                 {
                                                     Name = "Title",
                                                     Segment = "h4",
-                                                    Attributes = [new WireFrameAttribute { Name = "class", Value = "title" }],
+                                                    Attributes = AsJson(new { @class = "title" }),
                                                     Content = "Frequently asked question"
                                                 }
                                             ]
@@ -56,26 +56,26 @@ public class FaqSection
                                         {
                                             Name = "FAQ Content",
                                             Segment = "div",
-                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "faq-content" }],
+                                            Attributes = AsJson(new { @class = "faq-content" }),
                                             Children = [
                                                 new WireFrame
                                                 {
                                                     Name = "Subtitle",
                                                     Segment = "h6",
-                                                    Attributes = [new WireFrameAttribute { Name = "class", Value = "subtitle" }],
+                                                    Attributes = AsJson(new { @class = "subtitle" }),
                                                     Content = "Still do you have any questions to know? <br> Feel free to ask our experts here."
                                                 },
                                                 new WireFrame
                                                 {
                                                     Name = "Button Wrap",
                                                     Segment = "div",
-                                                    Attributes = [new WireFrameAttribute { Name = "class", Value = "btn-wrap" }],
+                                                    Attributes = AsJson(new { @class = "btn-wrap" }),
                                                     Children = [
                                                         new WireFrame
                                                         {
                                                             Name = "Button",
                                                             Segment = "a",
-                                                            Attributes = [new WireFrameAttribute { Name = "href", Value = "#0" }, new WireFrameAttribute { Name = "class", Value = "btn-common flat-btn" }],
+                                                            Attributes = AsJson(new { href = "#0", @class = "btn-common flat-btn" }),
                                                             Content = "ASK YOUR QUESTIONS"
                                                         }
                                                     ]
@@ -88,43 +88,43 @@ public class FaqSection
                                 {
                                     Name = "Column",
                                     Segment = "div",
-                                    Attributes = [new WireFrameAttribute { Name = "class", Value = "col-lg-6" }],
+                                    Attributes = AsJson(new { @class = "col-lg-6" }),
                                     Children = [
                                         new WireFrame
                                         {
                                             Name = "Accordion Wrapper",
                                             Segment = "div",
-                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "accordion-wrapper" }],
+                                            Attributes = AsJson(new { @class = "accordion-wrapper" }),
                                             Children = [
                                                 new WireFrame
                                                 {
                                                     Name = "Accordion",
                                                     Segment = "div",
-                                                    Attributes = [new WireFrameAttribute { Name = "id", Value = "accordionOne" }],
+                                                    Attributes = AsJson(new { id = "accordionOne" }),
                                                     Children = [
                                                         new WireFrame
                                                         {
                                                             Name = "Card",
                                                             Segment = "div",
-                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "card" }],
+                                                            Attributes = AsJson(new { @class = "card" }),
                                                             Children = [
                                                                 new WireFrame
                                                                 {
                                                                     Name = "Card Header",
                                                                     Segment = "div",
-                                                                    Attributes = [new WireFrameAttribute { Name = "id", Value = "headingOne" }],
+                                                                    Attributes = AsJson(new { @class = "card-header", id = "headingOne" }),
                                                                     Children = [
                                                                         new WireFrame
                                                                         {
                                                                             Name = "Title",
                                                                             Segment = "h5",
-                                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "mb-0" }],
+                                                                            Attributes = AsJson(new { @class = "mb-0" }),
                                                                             Children = [
                                                                                 new WireFrame
                                                                                 {
                                                                                     Name = "Anchor",
                                                                                     Segment = "a",
-                                                                                    Attributes = [new WireFrameAttribute { Name = "class", Value = "collapsed" }, new WireFrameAttribute { Name = "role", Value = "button" }, new WireFrameAttribute { Name = "data-bs-toggle", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-target", Value = "#collapseOne" }, new WireFrameAttribute { Name = "aria-expanded", Value = "false" }, new WireFrameAttribute { Name = "aria-controls", Value = "collapseOne" }],
+                                                                                    Attributes = AsJson(new Dictionary<string, string> { { "class", "collapsed" }, { "role", "button" }, { "data-bs-toggle", "collapse" }, { "data-bs-target", "#collapseOne" }, { "aria-expanded", "false" }, { "aria-controls", "collapseOne" } }),
                                                                                     Content = "1. How is get admission in abroad university?",
                                                                                 }
                                                                             ]
@@ -135,13 +135,13 @@ public class FaqSection
                                                                 {
                                                                     Name = "Collapse",
                                                                     Segment = "div",
-                                                                    Attributes = [new WireFrameAttribute { Name = "id", Value = "collapseOne" }, new WireFrameAttribute { Name = "class", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-parent", Value = "#accordionOne" }],
+                                                                    Attributes = AsJson(new Dictionary<string, string> { { "id", "collapseOne" }, { "class", "collapse" }, { "data-bs-parent", "#accordionOne" } }),
                                                                     Children = [
                                                                         new WireFrame
                                                                         {
                                                                             Name = "Card Body",
                                                                             Segment = "div",
-                                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "card-body" }],
+                                                                            Attributes = AsJson(new { @class = "card-body" }),
                                                                             Content = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study."
                                                                         }
                                                                     ]
@@ -152,25 +152,25 @@ public class FaqSection
                                                         {
                                                             Name = "Card",
                                                             Segment = "div",
-                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "card" }],
+                                                            Attributes = AsJson(new { @class = "card" }),
                                                             Children = [
                                                                 new WireFrame
                                                                 {
                                                                     Name = "Card Header",
                                                                     Segment = "div",
-                                                                    Attributes = [new WireFrameAttribute { Name = "id", Value = "headingTwo" }],
+                                                                    Attributes = AsJson(new { @class = "card-header", id = "headingTwo" }),
                                                                     Children = [
                                                                         new WireFrame
                                                                         {
                                                                             Name = "Title",
                                                                             Segment = "h5",
-                                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "mb-0" }],
+                                                                            Attributes = AsJson(new { @class = "mb-0" }),
                                                                             Children = [
                                                                                 new WireFrame
                                                                                 {
                                                                                     Name = "Anchor",
                                                                                     Segment = "a",
-                                                                                    Attributes = [new WireFrameAttribute { Name = "class", Value = "collapsed" }, new WireFrameAttribute { Name = "role", Value = "button" }, new WireFrameAttribute { Name = "data-bs-toggle", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-target", Value = "#collapseTwo" }, new WireFrameAttribute { Name = "aria-expanded", Value = "false" }, new WireFrameAttribute { Name = "aria-controls", Value = "collapseTwo" }],
+                                                                                    Attributes = AsJson(new Dictionary<string, string> { { "class", "collapsed" }, { "role", "button" }, { "data-bs-toggle", "collapse" }, { "data-bs-target", "#collapseTwo" }, { "aria-expanded", "false" }, { "aria-controls", "collapseTwo" } }),
                                                                                     Content = "2. Do you offer complete solution for students?"
                                                                                 }
                                                                             ]
@@ -181,13 +181,13 @@ public class FaqSection
                                                                 {
                                                                     Name = "Collapse",
                                                                     Segment = "div",
-                                                                    Attributes = [new WireFrameAttribute { Name = "id", Value = "collapseTwo" }, new WireFrameAttribute { Name = "class", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-parent", Value = "#accordionOne" }],
+                                                                    Attributes = AsJson(new Dictionary<string, string> { { "id", "collapseTwo" }, { "class", "collapse" }, { "data-bs-parent", "#accordionOne" } }),
                                                                     Children = [
                                                                         new WireFrame
                                                                         {
                                                                             Name = "Card Body",
                                                                             Segment = "div",
-                                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "card-body" }],
+                                                                            Attributes = AsJson(new { @class = "card-body" }),
                                                                             Content = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study."
                                                                         }
                                                                     ]
@@ -198,25 +198,25 @@ public class FaqSection
                                                         {
                                                             Name = "Card",
                                                             Segment = "div",
-                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "card" }],
+                                                            Attributes = AsJson(new { @class = "card" }),
                                                             Children = [
                                                                 new WireFrame
                                                                 {
                                                                     Name = "Card Header",
                                                                     Segment = "div",
-                                                                    Attributes = [new WireFrameAttribute { Name = "id", Value = "headingThree" }],
+                                                                    Attributes = AsJson(new { @class = "card-header", id = "headingThree" }),
                                                                     Children = [
                                                                         new WireFrame
                                                                         {
                                                                             Name = "Title",
                                                                             Segment = "h5",
-                                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "mb-0" }],
+                                                                            Attributes = AsJson(new { @class = "mb-0" }),
                                                                             Children = [
                                                                                 new WireFrame
                                                                                 {
                                                                                     Name = "Anchor",
                                                                                     Segment = "a",
-                                                                                    Attributes = [new WireFrameAttribute { Name = "class", Value = "collapsed" }, new WireFrameAttribute { Name = "role", Value = "button" }, new WireFrameAttribute { Name = "data-bs-toggle", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-target", Value = "#collapseThree" }, new WireFrameAttribute { Name = "aria-expanded", Value = "false" }, new WireFrameAttribute { Name = "aria-controls", Value = "collapseThree" }],
+                                                                                    Attributes = AsJson(new Dictionary<string, string> { { "class", "collapsed" }, { "role", "button" }, { "data-bs-toggle", "collapse" }, { "data-bs-target", "#collapseThree" }, { "aria-expanded", "false" }, { "aria-controls", "collapseThree" } }),
                                                                                     Content = "3. Which country is safe and better for higher study?"
                                                                                 }
                                                                             ]
@@ -227,13 +227,13 @@ public class FaqSection
                                                                 {
                                                                     Name = "Collapse",
                                                                     Segment = "div",
-                                                                    Attributes = [new WireFrameAttribute { Name = "id", Value = "collapseThree" }, new WireFrameAttribute { Name = "class", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-parent", Value = "#accordionOne" }],
+                                                                    Attributes = AsJson(new Dictionary<string, string> { { "id", "collapseThree" }, { "class", "collapse" }, { "data-bs-parent", "#accordionOne" } }),
                                                                     Children = [
                                                                         new WireFrame
                                                                         {
                                                                             Name = "Card Body",
                                                                             Segment = "div",
-                                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "card-body" }],
+                                                                            Attributes = AsJson(new { @class = "card-body" }),
                                                                             Content = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study."
                                                                         }
                                                                     ]
@@ -244,25 +244,25 @@ public class FaqSection
                                                         {
                                                             Name = "Card",
                                                             Segment = "div",
-                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "card" }],
+                                                            Attributes = AsJson(new { @class = "card" }),
                                                             Children = [
                                                                 new WireFrame
                                                                 {
                                                                     Name = "Card Header",
                                                                     Segment = "div",
-                                                                    Attributes = [new WireFrameAttribute { Name = "id", Value = "headingFour" }],
+                                                                    Attributes = AsJson(new { @class = "card-header", id = "headingFour" }),
                                                                     Children = [
                                                                         new WireFrame
                                                                         {
                                                                             Name = "Title",
                                                                             Segment = "h5",
-                                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "mb-0" }],
+                                                                            Attributes = AsJson(new { @class = "mb-0" }),
                                                                             Children = [
                                                                                 new WireFrame
                                                                                 {
                                                                                     Name = "Anchor",
                                                                                     Segment = "a",
-                                                                                    Attributes = [new WireFrameAttribute { Name = "class", Value = "collapsed" }, new WireFrameAttribute { Name = "role", Value = "button" }, new WireFrameAttribute { Name = "data-bs-toggle", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-target", Value = "#collapseFour" }, new WireFrameAttribute { Name = "aria-expanded", Value = "false" }, new WireFrameAttribute { Name = "aria-controls", Value = "collapseFour" }],
+                                                                                    Attributes = AsJson(new Dictionary<string, string> { { "class", "collapsed" }, { "role", "button" }, { "data-bs-toggle", "collapse" }, { "data-bs-target", "#collapseFour" }, { "aria-expanded", "false" }, { "aria-controls", "collapseFour" } }),
                                                                                     Content = "4. Which country offer PR after study getting job?"
                                                                                 }
                                                                             ]
@@ -273,13 +273,13 @@ public class FaqSection
                                                                 {
                                                                     Name = "Collapse",
                                                                     Segment = "div",
-                                                                    Attributes = [new WireFrameAttribute { Name = "id", Value = "collapseFour" }, new WireFrameAttribute { Name = "class", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-parent", Value = "#accordionOne" }],
+                                                                    Attributes = AsJson(new Dictionary<string, string> { { "id", "collapseFour" }, { "class", "collapse" }, { "data-bs-parent", "#accordionOne" } }),
                                                                     Children = [
                                                                         new WireFrame
                                                                         {
                                                                             Name = "Card Body",
                                                                             Segment = "div",
-                                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "card-body" }],
+                                                                            Attributes = AsJson(new { @class = "card-body" }),
                                                                             Content = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study."
                                                                         }
                                                                     ]
@@ -290,25 +290,25 @@ public class FaqSection
                                                         {
                                                             Name = "Card",
                                                             Segment = "div",
-                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "card" }],
+                                                            Attributes = AsJson(new { @class = "card" }),
                                                             Children = [
                                                                 new WireFrame
                                                                 {
                                                                     Name = "Card Header",
                                                                     Segment = "div",
-                                                                    Attributes = [new WireFrameAttribute { Name = "id", Value = "headingFive" }],
+                                                                    Attributes = AsJson(new { @class = "card-header", id = "headingFive" }),
                                                                     Children = [
                                                                         new WireFrame
                                                                         {
                                                                             Name = "Title",
                                                                             Segment = "h5",
-                                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "mb-0" }],
+                                                                            Attributes = AsJson(new { @class = "mb-0" }),
                                                                             Children = [
                                                                                 new WireFrame
                                                                                 {
                                                                                     Name = "Anchor",
                                                                                     Segment = "a",
-                                                                                    Attributes = [new WireFrameAttribute { Name = "class", Value = "collapsed" }, new WireFrameAttribute { Name = "role", Value = "button" }, new WireFrameAttribute { Name = "data-bs-toggle", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-target", Value = "#collapseFive" }, new WireFrameAttribute { Name = "aria-expanded", Value = "false" }, new WireFrameAttribute { Name = "aria-controls", Value = "collapseFive" }],
+                                                                                    Attributes = AsJson(new Dictionary<string, string> { { "class", "collapsed" }, { "role", "button" }, { "data-bs-toggle", "collapse" }, { "data-bs-target", "#collapseFive" }, { "aria-expanded", "false" }, { "aria-controls", "collapseFive" } }),
                                                                                     Content = "5. Can i get scholarship with my low cGPA?"
                                                                                 }
                                                                             ]
@@ -319,13 +319,13 @@ public class FaqSection
                                                                 {
                                                                     Name = "Collapse",
                                                                     Segment = "div",
-                                                                    Attributes = [new WireFrameAttribute { Name = "id", Value = "collapseFive" }, new WireFrameAttribute { Name = "class", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-parent", Value = "#accordionOne" }],
+                                                                    Attributes = AsJson(new Dictionary<string, string> { { "id", "collapseFive" }, { "class", "collapse" }, { "data-bs-parent", "#accordionOne" } }),
                                                                     Children = [
                                                                         new WireFrame
                                                                         {
                                                                             Name = "Card Body",
                                                                             Segment = "div",
-                                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "card-body" }],
+                                                                            Attributes = AsJson(new { @class = "card-body" }),
                                                                             Content = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study."
                                                                         }
                                                                     ]
@@ -336,25 +336,25 @@ public class FaqSection
                                                         {
                                                             Name = "Card",
                                                             Segment = "div",
-                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "card" }],
+                                                            Attributes = AsJson(new { @class = "card" }),
                                                             Children = [
                                                                 new WireFrame
                                                                 {
                                                                     Name = "Card Header",
                                                                     Segment = "div",
-                                                                    Attributes = [new WireFrameAttribute { Name = "id", Value = "headingSix" }],
+                                                                    Attributes = AsJson(new { @class = "card-header", id = "headingSix" }),
                                                                     Children = [
                                                                         new WireFrame
                                                                         {
                                                                             Name = "Title",
                                                                             Segment = "h5",
-                                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "mb-0" }],
+                                                                            Attributes = AsJson(new { @class = "mb-0" }),
                                                                             Children = [
                                                                                 new WireFrame
                                                                                 {
                                                                                     Name = "Anchor",
                                                                                     Segment = "a",
-                                                                                    Attributes = [new WireFrameAttribute { Name = "class", Value = "collapsed" }, new WireFrameAttribute { Name = "role", Value = "button" }, new WireFrameAttribute { Name = "data-bs-toggle", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-target", Value = "#collapseSix" }, new WireFrameAttribute { Name = "aria-expanded", Value = "false" }, new WireFrameAttribute { Name = "aria-controls", Value = "collapseSix" }],
+                                                                                    Attributes = AsJson(new Dictionary<string, string> { { "class", "collapsed" }, { "role", "button" }, { "data-bs-toggle", "collapse" }, { "data-bs-target", "#collapseSix" }, { "aria-expanded", "false" }, { "aria-controls", "collapseSix" } }),
                                                                                     Content = "6. Do you allow accomadation for students in abroad?"
                                                                                 }
                                                                             ]
@@ -365,13 +365,13 @@ public class FaqSection
                                                                 {
                                                                     Name = "Collapse",
                                                                     Segment = "div",
-                                                                    Attributes = [new WireFrameAttribute { Name = "id", Value = "collapseSix" }, new WireFrameAttribute { Name = "class", Value = "collapse" }, new WireFrameAttribute { Name = "data-bs-parent", Value = "#accordionOne" }],
+                                                                    Attributes = AsJson(new Dictionary<string, string> { { "id", "collapseSix" }, { "class", "collapse" }, { "data-bs-parent", "#accordionOne" } }),
                                                                     Children = [
                                                                         new WireFrame
                                                                         {
                                                                             Name = "Card Body",
                                                                             Segment = "div",
-                                                                            Attributes = [new WireFrameAttribute { Name = "class", Value = "card-body" }],
+                                                                            Attributes = AsJson(new { @class = "card-body" }),
                                                                             Content = "Norway, USA, UK, Germany & Italy is most safest country in the world for Bangladeshi students for higer study."
                                                                         }
                                                                     ]

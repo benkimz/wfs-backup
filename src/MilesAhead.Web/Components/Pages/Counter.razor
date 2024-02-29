@@ -10,25 +10,21 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        // we will be testing the HomePrimeRoot in this page
-        Root = new HomePrimeRoot().Build(); // this will change to query from database
+        Root = new HomePrimeRoot().Build();
     }
 }
 
 @if (Root is not null)
 {
-    @if (Root.MetaData != null)
+    <HeadContent>
+    @foreach (string css in Root.ExternalStyleSheets)
+        {
+            <link href="@css" rel="stylesheet" />
+        }
+    </HeadContent>
+    @if (Root.PageTitle is not null)
     {
-        <HeadContent>
-    @foreach (var node in Root.MetaData.Children)
-            {
-                @WireframeParser.RenderWireFrame(node)
-            }
-            @foreach (string css in Root.ExternalStyleSheets)
-            {
-                <link href="@css" rel="stylesheet" />
-            }
-        </HeadContent>
+        <PageTitle>@Root.PageTitle</PageTitle>
     }
 
     @WireframeParser.RenderWireFrame(Root)

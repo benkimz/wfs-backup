@@ -12,8 +12,8 @@ using MilesAhead.Components;
 namespace MilesAhead.Web.Migrations
 {
     [DbContext(typeof(WireFramesDbContext))]
-    [Migration("20240228091201_InitialDB")]
-    partial class InitialDB
+    [Migration("20240229132548_Alpha")]
+    partial class Alpha
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -77,6 +77,10 @@ namespace MilesAhead.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Attributes")
+                        .HasMaxLength(720)
+                        .HasColumnType("nvarchar(720)");
+
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
@@ -117,33 +121,6 @@ namespace MilesAhead.Web.Migrations
                     b.UseTphMappingStrategy();
                 });
 
-            modelBuilder.Entity("MilesAhead.Components.WireFrameAttribute", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Value")
-                        .HasMaxLength(320)
-                        .HasColumnType("nvarchar(320)");
-
-                    b.Property<int?>("WireFrameId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("WireFrameId");
-
-                    b.ToTable("WireFrameAttribute", "render");
-                });
-
             modelBuilder.Entity("MilesAhead.Components.PrimeRoot", b =>
                 {
                     b.HasBaseType("MilesAhead.Components.WireFrame");
@@ -156,18 +133,19 @@ namespace MilesAhead.Web.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("FaviconUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("HeadScripts")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("MetaDataId")
-                        .HasColumnType("int");
+                    b.Property<string>("PageTitle")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RootName")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
-
-                    b.HasIndex("MetaDataId");
 
                     b.HasIndex("RootName")
                         .IsUnique()
@@ -196,22 +174,6 @@ namespace MilesAhead.Web.Migrations
                     b.Navigation("FetchContent");
                 });
 
-            modelBuilder.Entity("MilesAhead.Components.WireFrameAttribute", b =>
-                {
-                    b.HasOne("MilesAhead.Components.WireFrame", null)
-                        .WithMany("Attributes")
-                        .HasForeignKey("WireFrameId");
-                });
-
-            modelBuilder.Entity("MilesAhead.Components.PrimeRoot", b =>
-                {
-                    b.HasOne("MilesAhead.Components.WireFrame", "MetaData")
-                        .WithMany()
-                        .HasForeignKey("MetaDataId");
-
-                    b.Navigation("MetaData");
-                });
-
             modelBuilder.Entity("MilesAhead.Components.FetchData", b =>
                 {
                     b.Navigation("Parameters");
@@ -219,8 +181,6 @@ namespace MilesAhead.Web.Migrations
 
             modelBuilder.Entity("MilesAhead.Components.WireFrame", b =>
                 {
-                    b.Navigation("Attributes");
-
                     b.Navigation("Children");
                 });
 #pragma warning restore 612, 618

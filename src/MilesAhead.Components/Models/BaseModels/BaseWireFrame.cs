@@ -9,7 +9,8 @@ public class BaseWireFrame : IBaseWireFrame
     public string Name { get; set; } = "Dynamic Component";
     [MaxLength(64)]
     public string Segment { get; set; } = "div"; // target component or html element
-    public virtual List<WireFrameAttribute>? Attributes { get; set; } // segment attributes
+    [MaxLength(720)]
+    public string? Attributes { get; set; } // segment attributes as a JSON string
     public DataSource DataSource { get; set; } // data source
     public string? Content { get; set; } // content to be rendered
     public virtual FetchData? FetchContent { get; set; } // data to be rendered

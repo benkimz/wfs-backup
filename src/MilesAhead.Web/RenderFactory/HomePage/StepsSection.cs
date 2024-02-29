@@ -2,7 +2,7 @@
 
 namespace MilesAhead.Web;
 
-public class StepsSection
+public class StepsSection : BaseBuilder
 {
     public WireFrame Build()
     {
@@ -10,54 +10,29 @@ public class StepsSection
         {
             Name = "Steps Section",
             Segment = "section",
-            Attributes = [
-                new WireFrameAttribute{
-                    Name = "class",
-                    Value = "destination-section style-01 margin-top-110 instruction"
-                }
-            ],
+            Attributes = AsJson(new { @class = "destination-section style-01 margin-top-110 instruction" }),
         };
 
         StepsFrame.Children.AddRange([
             new WireFrame{
                 Name = "Container",
                 Segment = "div",
-                Attributes = [
-                    new WireFrameAttribute{
-                        Name = "class",
-                        Value = "container custom-container-01"
-                    }
-                ],
+                Attributes = AsJson(new { @class = "container custom-container-01" }),
                 Children = [
                     new WireFrame{
                         Name = "Row",
                         Segment = "div",
-                        Attributes = [
-                            new WireFrameAttribute{
-                                Name = "class",
-                                Value = "row justify-content-center"
-                            }
-                        ],
+                        Attributes = AsJson(new { @class = "row justify-content-center" }),
                         Children = [
                             new WireFrame{
                                 Name = "Column",
                                 Segment = "div",
-                                Attributes = [
-                                    new WireFrameAttribute{
-                                        Name = "class",
-                                        Value = "col-lg-12"
-                                    }
-                                ],
+                                Attributes = AsJson(new { @class = "col-lg-12" }),
                                 Children = [
                                     new WireFrame{
                                         Name = "Title",
                                         Segment = "div",
-                                        Attributes = [
-                                            new WireFrameAttribute{
-                                                Name = "class",
-                                                Value = "theme-section-title desktop-center text-center"
-                                            }
-                                        ],
+                                        Attributes = AsJson(new { @class = "theme-section-title desktop-center text-center" }),
                                         Children = [
                                             new WireFrame{
                                                 Name = "Subtitle",
@@ -78,58 +53,29 @@ public class StepsSection
                     new WireFrame{
                         Name = "Destination Items Wrap",
                         Segment = "div",
-                        Attributes = [
-                            new WireFrameAttribute{
-                                Name = "class",
-                                Value = "destination-items-wrap"
-                            }
-                        ],
+                        Attributes = AsJson(new { @class = "destination-items-wrap" }),
                         Children = [
                             new WireFrame{
                                 Name = "Destination Single Item",
                                 Segment = "div",
-                                Attributes = [
-                                    new WireFrameAttribute{
-                                        Name = "class",
-                                        Value = "destination-single-item style-02"
-                                    }
-                                ],
+                                Attributes = AsJson(new { @class = "destination-single-item style-02" }),
                                 Children = [
                                     new WireFrame{
                                         Name = "Thumbnail",
                                         Segment = "div",
-                                        Attributes = [
-                                            new WireFrameAttribute{
-                                                Name = "class",
-                                                Value = "thumbnail"
-                                            }
-                                        ],
+                                        Attributes = AsJson(new { @class = "thumbnail" }),
                                         Children = [
                                             new WireFrame{
                                                 Name = "Image",
                                                 Segment = "img",
-                                                Attributes = [
-                                                    new WireFrameAttribute{
-                                                        Name = "src",
-                                                        Value = "assets/img/icon/step-01.png"
-                                                    },
-                                                    new WireFrameAttribute{
-                                                        Name = "alt",
-                                                        Value = ""
-                                                    }
-                                                ]
+                                                Attributes = AsJson(new { src = "assets/img/icon/step-01.png", alt = "" })
                                             }
                                         ]
                                     },
                                     new WireFrame{
                                         Name = "Name",
                                         Segment = "h6",
-                                        Attributes = [
-                                            new WireFrameAttribute{
-                                                Name = "class",
-                                                Value = "name"
-                                            }
-                                        ],
+                                        Attributes = AsJson(new { @class = "name" }),
                                         Content = "Identify course <br> country & collage"
                                     }
                                 ]
@@ -137,48 +83,24 @@ public class StepsSection
                             new WireFrame{
                                 Name = "Destination Single Item",
                                 Segment = "div",
-                                Attributes = [
-                                    new WireFrameAttribute{
-                                        Name = "class",
-                                        Value = "destination-single-item style-02"
-                                    }
-                                ],
+                                Attributes = AsJson(new { @class = "destination-single-item style-02" }),
                                 Children = [
                                     new WireFrame{
                                         Name = "Thumbnail",
                                         Segment = "div",
-                                        Attributes = [
-                                            new WireFrameAttribute{
-                                                Name = "class",
-                                                Value = "thumbnail"
-                                            }
-                                        ],
+                                        Attributes = AsJson(new { @class = "thumbnail" }),
                                         Children = [
                                             new WireFrame{
                                                 Name = "Image",
                                                 Segment = "img",
-                                                Attributes = [
-                                                    new WireFrameAttribute{
-                                                        Name = "src",
-                                                        Value = "assets/img/icon/step-02.png"
-                                                    },
-                                                    new WireFrameAttribute{
-                                                        Name = "alt",
-                                                        Value = ""
-                                                    }
-                                                ]
+                                                Attributes = AsJson(new { src = "assets/img/icon/step-02.png", alt = "" })
                                             }
                                         ]
                                     },
                                     new WireFrame{
                                         Name = "Name",
                                         Segment = "h6",
-                                        Attributes = [
-                                            new WireFrameAttribute{
-                                                Name = "class",
-                                                Value = "name"
-                                            }
-                                        ],
+                                        Attributes = AsJson(new { @class = "name" }),
                                         Content = "science <br> & professional"
                                     }
                                 ]
@@ -186,48 +108,24 @@ public class StepsSection
                             new WireFrame{
                                 Name = "Destination Single Item",
                                 Segment = "div",
-                                Attributes = [
-                                    new WireFrameAttribute{
-                                        Name = "class",
-                                        Value = "destination-single-item style-02"
-                                    }
-                                ],
+                                Attributes = AsJson(new { @class = "destination-single-item style-02" }),
                                 Children = [
                                     new WireFrame{
                                         Name = "Thumbnail",
                                         Segment = "div",
-                                        Attributes = [
-                                            new WireFrameAttribute{
-                                                Name = "class",
-                                                Value = "thumbnail"
-                                            }
-                                        ],
+                                        Attributes = AsJson(new { @class = "thumbnail" }),
                                         Children = [
                                             new WireFrame{
                                                 Name = "Image",
                                                 Segment = "img",
-                                                Attributes = [
-                                                    new WireFrameAttribute{
-                                                        Name = "src",
-                                                        Value = "assets/img/icon/step-03.png"
-                                                    },
-                                                    new WireFrameAttribute{
-                                                        Name = "alt",
-                                                        Value = ""
-                                                    }
-                                                ]
+                                                Attributes = AsJson(new { src = "assets/img/icon/step-03.png", alt = "" })
                                             }
                                         ]
                                     },
                                     new WireFrame{
                                         Name = "Name",
                                         Segment = "h6",
-                                        Attributes = [
-                                            new WireFrameAttribute{
-                                                Name = "class",
-                                                Value = "name"
-                                            }
-                                        ],
+                                        Attributes = AsJson(new { @class = "name" }),
                                         Content = "Art, Design & <br> Culture"
                                     }
                                 ]
@@ -235,48 +133,24 @@ public class StepsSection
                             new WireFrame{
                                 Name = "Destination Single Item",
                                 Segment = "div",
-                                Attributes = [
-                                    new WireFrameAttribute{
-                                        Name = "class",
-                                        Value = "destination-single-item style-02"
-                                    }
-                                ],
+                                Attributes = AsJson(new { @class = "destination-single-item style-02" }),
                                 Children = [
                                     new WireFrame{
                                         Name = "Thumbnail",
                                         Segment = "div",
-                                        Attributes = [
-                                            new WireFrameAttribute{
-                                                Name = "class",
-                                                Value = "thumbnail"
-                                            }
-                                        ],
+                                        Attributes = AsJson(new { @class = "thumbnail" }),
                                         Children = [
                                             new WireFrame{
                                                 Name = "Image",
                                                 Segment = "img",
-                                                Attributes = [
-                                                    new WireFrameAttribute{
-                                                        Name = "src",
-                                                        Value = "assets/img/icon/step-04.png"
-                                                    },
-                                                    new WireFrameAttribute{
-                                                        Name = "alt",
-                                                        Value = ""
-                                                    }
-                                                ]
+                                                Attributes = AsJson(new { src = "assets/img/icon/step-04.png", alt = "" })
                                             }
                                         ]
                                     },
                                     new WireFrame{
                                         Name = "Name",
                                         Segment = "h6",
-                                        Attributes = [
-                                            new WireFrameAttribute{
-                                                Name = "class",
-                                                Value = "name"
-                                            }
-                                        ],
+                                        Attributes = AsJson(new { @class = "name" }),
                                         Content = "Business & <br> Management"
                                     }
                                 ]
@@ -284,48 +158,24 @@ public class StepsSection
                             new WireFrame{
                                 Name = "Destination Single Item",
                                 Segment = "div",
-                                Attributes = [
-                                    new WireFrameAttribute{
-                                        Name = "class",
-                                        Value = "destination-single-item style-02"
-                                    }
-                                ],
+                                Attributes = AsJson(new { @class = "destination-single-item style-02" }),
                                 Children = [
                                     new WireFrame{
                                         Name = "Thumbnail",
                                         Segment = "div",
-                                        Attributes = [
-                                            new WireFrameAttribute{
-                                                Name = "class",
-                                                Value = "thumbnail"
-                                            }
-                                        ],
+                                        Attributes = AsJson(new { @class = "thumbnail" }),
                                         Children = [
                                             new WireFrame{
                                                 Name = "Image",
                                                 Segment = "img",
-                                                Attributes = [
-                                                    new WireFrameAttribute{
-                                                        Name = "src",
-                                                        Value = "assets/img/icon/step-05.png"
-                                                    },
-                                                    new WireFrameAttribute{
-                                                        Name = "alt",
-                                                        Value = ""
-                                                    }
-                                                ]
+                                                Attributes = AsJson(new { src = "assets/img/icon/step-05.png", alt = "" })
                                             }
                                         ]
                                     },
                                     new WireFrame{
                                         Name = "Name",
                                         Segment = "h6",
-                                        Attributes = [
-                                            new WireFrameAttribute{
-                                                Name = "class",
-                                                Value = "name"
-                                            }
-                                        ],
+                                        Attributes = AsJson(new { @class = "name" }),
                                         Content = "Computer <br> Science & IT"
                                     }
                                 ]

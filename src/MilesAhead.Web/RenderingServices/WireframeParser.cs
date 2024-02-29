@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using System.Text.Json;
+using Microsoft.AspNetCore.Components;
 using MilesAhead.Components;
 
 namespace MilesAhead.Web;
@@ -12,9 +13,10 @@ public class WireframeParser
             builder.OpenElement(0, wireFrame.Segment);
             if (wireFrame.Attributes != null)
             {
-                foreach (var attribute in wireFrame.Attributes)
+                var attrs = ObjectFromJson(wireFrame.Attributes);
+                foreach (JsonProperty attr in attrs.RootElement.EnumerateObject())
                 {
-                    builder.AddAttribute(1, attribute.Name, attribute.Value);
+                    builder.AddAttribute(1, attr.Name, attr.Value);
                 }
             }
             if (wireFrame.Content != null)
@@ -27,5 +29,15 @@ public class WireframeParser
             }
             builder.CloseComponent();
         };
+    }
+
+    public static JsonDocument ObjectFromJson(string json)
+    {
+        return JsonDocument.Parse(json);
+    }
+
+    public static string JsonFromObject<T>(T obj)
+    {
+        return JsonSerializer.Serialize(obj);
     }
 }

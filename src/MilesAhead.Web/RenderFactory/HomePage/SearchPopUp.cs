@@ -2,7 +2,7 @@
 
 namespace MilesAhead.Web;
 
-public class SearchPopUp
+public class SearchPopUp : BaseBuilder
 {
     public WireFrame Build()
     {
@@ -10,25 +10,25 @@ public class SearchPopUp
         {
             Name = "Search Popup",
             Segment = "div",
-            Attributes = [new WireFrameAttribute { Name = "class", Value = "search-popup" }, new WireFrameAttribute { Name = "id", Value = "search-popup" }],
+            Attributes = AsJson(new { @class = "search-popup", id = "search-popup" }),
             Children = [
                 new WireFrame
                 {
                     Name = "Search Form",
                     Segment = "form",
-                    Attributes = [new WireFrameAttribute { Name = "action", Value = "index.html" }, new WireFrameAttribute { Name = "class", Value = "search-form" }],
+                    Attributes = AsJson(new { action = "index.html", @class = "search-form" }),
                     Children = [
                         new WireFrame
                         {
                             Name = "Form Group",
                             Segment = "div",
-                            Attributes = [new WireFrameAttribute { Name = "class", Value = "form-group" }],
+                            Attributes = AsJson(new { @class = "form-group" }),
                             Children = [
                                 new WireFrame
                                 {
                                     Name = "Input",
                                     Segment = "input",
-                                    Attributes = [new WireFrameAttribute { Name = "type", Value = "text" }, new WireFrameAttribute { Name = "class", Value = "form-control" }, new WireFrameAttribute { Name = "placeholder", Value = "Search....." }]
+                                    Attributes = AsJson(new { type = "text", @class = "form-control", placeholder = "Search....." })
                                 }
                             ]
                         },
@@ -36,13 +36,13 @@ public class SearchPopUp
                         {
                             Name = "Close Button",
                             Segment = "button",
-                            Attributes = [new WireFrameAttribute { Name = "class", Value = "close-btn border-none" }],
+                            Attributes = AsJson(new { @class = "close-btn border-none" }),
                             Children = [
                                 new WireFrame
                                 {
                                     Name = "Icon",
                                     Segment = "i",
-                                    Attributes = [new WireFrameAttribute { Name = "class", Value = "fas fa-search" }]
+                                    Attributes = AsJson(new { @class = "fas fa-search" })
                                 }
                             ]
                         }

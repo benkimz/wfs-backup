@@ -1,4 +1,6 @@
-﻿namespace MilesAhead.Components;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace MilesAhead.Components;
 
 public class WireFrame : BaseWireFrame
 {

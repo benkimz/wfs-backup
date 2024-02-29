@@ -2,7 +2,7 @@
 
 namespace MilesAhead.Web;
 
-public class PagePreloader
+public class PagePreloader : BaseBuilder
 {
     public WireFrame Build()
     {
@@ -10,22 +10,19 @@ public class PagePreloader
         {
             Name = "Preloader",
             Segment = "div",
-            Attributes = [
-               new WireFrameAttribute { Name = "class", Value = "preloader" },
-                new WireFrameAttribute { Name = "id", Value = "preloader" }
-           ],
+            Attributes = AsJson(new { @class = "preloader", id = "preloader" }),
             Children = [
                new WireFrame
                 {
                     Name = "Preloader Inner",
                     Segment = "div",
-                    Attributes = [new WireFrameAttribute { Name = "class", Value = "preloader-inner" }],
+                    Attributes = AsJson(new { @class = "preloader-inner" }),
                     Children = [
                         new WireFrame
                         {
                             Name = "Loader",
                             Segment = "div",
-                            Attributes = [new WireFrameAttribute { Name = "class", Value = "loader" }]
+                            Attributes = AsJson(new { @class = "loader" })
                         }
                     ]
                 }

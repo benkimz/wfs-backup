@@ -1,5 +1,7 @@
 ﻿
 
+using System.Linq.Expressions;
+
 namespace MilesAhead.Components;
 
 public class WireFramesRepository : IWireFramesRepository
@@ -41,8 +43,4 @@ public class WireFramesRepository : IWireFramesRepository
         return _genericRepository.Update(entity);
     }
 
-    public Task<WireFrame?> Upsert(WireFrame entity)
-    {
-        return _genericRepository.Upsert(entity);
-    }
 }

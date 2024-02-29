@@ -2,7 +2,7 @@
 
 namespace MilesAhead.Web;
 
-public class BodyOverLay
+public class BodyOverLay : BaseBuilder
 {
     public WireFrame Build()
     {
@@ -10,13 +10,7 @@ public class BodyOverLay
         {
             Name = "body-overlay",
             Segment = "div",
-            Attributes = [new WireFrameAttribute{
-            Name = "class",
-            Value = "body-overlay"
-        }, new WireFrameAttribute{
-            Name = "id",
-            Value = "body-overlay"
-        }]
+            Attributes = AsJson(new { @class = "body-overlay", id = "body-overlay" })
         };
     }
 }

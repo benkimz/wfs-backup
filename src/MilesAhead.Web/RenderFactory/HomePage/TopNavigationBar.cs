@@ -2,7 +2,7 @@
 
 namespace MilesAhead.Web;
 
-public class TopNavigationBar
+public class TopNavigationBar : BaseBuilder
 {
     public WireFrame Build()
     {
@@ -10,46 +10,34 @@ public class TopNavigationBar
         {
             Name = "Top Navigation Bar",
             Segment = "nav",
-            Attributes = [
-                new WireFrameAttribute { Name = "class", Value = "navbar navbar-area navbar-expand-lg navigation-style-02" }
-            ],
+            Attributes = AsJson(new { @class = "navbar navbar-area navbar-expand-lg navigation-style-02" })
         };
 
         NavBar.Children.AddRange([
             new WireFrame{
                 Name = "Container",
                 Segment = "div",
-                Attributes = [
-                    new WireFrameAttribute { Name = "class", Value = "container custom-container custom-container-01" }
-                ],
+                Attributes = AsJson(new { @class = "container custom-container custom-container-01" }),
                 Children = [
                     new WireFrame{
                         Name = "Responsive Menu",
                         Segment = "div",
-                        Attributes = [new WireFrameAttribute { Name = "class", Value = "responsive-menu" }
-                        ],
+                        Attributes = AsJson(new { @class = "responsive-menu" }),
                         Children = [
                             new WireFrame{
                                 Name = "Logo Wrapper",
                                 Segment = "div",
-                                Attributes = [new WireFrameAttribute { Name = "class", Value = "logo-wrapper" }
-                                ],
+                                Attributes = AsJson(new { @class = "logo-wrapper" }),
                                 Children = [
                                     new WireFrame{
                                         Name = "Logo",
                                         Segment = "a",
-                                        Attributes = [
-                                            new WireFrameAttribute { Name = "href", Value = "index.html" },
-                                            new WireFrameAttribute { Name = "class", Value = "logo" }
-                                        ],
+                                        Attributes = AsJson(new { href = "index.html", @class = "logo" }),
                                         Children = [
                                             new WireFrame{
                                                 Name = "Image",
                                                 Segment = "img",
-                                                Attributes = [
-                                                    new WireFrameAttribute { Name = "src", Value = "assets/img/Logos/logo-black.svg" },
-                                                    new WireFrameAttribute { Name = "alt", Value = "" }
-                                                ]
+                                                Attributes = AsJson(new { src = "assets/img/Logos/logo-black.svg", alt = "" })
                                             }
                                         ]
                                     }
@@ -58,20 +46,20 @@ public class TopNavigationBar
                             new WireFrame{
                                 Name = "Navbar Toggler",
                                 Segment = "button",
-                                Attributes = [
-                                    new WireFrameAttribute { Name = "class", Value = "navbar-toggler navbar-bs-toggler" },
-                                    new WireFrameAttribute { Name = "type", Value = "button" },
-                                    new WireFrameAttribute { Name = "data-bs-toggle", Value = "collapse" },
-                                    new WireFrameAttribute { Name = "data-bs-target", Value = "#themeim_main_menu" },
-                                    new WireFrameAttribute { Name = "aria-expanded", Value = "false" },
-                                    new WireFrameAttribute { Name = "aria-label", Value = "Toggle navigation" }
-                                ],
+                                Attributes = AsJson(new Dictionary<string, string>
+                                {
+                                    { "class", "navbar-toggler navbar-bs-toggler" },
+                                    { "type", "button" },
+                                    { "data-bs-toggle", "collapse" },
+                                    { "data-bs-target", "#themeim_main_menu" },
+                                    { "aria-expanded", "false" },
+                                    { "aria-label", "Toggle navigation" }
+                                }),
                                 Children = [
                                     new WireFrame{
                                         Name = "Navbar Toggler Icon",
                                         Segment = "span",
-                                        Attributes = [new WireFrameAttribute { Name = "class", Value = "navbar-toggler-icon" }
-                                        ]
+                                        Attributes = AsJson(new { @class = "navbar-toggler-icon" })
                                     }
                                 ]
                             }
@@ -80,28 +68,22 @@ public class TopNavigationBar
                     new WireFrame{
                         Name = "Collapse Navbar",
                         Segment = "div",
-                        Attributes = [
-                            new WireFrameAttribute { Name = "class", Value = "collapse navbar-collapse" },
-                            new WireFrameAttribute { Name = "id", Value = "themeim_main_menu" }
-                        ],
+                        Attributes = AsJson(new { @class = "collapse navbar-collapse", id = "themeim_main_menu" }),
                         Children = [
                             new WireFrame{
                                 Name = "Navbar Nav",
                                 Segment = "ul",
-                                Attributes = [new WireFrameAttribute { Name = "class", Value = "navbar-nav" }
-                                ],
+                                Attributes = AsJson(new { @class = "navbar-nav" }),
                                 Children = [
                                     new WireFrame{
                                         Name = "Home",
                                         Segment = "li",
-                                        Attributes = [new WireFrameAttribute { Name = "class", Value = "menu-item-has-children current-menu-item" }
-                                        ],
+                                        Attributes = AsJson(new { @class = "menu-item-has-children current-menu-item" }),
                                         Children = [
                                             new WireFrame{
                                                 Name = "Home Link",
                                                 Segment = "a",
-                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "#0" }
-                                                ],
+                                                Attributes = AsJson(new { href = "#0" }),
                                                 Children = [
                                                     new WireFrame{
                                                         Name = "Home Text",
@@ -113,8 +95,7 @@ public class TopNavigationBar
                                             new WireFrame{
                                                 Name = "Home Sub Menu",
                                                 Segment = "ul",
-                                                Attributes = [new WireFrameAttribute { Name = "class", Value = "sub-menu" }
-                                                ],
+                                                Attributes = AsJson(new { @class = "sub-menu" }),
                                                 Children = [
                                                     new WireFrame{
                                                         Name = "Home One",
@@ -123,8 +104,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "Home One Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "index.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "index.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "Home One Text",
@@ -142,8 +122,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "Home Two Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "index-02.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "index-02.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "Home Two Text",
@@ -165,8 +144,7 @@ public class TopNavigationBar
                                             new WireFrame{
                                                 Name = "About Us Link",
                                                 Segment = "a",
-                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "about-us.html" }
-                                                ],
+                                                Attributes = AsJson(new { href = "about-us.html" }),
                                                 Children = [
                                                     new WireFrame{
                                                         Name = "About Us Text",
@@ -180,14 +158,12 @@ public class TopNavigationBar
                                     new WireFrame{
                                         Name = "Pages",
                                         Segment = "li",
-                                        Attributes = [new WireFrameAttribute { Name = "class", Value = "menu-item-has-children" }
-                                        ],
+                                        Attributes = AsJson(new { @class = "menu-item-has-children" }),
                                         Children = [
                                             new WireFrame{
                                                 Name = "Pages Link",
                                                 Segment = "a",
-                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }
-                                                ],
+                                                Attributes = AsJson(new { href = "#" }),
                                                 Children = [
                                                     new WireFrame{
                                                         Name = "Pages Text",
@@ -199,8 +175,7 @@ public class TopNavigationBar
                                             new WireFrame{
                                                 Name = "Pages Sub Menu",
                                                 Segment = "ul",
-                                                Attributes = [new WireFrameAttribute { Name = "class", Value = "sub-menu" }
-                                                ],
+                                                Attributes = AsJson(new { @class = "sub-menu" }),
                                                 Children = [
                                                     new WireFrame{
                                                         Name = "Our Services",
@@ -209,8 +184,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "Our Services Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "Our-services.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "Our-services.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "Our Services Text",
@@ -228,8 +202,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "Services Details Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "services-details.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "services-details.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "Services Details Text",
@@ -247,8 +220,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "Team Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "our-team.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "our-team.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "Team Text",
@@ -266,8 +238,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "Instructors Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "instructors.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "instructors.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "Instructors Text",
@@ -285,8 +256,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "About Instructor Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "about-instructor.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "about-instructor.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "About Instructor Text",
@@ -304,8 +274,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "Country Details Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "country-details.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "country-details.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "Country Details Text",
@@ -323,8 +292,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "All Course Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "all-course.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "all-course.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "All Course Text",
@@ -342,8 +310,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "All Course Widget Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "all-course-widget.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "all-course-widget.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "All Course Widget Text",
@@ -361,8 +328,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "Course Details Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "course-details.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "course-details.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "Course Details Text",
@@ -380,8 +346,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "Apply Online Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "apply-online.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "apply-online.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "Apply Online Text",
@@ -399,8 +364,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "Shop Cart Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "shop-cart.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "shop-cart.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "Shop Cart Text",
@@ -418,8 +382,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "FAQ Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "faq.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "faq.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "FAQ Text",
@@ -437,8 +400,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "404 Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "404.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "404.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "404 Text",
@@ -456,8 +418,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "Cart Empty Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "cart-empty.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "cart-empty.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "Cart Empty Text",
@@ -475,14 +436,12 @@ public class TopNavigationBar
                                     new WireFrame{
                                         Name = "Blog",
                                         Segment = "li",
-                                        Attributes = [new WireFrameAttribute { Name = "class", Value = "menu-item-has-children" }
-                                        ],
+                                        Attributes = AsJson(new { @class = "menu-item-has-children" }),
                                         Children = [
                                             new WireFrame{
                                                 Name = "Blog Link",
                                                 Segment = "a",
-                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }
-                                                ],
+                                                Attributes = AsJson(new { href = "#" }),
                                                 Children = [
                                                     new WireFrame{
                                                         Name = "Blog Text",
@@ -494,8 +453,7 @@ public class TopNavigationBar
                                             new WireFrame{
                                                 Name = "Blog Sub Menu",
                                                 Segment = "ul",
-                                                Attributes = [new WireFrameAttribute { Name = "class", Value = "sub-menu" }
-                                                ],
+                                                Attributes = AsJson(new { @class = "sub-menu" }),
                                                 Children = [
                                                     new WireFrame{
                                                         Name = "Blog",
@@ -504,8 +462,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "Blog Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "blog.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "blog.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "Blog Text",
@@ -523,8 +480,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "Blog Classic Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "blog-classic.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "blog-classic.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "Blog Classic Text",
@@ -542,8 +498,7 @@ public class TopNavigationBar
                                                             new WireFrame{
                                                                 Name = "Blog Single Link",
                                                                 Segment = "a",
-                                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "blog-details.html" }
-                                                                ],
+                                                                Attributes = AsJson(new { href = "blog-details.html" }),
                                                                 Children = [
                                                                     new WireFrame{
                                                                         Name = "Blog Single Text",
@@ -565,8 +520,7 @@ public class TopNavigationBar
                                             new WireFrame{
                                                 Name = "Contact Us Link",
                                                 Segment = "a",
-                                                Attributes = [new WireFrameAttribute { Name = "href", Value = "contact-us.html" }
-                                                ],
+                                                Attributes = AsJson(new { href = "contact-us.html" }),
                                                 Children = [
                                                     new WireFrame{
                                                         Name = "Contact Us Text",
@@ -584,14 +538,12 @@ public class TopNavigationBar
                     new WireFrame{
                         Name = "Nav Right Content",
                         Segment = "div",
-                        Attributes = [new WireFrameAttribute { Name = "class", Value = "nav-right-content" }
-                        ],
+                        Attributes = AsJson(new { @class = "nav-right-content" }),
                         Children = [
                             new WireFrame{
                                 Name = "Icon Part",
                                 Segment = "div",
-                                Attributes = [new WireFrameAttribute { Name = "class", Value = "icon-part" }
-                                ],
+                                Attributes = AsJson(new { @class = "icon-part" }),
                                 Children = [
                                     new WireFrame{
                                         Name = "Icon List",
@@ -600,22 +552,17 @@ public class TopNavigationBar
                                             new WireFrame{
                                                 Name = "Search",
                                                 Segment = "li",
-                                                Attributes = [new WireFrameAttribute { Name = "id", Value = "search" }
-                                                ],
+                                                Attributes = AsJson(new { @class = "search" }),
                                                 Children = [
                                                     new WireFrame{
                                                         Name = "Search Link",
                                                         Segment = "a",
-                                                        Attributes = [new WireFrameAttribute { Name = "href", Value = "#" }
-                                                        ],
+                                                        Attributes = AsJson(new { href = "#" }),
                                                         Children = [
                                                             new WireFrame{
                                                                 Name = "Search Image",
                                                                 Segment = "img",
-                                                                Attributes = [
-                                                                    new WireFrameAttribute { Name = "src", Value = "assets/img/icon/search-icon.png" },
-                                                                    new WireFrameAttribute { Name = "alt", Value = "" }
-                                                                ]
+                                                                Attributes = AsJson(new { src = "assets/img/icon/search-icon.png", alt = "" })
                                                             }
                                                         ]
                                                     }
@@ -628,16 +575,12 @@ public class TopNavigationBar
                             new WireFrame{
                                 Name = "Button Wrap",
                                 Segment = "div",
-                                Attributes = [new WireFrameAttribute { Name = "class", Value = "btn-wrap" }
-                                ],
+                                Attributes  = AsJson(new { @class = "btn-wrap" }),
                                 Children = [
                                     new WireFrame{
                                         Name = "Button",
                                         Segment = "a",
-                                        Attributes = [
-                                            new WireFrameAttribute { Name = "href", Value = "#" },
-                                            new WireFrameAttribute { Name = "class", Value = "btn-common nav-btn" }
-                                        ],
+                                        Attributes = AsJson(new { href = "#", @class = "btn-common nav-btn" }),
                                         Children = [
                                             new WireFrame{
                                                 Name = "Button Text",
@@ -658,8 +601,7 @@ public class TopNavigationBar
         {
             Name = "Top Navigation Bar Container",
             Segment = "div",
-            Attributes = [new WireFrameAttribute { Name = "class", Value = "nav-area-wrapper-relative" }
-            ],
+            Attributes = AsJson(new { @class = "nav-area-wrapper-relative" }),
             Children = [NavBar]
         };
     }

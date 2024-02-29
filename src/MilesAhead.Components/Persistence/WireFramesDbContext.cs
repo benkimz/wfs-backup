@@ -11,8 +11,8 @@ public class WireFramesDbContext : DbContext
     {
         modelBuilder.HasDefaultSchema("render");
         modelBuilder.Entity<PrimeRoot>()
-        .HasIndex(e => e.RootName)
-        .IsUnique();
+            .HasIndex(e => e.RootName)
+            .IsUnique();
     }
     public DbSet<PrimeRoot> PrimeRoots { get; set; }
     public DbSet<WireFrame> WireFrames { get; set; }
