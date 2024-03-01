@@ -1,8 +1,4 @@
-﻿
-
-using System.Linq.Expressions;
-
-namespace MilesAhead.Components;
+﻿namespace MilesAhead.WireFrames.Core;
 
 public class PrimeRootRepository : IPrimeRootRepository
 {

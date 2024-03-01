@@ -1,8 +1,6 @@
-﻿
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace MilesAhead.Components;
+namespace MilesAhead.WireFrames.Core;
 
 public class RecursiveRootReader : IRecursiveRootReader
 {

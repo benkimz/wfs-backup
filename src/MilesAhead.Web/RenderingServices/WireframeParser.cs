@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 using Microsoft.AspNetCore.Components;
-using MilesAhead.Components;
+using MilesAhead.WireFrames.Core;
 
 namespace MilesAhead.Web;
 

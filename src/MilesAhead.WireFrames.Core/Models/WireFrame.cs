@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MilesAhead.Components;
+namespace MilesAhead.WireFrames.Core;
 
 public class WireFrame : BaseWireFrame
 {

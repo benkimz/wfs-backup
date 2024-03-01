@@ -1,4 +1,4 @@
-﻿namespace MilesAhead.Components;
+﻿namespace MilesAhead.WireFrames.Core;
 
 public interface IRecursiveRootReader
 {

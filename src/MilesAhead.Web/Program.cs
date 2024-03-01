@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using MilesAhead.Components;
+using MilesAhead.WireFrames.Core;
 using MilesAhead.Web;
 using MilesAhead.Web.Components;
 

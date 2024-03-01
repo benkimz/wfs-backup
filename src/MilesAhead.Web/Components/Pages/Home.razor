@@ -1,4 +1,20 @@
 ﻿@page "/"
+
+<Weather />
+
+@* <DynamicComponent Type="typeof(Weather)" /> *@
+
+@code {
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        Console.WriteLine($"Type Weather: {typeof(Weather)}");
+        Console.WriteLine($"Name Weather: {nameof(Weather)}");
+        Console.WriteLine($"Type -> GetType: {Type.GetType("MilesAhead.Web.Components.Pages.Weather")}");
+    }
+}
+
+@*
 @rendermode InteractiveServer
 @layout PlainLayout
 
@@ -7,36 +23,36 @@
 @inject IRecursiveRootReader RecursiveRootReader
 
 @code {
-    private PrimeRoot? Root { get; set; }
-    protected override async void OnInitialized()
-    {
-        base.OnInitialized();
-        Root = await RecursiveRootReader.BuildAsync("HomePrimeRoot");
-    }
+private PrimeRoot? Root { get; set; }
+protected override async void OnInitialized()
+{
+base.OnInitialized();
+Root = await RecursiveRootReader.BuildAsync("HomePrimeRoot");
+}
 }
 
 @if (Root is not null)
 {
-    @if (Root.PageTitle is not null)
-    {
-        <PageTitle>@Root.PageTitle</PageTitle>
-    }
-    <HeadContent>
-        @foreach (string css in Root.ExternalStyleSheets)
-        {
-            <link href="@css" rel="stylesheet" />
-        }
-        @foreach (string scriptUrl in Root.HeadScripts)
-        {
-            <script src="@scriptUrl" type="text/javascript"></script>
-        }
-    </HeadContent>
-
-    @WireframeParser.RenderWireFrame(Root)
-
-
-    @foreach (var script in Root.BodyScripts)
-    {
-        <script src="@script" type="text/javascript"></script>
-    }
+@if (Root.PageTitle is not null)
+{
+<PageTitle>@Root.PageTitle</PageTitle>
 }
+<HeadContent>
+@foreach (string css in Root.ExternalStyleSheets)
+{
+<link href="@css" rel="stylesheet" />
+}
+@foreach (string scriptUrl in Root.HeadScripts)
+{
+<script src="@scriptUrl" type="text/javascript"></script>
+}
+</HeadContent>
+
+@WireframeParser.RenderWireFrame(Root)
+
+
+@foreach (var script in Root.BodyScripts)
+{
+<script src="@script" type="text/javascript"></script>
+}
+} *@
