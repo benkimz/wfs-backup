@@ -1,7 +1,16 @@
 ﻿@page "/"
 @layout PlainLayout
-<Components.Repository.EduplanTemplate.Pages.HomePage />
 
+@code {
+    public Type component = typeof(eduplan.homekit.AboutSection);
+    public string? componentType { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        var dd = Type.GetType($"eduplan.homekit.AboutSection, Components.Repository");
+        Console.WriteLine("Type DD: " + dd);
+    }
+}
 
 
 @* <DynamicComponent Type="typeof(Weather)" /> *@

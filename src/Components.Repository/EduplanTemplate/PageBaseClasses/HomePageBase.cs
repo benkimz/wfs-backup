@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace Components.Repository;
+namespace eduplan;
 
 public class HomePageBase : ComponentBase
 {
