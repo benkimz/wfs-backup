@@ -12,7 +12,7 @@ using WireFrames.Core;
 namespace MilesAhead.Web.Migrations
 {
     [DbContext(typeof(WireFramesDbContext))]
-    [Migration("20240229164039_Alpha")]
+    [Migration("20240302170703_Alpha")]
     partial class Alpha
     {
         /// <inheritdoc />
@@ -26,7 +26,7 @@ namespace MilesAhead.Web.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("MilesAhead.Components.WireFrame", b =>
+            modelBuilder.Entity("WireFrames.Core.WireFrame", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -52,6 +52,9 @@ namespace MilesAhead.Web.Migrations
                     b.Property<string>("FetchData")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsBlazorComponent")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -76,9 +79,9 @@ namespace MilesAhead.Web.Migrations
                     b.UseTphMappingStrategy();
                 });
 
-            modelBuilder.Entity("MilesAhead.Components.PrimeRoot", b =>
+            modelBuilder.Entity("WireFrames.Core.PrimeRoot", b =>
                 {
-                    b.HasBaseType("MilesAhead.Components.WireFrame");
+                    b.HasBaseType("WireFrames.Core.WireFrame");
 
                     b.Property<string>("BodyScripts")
                         .IsRequired()
@@ -109,14 +112,14 @@ namespace MilesAhead.Web.Migrations
                     b.HasDiscriminator().HasValue("PrimeRoot");
                 });
 
-            modelBuilder.Entity("MilesAhead.Components.WireFrame", b =>
+            modelBuilder.Entity("WireFrames.Core.WireFrame", b =>
                 {
-                    b.HasOne("MilesAhead.Components.WireFrame", null)
+                    b.HasOne("WireFrames.Core.WireFrame", null)
                         .WithMany("Children")
                         .HasForeignKey("WireFrameId");
                 });
 
-            modelBuilder.Entity("MilesAhead.Components.WireFrame", b =>
+            modelBuilder.Entity("WireFrames.Core.WireFrame", b =>
                 {
                     b.Navigation("Children");
                 });

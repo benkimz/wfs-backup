@@ -30,6 +30,7 @@ namespace MilesAhead.Web.Migrations
                     BodyScripts = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Segment = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
+                    IsBlazorComponent = table.Column<bool>(type: "bit", nullable: false),
                     Attributes = table.Column<string>(type: "nvarchar(720)", maxLength: 720, nullable: true),
                     DataSource = table.Column<int>(type: "int", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
