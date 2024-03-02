@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 using Microsoft.AspNetCore.Components;
-using MilesAhead.WireFrames.Core;
+using WireFrames.Core;
 
 namespace MilesAhead.Web;
 
@@ -10,24 +10,56 @@ public class WireframeParser
     {
         return builder =>
         {
-            builder.OpenElement(0, wireFrame.Segment);
-            if (wireFrame.Attributes != null)
+            if (wireFrame.IsBlazorComponent == true)
             {
-                var attrs = ObjectFromJson(wireFrame.Attributes);
-                foreach (JsonProperty attr in attrs.RootElement.EnumerateObject())
+                Type? razorNodeType = ComponentType(wireFrame.Segment);
+                if (razorNodeType != null)
                 {
-                    builder.AddAttribute(1, attr.Name, attr.Value);
+                    builder.OpenComponent(0, razorNodeType);
+                    if (wireFrame.Attributes != null)
+                    {
+                        var attrs = ObjectFromJson(wireFrame.Attributes);
+                        foreach (JsonProperty attr in attrs.RootElement.EnumerateObject())
+                        {
+                            builder.AddAttribute(1, attr.Name, attr.Value);
+                        }
+                    }
+                    if (wireFrame.Content != null)
+                    {
+                        builder.AddContent(2, (MarkupString)(wireFrame.Content ?? string.Empty));
+                    }
+                    foreach (var child in wireFrame.Children)
+                    {
+                        builder.AddContent(3, RenderWireFrame(child));
+                    }
+                    builder.CloseComponent();
+                }
+                else
+                {
+                    Alert($"Component '{wireFrame.Segment}' not found");
                 }
             }
-            if (wireFrame.Content != null)
+            else
             {
-                builder.AddContent(2, (MarkupString)(wireFrame.Content ?? string.Empty));
+                builder.OpenElement(0, wireFrame.Segment);
+                if (wireFrame.Attributes != null)
+                {
+                    var attrs = ObjectFromJson(wireFrame.Attributes);
+                    foreach (JsonProperty attr in attrs.RootElement.EnumerateObject())
+                    {
+                        builder.AddAttribute(1, attr.Name, attr.Value);
+                    }
+                }
+                if (wireFrame.Content != null)
+                {
+                    builder.AddContent(2, (MarkupString)(wireFrame.Content ?? string.Empty));
+                }
+                foreach (var child in wireFrame.Children)
+                {
+                    builder.AddContent(3, RenderWireFrame(child));
+                }
+                builder.CloseComponent();
             }
-            foreach (var child in wireFrame.Children)
-            {
-                builder.AddContent(3, RenderWireFrame(child));
-            }
-            builder.CloseComponent();
         };
     }
 
@@ -40,4 +72,9 @@ public class WireframeParser
     {
         return JsonSerializer.Serialize(obj);
     }
+
+    private static Type? ComponentType(string segment) => Type.GetType($"{segment}, Components.Repository");
+
+    // ~ console alerts & warnings
+    public static void Alert(string message) => Console.WriteLine($"\n\n Warning: '{message}' << WireframeParser >> \n\n");
 }

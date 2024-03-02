@@ -1,36 +1,4 @@
 ﻿@page "/"
-@layout PlainLayout
-
-@code {
-    public Type component = typeof(eduplan.homekit.AboutSection);
-    public string? componentType { get; set; }
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        var dd = Type.GetType($"eduplan.homekit.AboutSection, Components.Repository");
-        Console.WriteLine("Type DD: " + dd);
-    }
-}
-
-
-@* <DynamicComponent Type="typeof(Weather)" /> *@
-
-@* @code {
-protected override void OnInitialized()
-{
-base.OnInitialized();
-Console.WriteLine($"Type Weather: {typeof(Weather)}");
-Console.WriteLine($"Name Weather: {nameof(Weather)}");
-Console.WriteLine($"Type -> GetType: {Type.GetType("MilesAhead.Web.Components.Pages.Weather")}");
-}
-} *@
-
-
-
-@* ----------------------------------- DO NOT ALTER ----------------------------*@
-
-
-@*
 @rendermode InteractiveServer
 @layout PlainLayout
 
@@ -39,36 +7,37 @@ Console.WriteLine($"Type -> GetType: {Type.GetType("MilesAhead.Web.Components.Pa
 @inject IRecursiveRootReader RecursiveRootReader
 
 @code {
-private PrimeRoot? Root { get; set; }
-protected override async void OnInitialized()
-{
-base.OnInitialized();
-Root = await RecursiveRootReader.BuildAsync("HomePrimeRoot");
-}
+    private PrimeRoot? Root { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        @* Root = await RecursiveRootReader.BuildAsync("HomePrimeRoot"); *@
+        Root = new HomeRoot().Build();
+    }
 }
 
 @if (Root is not null)
 {
-@if (Root.PageTitle is not null)
-{
-<PageTitle>@Root.PageTitle</PageTitle>
-}
-<HeadContent>
-@foreach (string css in Root.ExternalStyleSheets)
-{
-<link href="@css" rel="stylesheet" />
-}
-@foreach (string scriptUrl in Root.HeadScripts)
-{
-<script src="@scriptUrl" type="text/javascript"></script>
-}
-</HeadContent>
+    @if (Root.PageTitle is not null)
+    {
+        <PageTitle>@Root.PageTitle</PageTitle>
+    }
+    <HeadContent>
+        @foreach (string css in Root.ExternalStyleSheets)
+        {
+            <link href="@css" rel="stylesheet" />
+        }
+        @foreach (string scriptUrl in Root.HeadScripts)
+        {
+            <script src="@scriptUrl" type="text/javascript"></script>
+        }
+    </HeadContent>
 
-@WireframeParser.RenderWireFrame(Root)
+    @WireframeParser.RenderWireFrame(Root)
 
 
-@foreach (var script in Root.BodyScripts)
-{
-<script src="@script" type="text/javascript"></script>
+    @foreach (var script in Root.BodyScripts)
+    {
+        <script src="@script" type="text/javascript"></script>
+    }
 }
-} *@

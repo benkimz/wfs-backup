@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MilesAhead.WireFrames.Core;
+namespace WireFrames.Core;
 
 public class BaseWireFrame : IBaseWireFrame
 {
@@ -9,6 +9,7 @@ public class BaseWireFrame : IBaseWireFrame
     public string Name { get; set; } = "Dynamic Component";
     [MaxLength(64)]
     public string Segment { get; set; } = "div"; // target component or html element
+    public bool IsBlazorComponent { get; set; } = false; // is the segment a blazor component
     [MaxLength(720)]
     public string? Attributes { get; set; } // segment attributes as a JSON string
     public DataSource DataSource { get; set; } // data source

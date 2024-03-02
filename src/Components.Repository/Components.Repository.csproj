@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="EduplanTemplate/PageComponents/HomePageKit/BannerSection.razor" />
-    <Content Remove="EduplanTemplate/PageComponents/HomePageKit/SearchPopUp.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
 
@@ -20,26 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="EduplanTemplate/PageComponents/HomePageKit/SearchPopUp.razor" />
+    <ProjectReference Include="..\WireFrames.Core\WireFrames.Core.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="EduplanTemplate/PageComponents/HomePageKit/AboutSection.razor" />
-    <_ContentIncludedByDefault Remove="EduplanTemplate/PageComponents/HomePageKit/BannerSection.razor" />
-    <_ContentIncludedByDefault Remove="EduplanTemplate/PageComponents/HomePageKit/SearchPopUp.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="EduplanTemplate/PageComponents/HomePageKit/BannerSection.razor" />
-    <None Include="EduplanTemplate/PageComponents/HomePageKit/SearchPopUp.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="EduplanTemplate/PageComponents/HomePageKit/BannerSection.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="EduplanTemplate/PageComponents/HomePageKit/AboutSection.razor" />
-  </ItemGroup>
-
 </Project>

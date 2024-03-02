@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MilesAhead.WireFrames.Core\MilesAhead.WireFrames.Core.csproj" />
+    <ProjectReference Include="..\WireFrames.Core\WireFrames.Core.csproj" />
     <ProjectReference Include="..\Components.Repository\Components.Repository.csproj" />
   </ItemGroup>
 

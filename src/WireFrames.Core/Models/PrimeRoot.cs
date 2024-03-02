@@ -1,4 +1,4 @@
-﻿namespace MilesAhead.WireFrames.Core;
+﻿namespace WireFrames.Core;
 
 public class PrimeRoot : WireFrame
 {

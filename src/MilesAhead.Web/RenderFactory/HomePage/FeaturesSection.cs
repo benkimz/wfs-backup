@@ -1,4 +1,4 @@
-﻿using MilesAhead.WireFrames.Core;
+﻿using WireFrames.Core;
 
 namespace MilesAhead.Web;
 

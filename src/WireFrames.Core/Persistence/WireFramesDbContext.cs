@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace MilesAhead.WireFrames.Core;
+namespace WireFrames.Core;
 
 public class WireFramesDbContext : DbContext
 {

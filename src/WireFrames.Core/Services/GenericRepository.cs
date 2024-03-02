@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 
-namespace MilesAhead.WireFrames.Core;
+namespace WireFrames.Core;
 
 public class GenericRepository<T> : IGenericRepository<T> where T : class
 {
