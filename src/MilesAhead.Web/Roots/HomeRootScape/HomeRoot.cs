@@ -49,7 +49,7 @@ public class HomeRoot : RootBuildHelpers
                 Segment = "main",
                 Attributes = AsJson(new { @class = "page-wrapper" }),
                 Children = [
-                     new WireFrame{Name = "Top Navigation Bar", Segment = "eduplan.homekit.TopNavigationBar", IsBlazorComponent = true},
+                     new WireFrame{Name = "Top Navigation Bar", Segment = "eduplan.homekit.TopNavigationBar", IsBlazorComponent = true },
 
                         new WireFrame{Name = "Banner Section", Segment = "eduplan.homekit.BannerSection", IsBlazorComponent = true},
 
