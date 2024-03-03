@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using WireFrames.Core;
 
-namespace MilesAhead.Web;
+namespace wireframes.render.services;
 
 public class WireframeParser
 {

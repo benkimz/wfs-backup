@@ -1,4 +1,6 @@
-﻿namespace MilesAhead.Web;
+﻿using wireframes.render.services;
+
+namespace MilesAhead.Web;
 
 public class BaseBuilder
 {

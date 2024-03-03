@@ -8,10 +8,11 @@
 
 @code {
     private PrimeRoot? Root { get; set; }
-    protected override async void OnInitialized()
+    protected override void OnInitialized()
     {
         base.OnInitialized();
-        Root = await RecursiveRootReader.BuildAsync("HomeRoot"); // query with a unique identifier
+        @* Root = await RecursiveRootReader.BuildAsync("HomeRoot"); *@
+        Root = new HomeRoot().Build();
     }
 }
 
