@@ -17,4 +17,17 @@
   <ItemGroup>
     <ProjectReference Include="..\WireFrames.Core\WireFrames.Core.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WAboutSection/" />
+    <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WBannerSection/" />
+    <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WCategoriesSection/" />
+    <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WDestinationsArea/" />
+    <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WFaqSection/" />
+    <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WFeaturesSection/" />
+    <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WFeedbackSection/" />
+    <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WFooterSection/" />
+    <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WNewsSection/" />
+    <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WStepsSection/" />
+  </ItemGroup>
 </Project>

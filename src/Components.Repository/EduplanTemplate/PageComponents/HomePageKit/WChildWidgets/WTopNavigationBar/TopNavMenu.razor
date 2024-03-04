@@ -1,0 +1,46 @@
+﻿@using System.Text.Json;
+
+@namespace eduplan.homekit.topnav.widgets
+@inherits WireFrameBase
+
+<div class="collapse navbar-collapse" id="themeim_main_menu">
+    <ul class="navbar-nav">
+
+        @if (MenuItems is not null)
+        {
+            foreach (var item in MenuItems)
+            {
+                if (KeyExists(item.Value, "url"))
+                {
+                    <li class="menu-item-has-children @(item.Key == "home" ? "current-menu-item" : "")">
+                        <a href="@(() => ValueFromJson<string>(item.Value, "url"))">@(ToTitleCase(item.Key))</a>
+                        @if (KeyExists(item.Value, "subUrls"))
+                        {
+                            var subMenu = ValueFromJson<Dictionary<string, string>>(item.Value, "subUrls");
+                            if (subMenu is not null)
+                            {
+                                <ul class="sub-menu">
+                                    @foreach (var subItem in subMenu)
+                                    {
+                                        <li><a href="@subItem.Value">@subItem.Key</a></li>
+                                    }
+                                </ul>
+                            }
+                        }
+                    </li>
+                }
+            }
+        }
+    </ul>
+</div>
+
+@code {
+    [Parameter]
+    public Dictionary<string, JsonElement>? MenuItems { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Attributes == null) return;
+        MenuItems = CustomObjectFromJson<Dictionary<string, JsonElement>>(Attributes);
+    }
+}

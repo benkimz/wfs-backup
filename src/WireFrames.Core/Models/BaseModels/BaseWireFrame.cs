@@ -10,6 +10,7 @@ public class BaseWireFrame : IBaseWireFrame
     [MaxLength(64)]
     public string Segment { get; set; } = "div"; // target component or html element
     public bool IsBlazorComponent { get; set; } = false; // is the segment a blazor component
+    public bool IsVisible { get; set; } = true; // is the segment visible
     [MaxLength(720)]
     public string? Attributes { get; set; } // segment attributes as a JSON string
     public DataSource DataSource { get; set; } // data source

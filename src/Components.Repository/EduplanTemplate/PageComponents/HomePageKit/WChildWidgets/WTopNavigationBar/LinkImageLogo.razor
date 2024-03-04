@@ -1,0 +1,28 @@
+﻿@namespace eduplan.homekit.topnav.widgets
+@inherits WireFrameBase
+
+<div class="logo-wrapper">
+    <a href="@linkUrl" class="logo">
+        <img src="@imageUrl" alt="@alt">
+    </a>
+</div>
+
+@code {
+    [Parameter]
+    public string? linkUrl { get; set; }
+    [Parameter]
+    public string? imageUrl { get; set; }
+    [Parameter]
+    public string? alt { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Attributes == null) return;
+        var data = ObjectFromJson(Attributes);
+        if (data == null) return;
+        linkUrl = ValueFromJson<string>(data, "linkUrl");
+        imageUrl = ValueFromJson<string>(data, "imageUrl");
+        alt = ValueFromJson<string>(data, "alt");
+    }
+}

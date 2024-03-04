@@ -4,5 +4,4 @@ namespace eduplan.homekit;
 
 public class TopNavigationBarBase : WireFrameBase
 {
-
 }
