@@ -11,7 +11,8 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        Root = new HomePrimeRoot().Build();
+        @* Root = new HomePrimeRoot().Build(); *@
+        Root = new HomeRoot().Build();
         @* PrimeRootRepository.Add(Root).GetAwaiter().GetResult(); *@
     }
 }
