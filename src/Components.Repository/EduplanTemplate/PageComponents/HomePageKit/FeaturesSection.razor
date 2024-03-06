@@ -1,4 +1,6 @@
-﻿@namespace eduplan.homekit
+﻿@using wireframes.render.services
+
+@namespace eduplan.homekit
 @inherits eduplan.homekit.FeaturesSectionBase
 
 <section class="features-section margin-top-100">
@@ -6,54 +8,15 @@
         alt="graduation cap">
     <div class="container custom-container-01">
         <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="icon-box-item">
-                    <div class="icon">
-                        <img src="_content/Components.Repository/assets/eduplan/img/icon/idea.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h4 class="title">One Stop Study Solution</h4>
-                        <p>Get a full view so you know where to save. Track spending, deta keep tab subscription
-                            lorem ipsum text</p>
-                    </div>
-                    <div class="btn-wrap">
-                        <a href="#0" class="more-btn">Learn More <i class="fa-solid fa-angle-right icon"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="icon-box-item">
-                    <div class="icon">
-                        <img src="_content/Components.Repository/assets/eduplan/img/icon/coversation.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h4 class="title">One To One Discussion</h4>
-                        <p>Get a full view so you know where to save. Track spending, deta keep tab subscription
-                            lorem ipsum text</p>
-                    </div>
-                    <div class="btn-wrap">
-                        <a href="#0" class="more-btn">Learn More <i class="fa-solid fa-angle-right icon"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="icon-box-item">
-                    <div class="icon">
-                        <img src="_content/Components.Repository/assets/eduplan/img/icon/emergency.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h4 class="title">End To End Support</h4>
-                        <p>Get a full view so you know where to save. Track spending, deta keep tab subscription
-                            lorem ipsum text</p>
-                    </div>
-                    <div class="btn-wrap">
-                        <a href="#0" class="more-btn">Learn More <i class="fa-solid fa-angle-right icon"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            @if (Children != null)
+            {
+                var items = Children.FirstOrDefault(i => i.Segment == "eduplan.homekit.features.widgets.IconBoxItems");
+                if (items != null)
+                {
+                    @WireframeParser.RenderWireFrame(items)
+                    ;
+                }
+            }
         </div>
     </div>
 </section>

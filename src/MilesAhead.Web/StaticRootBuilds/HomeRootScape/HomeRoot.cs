@@ -53,7 +53,7 @@ public class HomeRoot : RootBuildHelpers
 
                     new Banner().Build(),
 
-                    new WireFrame{Name = "Features Section", Segment = "eduplan.homekit.FeaturesSection", IsBlazorComponent = true},
+                    new Features().Build(),
 
                     new WireFrame{Name = "Feedback Section", Segment = "eduplan.homekit.FeedbackSection", IsBlazorComponent = true},
 

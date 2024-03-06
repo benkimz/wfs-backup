@@ -1,0 +1,43 @@
+﻿@using System.Text.Json
+
+@namespace eduplan.homekit.features.widgets
+@inherits WireFrameBase
+
+@if (iconBoxItems is not null)
+{
+    foreach (var item in iconBoxItems)
+    {
+        JsonElement icon = ValueFromJson<JsonElement>(item, "icon"),
+        content = ValueFromJson<JsonElement>(item, "content"),
+        moreButton = ValueFromJson<JsonElement>(item, "moreButton");
+
+        <div class="col-lg-4 col-md-6">
+    <div class="icon-box-item">
+        <div class="icon">
+            <img src="@(ValueFromJson<string>(icon, "iconImageSrc"))"
+                alt="@(ValueFromJson<string>(icon, "iconImageAlt"))">
+        </div>
+        <div class="content">
+            <h4 class="title">@(ValueFromJson<string>(content, "title"))</h4>
+            <p>@((MarkupString)(ValueFromJson<string>(content, "description") ?? string.Empty))</p>
+        </div>
+        <div class="btn-wrap">
+            <a href="@(ValueFromJson<string>(moreButton, "targetUrl"))" class="more-btn">
+                @((MarkupString)(ValueFromJson<string>(moreButton, "buttonText") ?? string.Empty))
+            </a>
+        </div>
+    </div>
+</div>
+    }
+}
+
+@code {
+    [Parameter]
+    public List<JsonElement>? iconBoxItems { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Attributes == null) return;
+        iconBoxItems = CustomObjectFromJson<List<JsonElement>>(Attributes);
+    }
+}
