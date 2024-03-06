@@ -27,16 +27,22 @@
                 ;
             }
             <div class="nav-right-content">
-                <div class="icon-part">
-                    <ul>
-                        <li id="search"><a href="#"><img
-                                    src="_content/Components.Repository/assets/eduplan/img/icon/search-icon.png"
-                                    alt=""></a></li>
-                    </ul>
-                </div>
-                <div class="btn-wrap">
-                    <a href="#" class="btn-common nav-btn">Free consultation</a>
-                </div>
+                @if (Children != null)
+                {
+                    var search = Children.FirstOrDefault(x => x.Segment == "eduplan.homekit.topnav.widgets.SearchIcon");
+                    if (search is not null)
+                        @WireframeParser.RenderWireFrame(search)
+                    ;
+                }
+
+                @if (Children != null)
+                {
+                    var consultation = Children.FirstOrDefault(x => x.Segment ==
+                    "eduplan.homekit.topnav.widgets.ConsultationButton");
+                    if (consultation is not null)
+                        @WireframeParser.RenderWireFrame(consultation)
+                    ;
+                }
             </div>
         </div>
     </nav>

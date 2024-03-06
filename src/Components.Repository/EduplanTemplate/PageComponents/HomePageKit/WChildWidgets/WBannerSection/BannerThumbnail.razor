@@ -1,0 +1,26 @@
+﻿@using System.Text.Json
+
+@namespace eduplan.homekit.banner.widgets
+@inherits WireFrameBase
+
+<div class="thumbnail">
+    @if (thumbnailImages is not null)
+    {
+        foreach (var image in thumbnailImages)
+        {
+            <img src="@(ValueFromJson<string>(image, "src"))" class="@(ValueFromJson<string>(image, "class"))"
+                alt="@(ValueFromJson<string>(image, "alt"))">
+        }
+    }
+</div>
+
+@code {
+    [Parameter]
+    public List<JsonElement>? thumbnailImages { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Attributes == null) return;
+        thumbnailImages = CustomObjectFromJson<List<JsonElement>>(Attributes);
+    }
+}

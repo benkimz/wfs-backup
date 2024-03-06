@@ -1,0 +1,25 @@
+﻿@namespace eduplan.homekit.banner.widgets
+@inherits WireFrameBase
+
+<p class="subtitle">@((MarkupString)(subtitle ?? string.Empty))</p>
+<h1 class="title">@((MarkupString)(title ?? string.Empty))</h1>
+<p>@((MarkupString)(text ?? string.Empty))</p>
+
+@code {
+    [Parameter]
+    public string? title { get; set; }
+    [Parameter]
+    public string? subtitle { get; set; }
+    [Parameter]
+    public string? text { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Attributes == null) return;
+        var data = ObjectFromJson(Attributes);
+        if (data == null) return;
+        title = ValueFromJson<string>(data, "title");
+        subtitle = ValueFromJson<string>(data, "subtitle");
+        text = ValueFromJson<string>(data, "text");
+    }
+}

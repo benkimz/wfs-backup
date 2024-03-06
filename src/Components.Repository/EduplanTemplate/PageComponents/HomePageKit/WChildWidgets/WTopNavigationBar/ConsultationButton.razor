@@ -1,0 +1,22 @@
+﻿@namespace eduplan.homekit.topnav.widgets
+@inherits WireFrameBase
+
+<div class="btn-wrap">
+    <a href="@targetUrl" class="btn-common nav-btn">@((MarkupString)(buttonText ?? string.Empty))</a>
+</div>
+
+@code {
+    [Parameter]
+    public string? targetUrl { get; set; }
+    [Parameter]
+    public string? buttonText { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Attributes == null) return;
+        var data = ObjectFromJson(Attributes);
+        if (data == null) return;
+        targetUrl = ValueFromJson<string>(data, "targetUrl");
+        buttonText = ValueFromJson<string>(data, "buttonText");
+    }
+}

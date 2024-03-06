@@ -1,0 +1,27 @@
+﻿@namespace eduplan.homekit.topnav.widgets
+@inherits WireFrameBase
+
+<div class="icon-part">
+    <ul>
+        <li id="search"><a href="@targetUrl"><img src="@iconImageUrl" alt="@iconImageAlt"></a></li>
+    </ul>
+</div>
+
+@code {
+    [Parameter]
+    public string? targetUrl { get; set; }
+    [Parameter]
+    public string? iconImageUrl { get; set; }
+    [Parameter]
+    public string? iconImageAlt { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Attributes == null) return;
+        var data = ObjectFromJson(Attributes);
+        if (data == null) return;
+        targetUrl = ValueFromJson<string>(data, "targetUrl");
+        iconImageUrl = ValueFromJson<string>(data, "iconImageUrl");
+        iconImageAlt = ValueFromJson<string>(data, "iconImageAlt");
+    }
+}

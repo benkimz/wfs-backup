@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WAboutSection/" />
-    <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WBannerSection/" />
     <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WCategoriesSection/" />
     <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WDestinationsArea/" />
     <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WFaqSection/" />

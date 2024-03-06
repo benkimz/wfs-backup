@@ -1,0 +1,30 @@
+﻿@namespace eduplan.homekit.banner.widgets
+@inherits WireFrameBase
+
+<div class="header-btn">
+    @if (buttons is not null)
+    {
+        int i = 0;
+        foreach (var button in buttons)
+        {
+            int m = i * 20;
+            <div class="btn-wrap @(i > 0 ? $"margin-left-{m}" : "")">
+                <a href="@button.Value"
+                    class="btn-common @(i == 0 ? "flat-btn btn-active" : "fill-btn")">@((MarkupString)(button.Key))</a>
+            </div>
+            i++;
+        }
+    }
+</div>
+
+@code {
+    [Parameter]
+    public Dictionary<string, string>? buttons { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Attributes == null) return;
+        buttons = CustomObjectFromJson<Dictionary<string, string>>(Attributes);
+    }
+}
