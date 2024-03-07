@@ -1,0 +1,46 @@
+﻿@using System.Text.Json;
+
+@namespace eduplan.homekit.news.widgets
+@inherits WireFrameBase
+
+@if (blogGridItems is not null)
+{
+    foreach (var item in blogGridItems)
+    {
+        JsonElement image = ValueFromJson<JsonElement>(item, "image"),
+        content = ValueFromJson<JsonElement>(item, "content");
+
+        <div class="col-md-6 col-lg-4">
+    <div class="blog-grid-item">
+        <div class="thumbnail">
+            <img src="@(ValueFromJson<string>(image, "src"))" alt="@(ValueFromJson<string>(image, "alt"))"
+                class="@(ValueFromJson<string>(image, "class"))">
+        </div>
+        <div class="content">
+            <ul class="post-categories">
+                <li><img src="_content/Components.Repository/assets/eduplan/img/icon/calander.png"
+                        alt="">@(ValueFromJson<string>(content, "date"))
+                </li>
+                <li>@(ValueFromJson<string>(content, "time"))</li>
+            </ul>
+            <h4 class="title">@(ValueFromJson<string>(content, "title"))</h4>
+            <div class="btn-wrap">
+                <a href="@(ValueFromJson<string>(content, "link"))" class="more-btn">@(ValueFromJson<string>(content, "linkText")) <i
+                        class="fa-solid fa-angle-right icon"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+    }
+}
+
+@code {
+    [Parameter]
+    public List<JsonElement>? blogGridItems { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        blogGridItems = CustomObjectFromJson<List<JsonElement>>(Content);
+    }
+}

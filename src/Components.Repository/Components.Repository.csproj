@@ -22,6 +22,5 @@
     <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WCategoriesSection/" />
     <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WFaqSection/" />
     <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WFooterSection/" />
-    <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WNewsSection/" />
   </ItemGroup>
 </Project>
