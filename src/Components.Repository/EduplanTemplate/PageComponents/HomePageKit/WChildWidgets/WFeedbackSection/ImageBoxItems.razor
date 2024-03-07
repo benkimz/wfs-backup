@@ -1,0 +1,43 @@
+﻿@using System.Text.Json;
+
+@namespace eduplan.homekit.feedback.widgets
+@inherits WireFrameBase
+
+@if (imageBoxItems is not null)
+{
+    foreach (var item in imageBoxItems)
+    {
+        JsonElement image = ValueFromJson<JsonElement>(item, "image"),
+        playButton = ValueFromJson<JsonElement>(item, "playButton"),
+        content = ValueFromJson<JsonElement>(item, "content");
+
+        <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="image-box-item">
+        <div class="thumbnail">
+            <img src="@(ValueFromJson<string>(image, "src"))" alt="@(ValueFromJson<string>(image, "alt"))">
+            <a class="video-play-btn mfp-iframe" href="@(ValueFromJson<string>(playButton, "href"))">
+                <svg width="14" height="25" viewBox="0 0 14 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.124 12.6362L0.364909 24.7606L0.36491 0.511875L13.124 12.6362Z" fill="white" />
+                </svg>
+            </a>
+            <div class="content">
+                <h6 class="title">@(ValueFromJson<string>(content, "title"))</h6>
+                <p>@(ValueFromJson<string>(content, "description"))</p>
+            </div>
+        </div>
+    </div>
+</div>
+    }
+}
+
+
+@code {
+    [Parameter]
+    public List<JsonElement>? imageBoxItems { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        imageBoxItems = CustomObjectFromJson<List<JsonElement>>(Content);
+    }
+}

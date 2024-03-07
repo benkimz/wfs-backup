@@ -55,7 +55,7 @@ public class HomeRoot : RootBuildHelpers
 
                     new Features().Build(),
 
-                    new WireFrame{Name = "Feedback Section", Segment = "eduplan.homekit.FeedbackSection", IsBlazorComponent = true},
+                    new Feedback().Build(),
 
                     new WireFrame{Name = "Destinations Area", Segment = "eduplan.homekit.DestinationsArea", IsBlazorComponent = true},
 
