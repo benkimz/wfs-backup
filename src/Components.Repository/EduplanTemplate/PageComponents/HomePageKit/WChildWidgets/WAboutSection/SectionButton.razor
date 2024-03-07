@@ -1,0 +1,22 @@
+﻿@namespace eduplan.homekit.about.widgets
+@inherits WireFrameBase
+
+<div class="btn-wrap">
+    <a href="@targetUrl" class="btn-common fill-btn">@((MarkupString)(buttonText ?? string.Empty))</a>
+</div>
+
+@code {
+    [Parameter]
+    public string? targetUrl { get; set; }
+    [Parameter]
+    public string? buttonText { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        var data = ObjectFromJson(Content);
+        targetUrl = ValueFromJson<string>(data, "targetUrl");
+        buttonText = ValueFromJson<string>(data, "buttonText");
+    }
+}

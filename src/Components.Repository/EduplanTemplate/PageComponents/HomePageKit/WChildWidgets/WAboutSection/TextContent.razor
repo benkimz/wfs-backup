@@ -1,0 +1,32 @@
+﻿@namespace eduplan.homekit.about.widgets
+@inherits WireFrameBase
+
+<div class="about-content-wrap">
+    @if (paragraphs is not null)
+    {
+        foreach (var paragraph in paragraphs)
+        {
+            <p>@paragraph</p>
+        }
+    }
+    @if (core is not null)
+    {
+        <span class="core">@core</span>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string[]? paragraphs { get; set; }
+    [Parameter]
+    public string? core { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        var data = ObjectFromJson(Content);
+        if (data == null) return;
+        paragraphs = ValueFromJson<string[]>(data, "paragraphs");
+        core = ValueFromJson<string>(data, "core");
+    }
+}

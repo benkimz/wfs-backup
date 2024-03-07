@@ -1,0 +1,33 @@
+﻿@namespace eduplan.homekit.about.widgets
+@inherits WireFrameBase
+
+<div class="theme-section-title">
+    <span class="subtitle">@((MarkupString)(subtitle ?? string.Empty))</span>
+    <h4 class="title">@((MarkupString)(title ?? string.Empty))
+        <svg class="title-shape style-01" width="355" height="15" viewBox="0 0 355 15" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path class="path" d="M351.66 12.6362C187.865 -6.32755 49.6478 6.37132 3.41142 12.6362" stroke="#764AF1"
+                stroke-width="3" stroke-linecap="square" />
+            <path class="path" d="M351.66 13C187.865 -5.96378 49.6478 6.73509 3.41142 13" stroke="#764AF1"
+                stroke-width="3" stroke-linecap="square" />
+            <path class="path" d="M2.5 5.5C168.5 2.0001 280.5 -1.49994 352.5 8.49985" stroke="#FFC44E" stroke-width="3"
+                stroke-linecap="square" />
+        </svg>
+    </h4>
+</div>
+
+@code {
+    [Parameter]
+    public string? title { get; set; }
+    [Parameter]
+    public string? subtitle { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        var data = ObjectFromJson(Content);
+        if (data == null) return;
+        title = ValueFromJson<string>(data, "title");
+        subtitle = ValueFromJson<string>(data, "subtitle");
+    }
+}

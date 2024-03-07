@@ -1,0 +1,29 @@
+﻿@using System.Text.Json;
+
+@namespace eduplan.homekit.about.widgets
+@inherits WireFrameBase
+
+@if (counterUpItems is not null)
+{
+    foreach (var item in counterUpItems)
+    {
+        string? subtitle = ValueFromJson<string>(item, "subtitle"),
+        color = ValueFromJson<string>(item, "color"),
+        odoStyle = ValueFromJson<string>(item, "odoStyle"),
+        odoMeterData = ValueFromJson<string>(item, "odoMeterData"),
+        odoAreaTitle = ValueFromJson<string>(item, "odoAreaTitle");
+        <CounterUp subtitle="@subtitle" color="@color" odoStyle="@odoStyle" odoMeterData="@odoMeterData"
+    odoAreaTitle="@odoAreaTitle" />
+    }
+}
+
+@code {
+    [Parameter]
+    public List<JsonElement>? counterUpItems { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        counterUpItems = CustomObjectFromJson<List<JsonElement>>(Content);
+    }
+}

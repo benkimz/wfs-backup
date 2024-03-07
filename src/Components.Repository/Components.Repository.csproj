@@ -19,7 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WAboutSection/" />
     <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WCategoriesSection/" />
     <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WFaqSection/" />
     <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WFooterSection/" />

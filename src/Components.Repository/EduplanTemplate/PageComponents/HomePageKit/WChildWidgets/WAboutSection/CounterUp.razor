@@ -1,0 +1,29 @@
+﻿@namespace eduplan.homekit.about.widgets
+
+<div class="single-counterup @color">
+    <div class="content-wrap">
+        <div class="odo-area">
+            <h3 class="odometer odo-title @odoStyle" data-odometer-final="@odoMeterData">0</h3>
+            @if (odoAreaTitle != null)
+            {
+                <h3 class="title">@odoAreaTitle</h3>
+            }
+        </div>
+        <div class="content">
+            <h6 class="subtitle">@subtitle</h6>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string? subtitle { get; set; }
+    [Parameter]
+    public string? color { get; set; }
+    [Parameter]
+    public string? odoStyle { get; set; }
+    [Parameter]
+    public string? odoMeterData { get; set; }
+    [Parameter]
+    public string? odoAreaTitle { get; set; }
+}

@@ -1,0 +1,22 @@
+﻿@namespace eduplan.homekit.about.widgets
+@inherits WireFrameBase
+
+<div class="thumbnail">
+    <img src="@imageUrl" alt="@imageAlt">
+</div>
+
+@code {
+    [Parameter]
+    public string? imageUrl { get; set; }
+    [Parameter]
+    public string? imageAlt { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        var data = ObjectFromJson(Content);
+        imageUrl = ValueFromJson<string>(data, "imageUrl");
+        imageAlt = ValueFromJson<string>(data, "imageAlt");
+    }
+}
