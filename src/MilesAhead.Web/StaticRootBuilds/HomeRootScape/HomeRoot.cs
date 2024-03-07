@@ -61,9 +61,7 @@ public class HomeRoot : RootBuildHelpers
 
                     new About().Build(),
 
-                    new WireFrame{Name = "Banner Section", Segment = "eduplan.homekit.BannerSection", IsBlazorComponent = true},
-
-                    new WireFrame{Name = "Steps Section", Segment = "eduplan.homekit.StepsSection", IsBlazorComponent = true},
+                    new Steps().Build(),
 
                     new WireFrame{Name = "News Section", Segment = "eduplan.homekit.NewsSection", IsBlazorComponent = true},
 

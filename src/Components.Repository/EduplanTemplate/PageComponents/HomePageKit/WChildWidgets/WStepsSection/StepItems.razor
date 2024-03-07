@@ -1,0 +1,30 @@
+﻿@using System.Text.Json;
+
+@namespace eduplan.homekit.steps.widgets
+@inherits WireFrameBase
+
+@if (steps is not null)
+{
+    foreach (var step in steps)
+    {
+        string? imageUrl = ValueFromJson<string>(step, "imageUrl"),
+        caption = ValueFromJson<string>(step, "caption");
+        <div class="destination-single-item style-02">
+    <div class="thumbnail">
+        <img src="@imageUrl" alt="">
+    </div>
+    <h6 class="name">@((MarkupString)(caption ?? string.Empty))</h6>
+</div>
+    }
+}
+
+@code {
+    [Parameter]
+    public List<JsonElement>? steps { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        steps = CustomObjectFromJson<List<JsonElement>>(Content);
+    }
+}

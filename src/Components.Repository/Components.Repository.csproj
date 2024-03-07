@@ -23,6 +23,5 @@
     <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WFaqSection/" />
     <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WFooterSection/" />
     <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WNewsSection/" />
-    <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WStepsSection/" />
   </ItemGroup>
 </Project>
