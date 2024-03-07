@@ -14,13 +14,13 @@ public class Banner : RootBuildHelpers
                             new WireFrame{
                                 Name = "Banner Text",
                                 Segment = "eduplan.homekit.banner.widgets.BannerText",
-                                Attributes = AsJson(new { title = "Your <span>success</span> journey start with us!", subtitle = "SPECIAL OFFER FIRST CUSTOMER", text = "Eduplan Education Can Fulfil Your International Education Dream <br> As Per Your Best Fit with world top universities and collages." }),
+                                Content = AsJson(new { title = "Your <span>success</span> journey start with us!", subtitle = "SPECIAL OFFER FIRST CUSTOMER", text = "Eduplan Education Can Fulfil Your International Education Dream <br> As Per Your Best Fit with world top universities and collages." }),
                                 IsBlazorComponent = true
                             },
                             new WireFrame{
                                 Name = "Banner Buttons",
                                 Segment = "eduplan.homekit.banner.widgets.BannerButtons",
-                                Attributes = AsJson(new Dictionary<string, string>{
+                                Content = AsJson(new Dictionary<string, string>{
                                     {"apply online", "#0"},
                                     {"Discover", "contact.html"}
                                  }),
@@ -29,7 +29,7 @@ public class Banner : RootBuildHelpers
                             new WireFrame{
                                 Name="Banner Thumbnail",
                                 Segment = "eduplan.homekit.banner.widgets.BannerThumbnail",
-                                Attributes = AsJson(new List<object>{
+                                Content = AsJson(new List<object>{
                                     new {@class = "element-01", src = "_content/Components.Repository/assets/eduplan/img/shapes/Ellipse-01.png", alt = "Ellipse"},
                                     new {@class = "element-02", src = "_content/Components.Repository/assets/eduplan/img/shapes/Ellipse-02.png", alt = "Ellipse"},
                                     new {@class = "element-03", src = "_content/Components.Repository/assets/eduplan/img/shapes/Vector-15.png", alt = "vector"},

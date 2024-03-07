@@ -15,8 +15,8 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        if (Attributes == null) return;
-        var data = ObjectFromJson(Attributes);
+        if (Content == null) return;
+        var data = ObjectFromJson(Content);
         if (data == null) return;
         title = ValueFromJson<string>(data, "title");
         subtitle = ValueFromJson<string>(data, "subtitle");

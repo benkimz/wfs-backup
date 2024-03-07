@@ -20,7 +20,7 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        if (Attributes == null) return;
-        thumbnailImages = CustomObjectFromJson<List<JsonElement>>(Attributes);
+        if (Content == null) return;
+        thumbnailImages = CustomObjectFromJson<List<JsonElement>>(Content);
     }
 }

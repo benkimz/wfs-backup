@@ -24,7 +24,7 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        if (Attributes == null) return;
-        buttons = CustomObjectFromJson<Dictionary<string, string>>(Attributes);
+        if (Content == null) return;
+        buttons = CustomObjectFromJson<Dictionary<string, string>>(Content);
     }
 }
