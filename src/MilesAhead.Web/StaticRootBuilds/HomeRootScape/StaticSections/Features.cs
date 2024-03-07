@@ -14,7 +14,7 @@ public class Features : RootBuildHelpers
                             new WireFrame{
                                 Name = "Features Icon Box Items",
                                 Segment = "eduplan.homekit.features.widgets.IconBoxItems",
-                                Attributes = AsJson(new List<object>{
+                                Content = AsJson(new List<object>{
                                     new {
                                         icon = new {
                                             iconImageSrc = "_content/Components.Repository/assets/eduplan/img/icon/idea.png",

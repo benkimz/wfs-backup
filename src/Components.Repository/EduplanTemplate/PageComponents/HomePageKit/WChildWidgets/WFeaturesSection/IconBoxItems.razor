@@ -37,7 +37,7 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        if (Attributes == null) return;
-        iconBoxItems = CustomObjectFromJson<List<JsonElement>>(Attributes);
+        if (Content == null) return;
+        iconBoxItems = CustomObjectFromJson<List<JsonElement>>(Content);
     }
 }
