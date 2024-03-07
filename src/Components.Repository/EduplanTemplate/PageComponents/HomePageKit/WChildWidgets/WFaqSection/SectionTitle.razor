@@ -1,0 +1,23 @@
+﻿@namespace eduplan.homekit.faqs.widgets
+@inherits WireFrameBase
+
+<div class="theme-section-title">
+    <span class="subtitle">@((MarkupString)(subtitle ?? string.Empty))</span>
+    <h4 class="title">@((MarkupString)(title ?? string.Empty))</h4>
+</div>
+
+@code {
+    [Parameter]
+    public string? title { get; set; }
+    [Parameter]
+    public string? subtitle { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        var data = ObjectFromJson(Content);
+        if (data == null) return;
+        title = ValueFromJson<string>(data, "title");
+        subtitle = ValueFromJson<string>(data, "subtitle");
+    }
+}

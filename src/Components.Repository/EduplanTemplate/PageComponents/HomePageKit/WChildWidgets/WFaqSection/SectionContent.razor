@@ -1,0 +1,27 @@
+﻿@namespace eduplan.homekit.faqs.widgets
+@inherits WireFrameBase
+
+<div class="faq-content">
+    <h6 class="subtitle">@((MarkupString)(subtitle ?? string.Empty))</h6>
+    <div class="btn-wrap">
+        <a href="@btnLink" class="btn-common flat-btn">@((MarkupString)(btnText ?? string.Empty))</a>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string? subtitle { get; set; }
+    [Parameter]
+    public string? btnText { get; set; }
+    [Parameter]
+    public string? btnLink { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        var data = ObjectFromJson(Content);
+        subtitle = ValueFromJson<string>(data, "subtitle");
+        btnText = ValueFromJson<string>(data, "btnText");
+        btnLink = ValueFromJson<string>(data, "btnLink");
+    }
+}

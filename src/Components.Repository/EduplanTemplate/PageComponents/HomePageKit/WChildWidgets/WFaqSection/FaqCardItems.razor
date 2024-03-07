@@ -1,0 +1,43 @@
+﻿@using System.Text.Json;
+
+@namespace eduplan.homekit.faqs.widgets
+@inherits WireFrameBase
+
+@if (faqCardItems is not null)
+{
+    foreach (var item in faqCardItems)
+    {
+        string? question = ValueFromJson<string>(item, "question"),
+        answer = ValueFromJson<string>(item, "answer"),
+        collapseTarget = ValueFromJson<string>(item, "collapseTarget"),
+        heading = ValueFromJson<string>(item, "heading");
+
+        <div class="card">
+    <div class="card-header" id="@heading">
+        <h5 class="mb-0">
+            <a class="collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#@collapseTarget"
+                aria-expanded="false" aria-controls="@collapseTarget">
+                @((MarkupString)(question ?? string.Empty))
+            </a>
+        </h5>
+    </div>
+    <div id="@collapseTarget" class="collapse" data-bs-parent="#accordionOne">
+        <div class="card-body">
+            @((MarkupString)(answer ?? string.Empty))
+        </div>
+    </div>
+</div>
+    }
+}
+
+
+@code {
+    [Parameter]
+    public List<JsonElement>? faqCardItems { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        faqCardItems = CustomObjectFromJson<List<JsonElement>>(Content);
+    }
+}
