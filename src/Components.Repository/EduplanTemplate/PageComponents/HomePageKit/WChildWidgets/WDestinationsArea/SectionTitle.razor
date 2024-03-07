@@ -1,0 +1,24 @@
+﻿@namespace eduplan.homekit.destinations.widgets
+@inherits WireFrameBase
+
+<div class="theme-section-title desktop-center text-center">
+    <h4 class="title">@((MarkupString)(title ?? string.Empty))</h4>
+    <p>
+        @((MarkupString)(description ?? string.Empty))
+    </p>
+</div>
+
+@code {
+    [Parameter]
+    public string? title { get; set; }
+    [Parameter]
+    public string? description { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        var data = ObjectFromJson(Content);
+        title = ValueFromJson<string>(data, "title");
+        description = ValueFromJson<string>(data, "description");
+    }
+}

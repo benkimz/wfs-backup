@@ -1,0 +1,28 @@
+﻿@using System.Text.Json;
+
+@namespace eduplan.homekit.destinations.widgets
+@inherits WireFrameBase
+
+@if (destinations is not null)
+{
+    foreach (var dest in destinations)
+    {
+        <div class="destination-single-item">
+    <div class="thumbnail">
+        <img src="@(ValueFromJson<string>(dest, "image"))" alt="@(ValueFromJson<string>(dest, "name"))">
+    </div>
+    <h6 class="name">@(ValueFromJson<string>(dest, "name"))</h6>
+</div>
+    }
+}
+
+@code {
+    [Parameter]
+    public List<JsonElement>? destinations { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        destinations = CustomObjectFromJson<List<JsonElement>>(Content);
+    }
+}

@@ -1,0 +1,23 @@
+﻿@namespace eduplan.homekit.destinations.widgets
+@inherits WireFrameBase
+
+<img src="_content/Components.Repository/assets/eduplan/img/shapes/mountant.png"
+    class="shape-01 wow animate__animated animate__delay-1s animate__fadeInUp" alt="mountant">
+<div class="plane-wrap">
+    <img src="_content/Components.Repository/assets/eduplan/img/shapes/plane.png" class="shape-02" alt="mountant">
+</div>
+
+@code {
+    [Parameter]
+    public string? backgroundImage { get; set; }
+    [Parameter]
+    public string? planeImageUrl { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        var data = ObjectFromJson(Content);
+        backgroundImage = ValueFromJson<string>(data, "backgroundImage");
+        planeImageUrl = ValueFromJson<string>(data, "planeImageUrl");
+    }
+}
