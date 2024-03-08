@@ -2,9 +2,9 @@
 @rendermode InteractiveServer
 @layout PlainLayout
 
-@inject WireframeParser WireframeParser
 @inject IJSRuntime JSRuntime
-@* @inject IPrimeRootRepository PrimeRootRepository *@
+@inject IPrimeRootRepository PrimeRootRepository
+@inject IRecursiveRootReader RecursiveRootReader
 
 @code {
     private PrimeRoot? Root { get; set; }
@@ -12,7 +12,23 @@
     {
         base.OnInitialized();
         @* Root = new HomePrimeRoot().Build(); *@
-        Root = new HomeRoot().Build();
+        @* Root = await PrimeRootRepository.Add(rt);
+if (Root != null)
+{
+string? AsJson<T>(T obj)
+{
+return System.Text.Json.JsonSerializer.Serialize(obj);
+}
+var t = AsJson(Root);
+Console.WriteLine($"\n\n Root: {Root.Guid.ToString()} {t} \n\n");
+WireframeParser.CapturePrimeRootId("home", Root.Guid.ToString());
+var d = await RecursiveRootReader.BuildAsync(WireframeParser.GetPrimeRootId("home"));
+Console.WriteLine($"\n\n RecursiveRootReader: {d} \n\n");
+}
+else
+{
+Console.WriteLine("\n\n >> Root is null \n\n");
+} *@
         @* PrimeRootRepository.Add(Root).GetAwaiter().GetResult(); *@
     }
 }

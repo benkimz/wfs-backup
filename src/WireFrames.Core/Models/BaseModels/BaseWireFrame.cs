@@ -6,7 +6,7 @@ public class BaseWireFrame : IBaseWireFrame
 {
     public int Id { get; set; }
     [MaxLength(255)]
-    public string Name { get; set; } = "Dynamic Component";
+    public string Name { get; set; } = "WireFrame Component";
     [MaxLength(64)]
     public string Segment { get; set; } = "div"; // target component or html element
     public bool IsBlazorComponent { get; set; } = false; // is the segment a blazor component

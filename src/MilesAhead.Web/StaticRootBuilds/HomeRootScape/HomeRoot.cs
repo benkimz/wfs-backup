@@ -4,7 +4,7 @@ namespace MilesAhead.Web;
 
 public class HomeRoot : RootBuildHelpers
 {
-    private PrimeRoot Root { get; set; } = new PrimeRoot { RootName = nameof(HomeRoot) };
+    private PrimeRoot Root { get; set; } = new PrimeRoot();
 
     public PrimeRoot Build()
     {
@@ -35,7 +35,7 @@ public class HomeRoot : RootBuildHelpers
             "_content/Components.Repository/assets/eduplan/js/main.js"
         ]);
 
-        WireFrame RootBody = new WireFrame { Name = $"{Root.RootName} Body", Segment = "body" };
+        WireFrame RootBody = new WireFrame { Name = $"{nameof(HomeRoot)} Body", Segment = "body" };
 
         RootBody.Children.AddRange([
             new WireFrame{Name = "Page Preloader", Segment = "eduplan.shared.PreLoader", IsBlazorComponent = true},

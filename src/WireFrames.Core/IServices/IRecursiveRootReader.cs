@@ -2,5 +2,5 @@
 
 public interface IRecursiveRootReader
 {
-    Task<PrimeRoot?> BuildAsync(string rootName);
+    Task<PrimeRoot?> BuildAsync(string rootGuid);
 }

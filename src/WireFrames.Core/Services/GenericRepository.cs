@@ -20,9 +20,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         if (result.State == EntityState.Added)
         {
             await _context.SaveChangesAsync();
-            entity = result.Entity;
-            _context.Entry(entity).State = EntityState.Detached;
-            return entity;
+            return result.Entity;
         }
         return null;
     }

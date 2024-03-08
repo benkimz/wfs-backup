@@ -91,4 +91,43 @@ public class WireframeParser
 
     // ~ console alerts & warnings
     public static void Alert(string message) => Console.WriteLine($"\n\n Warning: '{message}' << WireframeParser >> \n\n");
+
+
+    // ~ critical - methods: required for a correct page retrieval
+
+    // ~ helper method to prepare a target configuration file
+    private static string ValidatePrimeRootsConfigFile()
+    {
+        string root = Path.Combine(Directory.GetCurrentDirectory(), "PrimeRoots"),
+        path = Path.Combine(root, "config.json");
+
+        if (!Directory.Exists(root)) Directory.CreateDirectory(root);
+
+        if (!File.Exists(path))
+        {
+            File.Create(path).Close();
+            File.WriteAllText(path, "{}");
+        }
+        return path;
+    }
+    // ~ helper method to capture a root id on an accessible configuration file
+    public static void CapturePrimeRootId(string property, string value)
+    {
+        string path = ValidatePrimeRootsConfigFile();
+
+        var data = CustomObjectFromJson<Dictionary<string, object>>(File.ReadAllText(path));
+        if (data != null) data[property] = value;
+
+        File.WriteAllText(path, JsonFromObject(data));
+    }
+    // ~ helper method to retrieve a root id from an accessible configuration file
+    public static string? GetPrimeRootId(string property)
+    {
+        string path = ValidatePrimeRootsConfigFile();
+
+        var data = CustomObjectFromJson<Dictionary<string, object>>(File.ReadAllText(path));
+        if (data != null && data.ContainsKey(property)) return data[property].ToString();
+        return null;
+    }
+
 }

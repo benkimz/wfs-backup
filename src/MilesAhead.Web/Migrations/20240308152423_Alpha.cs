@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -22,7 +23,7 @@ namespace MilesAhead.Web.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Discriminator = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
                     WireFrameId = table.Column<int>(type: "int", nullable: true),
-                    RootName = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Guid = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     PageTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FaviconUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ExternalStyleSheets = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -31,6 +32,7 @@ namespace MilesAhead.Web.Migrations
                     Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Segment = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     IsBlazorComponent = table.Column<bool>(type: "bit", nullable: false),
+                    IsVisible = table.Column<bool>(type: "bit", nullable: false),
                     Attributes = table.Column<string>(type: "nvarchar(720)", maxLength: 720, nullable: true),
                     DataSource = table.Column<int>(type: "int", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -46,14 +48,6 @@ namespace MilesAhead.Web.Migrations
                         principalTable: "WireFrames",
                         principalColumn: "Id");
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_WireFrames_RootName",
-                schema: "render",
-                table: "WireFrames",
-                column: "RootName",
-                unique: true,
-                filter: "[RootName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_WireFrames_WireFrameId",

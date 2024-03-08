@@ -10,9 +10,6 @@ public class WireFramesDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.HasDefaultSchema("render");
-        modelBuilder.Entity<PrimeRoot>()
-            .HasIndex(e => e.RootName)
-            .IsUnique();
     }
     public DbSet<PrimeRoot> PrimeRoots { get; set; }
     public DbSet<WireFrame> WireFrames { get; set; }

@@ -11,7 +11,7 @@ public class RecursiveRootReader : IRecursiveRootReader
         _context = context;
     }
 
-    public Task<PrimeRoot?> BuildAsync(string rootName)
+    public Task<PrimeRoot?> BuildAsync(string rootGuid)
     {
         var nodes = _context.WireFrames.FromSqlRaw(@"
                         WITH tree AS (
@@ -20,7 +20,7 @@ public class RecursiveRootReader : IRecursiveRootReader
                             FROM 
                                 render.WireFrames AS wf
                             WHERE 
-                                wf.Discriminator = 'PrimeRoot' AND wf.RootName = {0}
+                                wf.Discriminator = 'PrimeRoot' AND wf.Guid = {0}
 
                             UNION ALL
 
@@ -31,11 +31,11 @@ public class RecursiveRootReader : IRecursiveRootReader
                             INNER JOIN 
                                 tree ON wf.WireFrameId = tree.Id
                         )
-                        SELECT * FROM tree", rootName).ToList();
+                        SELECT * FROM tree", rootGuid).ToList();
 
         var root = nodes.FirstOrDefault() as PrimeRoot;
         var rootinfo = _context.PrimeRoots
-                .Where(r => r.RootName == rootName)
+                .Where(r => r.Guid.ToString() == rootGuid)
                 .Select(r => new { PageTitle = r.PageTitle, FaviconUrl = r.FaviconUrl, ExternalStyleSheets = r.ExternalStyleSheets, HeadScripts = r.HeadScripts, BodyScripts = r.BodyScripts })
                 .FirstOrDefault();
         if (rootinfo != null && root != null)

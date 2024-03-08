@@ -12,7 +12,7 @@ using WireFrames.Core;
 namespace MilesAhead.Web.Migrations
 {
     [DbContext(typeof(WireFramesDbContext))]
-    [Migration("20240302170703_Alpha")]
+    [Migration("20240308152423_Alpha")]
     partial class Alpha
     {
         /// <inheritdoc />
@@ -55,6 +55,9 @@ namespace MilesAhead.Web.Migrations
                     b.Property<bool>("IsBlazorComponent")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsVisible")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -94,20 +97,15 @@ namespace MilesAhead.Web.Migrations
                     b.Property<string>("FaviconUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("Guid")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("HeadScripts")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PageTitle")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RootName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasIndex("RootName")
-                        .IsUnique()
-                        .HasFilter("[RootName] IS NOT NULL");
 
                     b.HasDiscriminator().HasValue("PrimeRoot");
                 });
