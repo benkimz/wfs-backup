@@ -1,0 +1,48 @@
+﻿@using System.Text.Json;
+
+@namespace eduplan.homekit.footer.widgets
+@inherits WireFrameBase
+
+<div class="copyright-area">
+    <div class="container custom-container-01">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="copyright-area-inner">
+                    <p>© @DateTime.UtcNow.ToString("yyyy") @((MarkupString)(headline ?? ""))
+                        <span>@((MarkupString)(developer ?? ""))</span>
+                    </p>
+                    <div class="footer-social-area">
+                        <ul class="social-icon-02">
+                            @if (socials != null)
+                            {
+                                foreach (var social in socials)
+                                {
+                                    <li><a href="@social.Value"><i class="@social.Key"></i></a></li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string? headline { get; set; }
+    [Parameter]
+    public string? developer { get; set; }
+    [Parameter]
+    public Dictionary<string, string>? socials { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        var data = ObjectFromJson(Content);
+        if (data == null) return;
+        headline = ValueFromJson<string>(data, "headline");
+        developer = ValueFromJson<string>(data, "developer");
+        socials = ValueFromJson<Dictionary<string, string>>(data, "socials");
+    }
+}

@@ -67,7 +67,7 @@ public class HomeRoot : RootBuildHelpers
 
                     new FAQs().Build(),
 
-                    new WireFrame{Name = "Footer Section", Segment = "eduplan.homekit.FooterSection", IsBlazorComponent = true},
+                    new Footer().Build()
                 ]
             },
         ]);

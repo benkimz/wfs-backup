@@ -1,0 +1,84 @@
+﻿@using System.Text.Json;
+
+@namespace eduplan.homekit.footer.widgets
+@inherits WireFrameBase
+
+
+@if (footerMenus is not null)
+{
+    foreach (var menu in footerMenus)
+    {
+        string? menuTitle = ValueFromJson<string>(menu, "menuTitle"), cssClass = ValueFromJson<string>(menu, "class");
+        List<JsonElement>? links = ValueFromJson<List<JsonElement>>(menu, "links");
+
+        <div class="@cssClass">
+    <div class="footer-widget widget widget_nav_menu">
+        <h4 class="widget-headline">@((MarkupString)(menuTitle ?? string.Empty))</h4>
+        <ul>
+            @if (links != null)
+                    {
+                        foreach (var link in links)
+                        {
+                            <li><a href="@(ValueFromJson<string>(link, "url"))">@((MarkupString)(ValueFromJson<string>(link,
+                    "title") ?? string.Empty))</a></li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+}
+
+@if (location is not null)
+{
+
+    string? cssClass = ValueFromJson<string>(location, "class"),
+    address = ValueFromJson<string>(location, "address"),
+    icon = ValueFromJson<string>(location, "icon");
+    List<JsonElement>? logos = ValueFromJson<List<JsonElement>>(location, "logos");
+
+    <div class="@cssClass">
+    <div class="footer-widget widget widget_nav_menu">
+        <h4 class="widget-headline">Location</h4>
+        <ul class="contact_info_list">
+            <li class="single-info-item">
+                <div class="icon">
+                    <img src="@icon" alt="Location Pin Icon">
+                </div>
+                <div class="details">
+                    @((MarkupString)(address ?? string.Empty))
+                </div>
+            </li>
+            <li class="single-info-item">
+                @if (logos != null)
+                    {
+                        int i = 0;
+                        foreach (var logo in logos)
+                        {
+                            <div class="icon @(i==0?"me-4":"")">
+                                <img src="@(ValueFromJson<string>(logo, "src"))" alt="@(ValueFromJson<string>(logo, "alt"))">
+                            </div>
+                            i++;
+                        }
+                    }
+                </li>
+            </ul>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public List<JsonElement>? footerMenus { get; set; }
+    [Parameter]
+    public JsonDocument? location { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        var data = ObjectFromJson(Content);
+        if (data == null) return;
+        footerMenus = ValueFromJson<List<JsonElement>>(data, "footerMenus");
+        location = ValueFromJson<JsonDocument>(data, "location");
+    }
+}

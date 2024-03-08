@@ -1,0 +1,61 @@
+﻿@using System.Text.Json;
+
+@namespace eduplan.homekit.footer.widgets
+@inherits WireFrameBase
+
+<div class="footer-widget widget widget_subscribe">
+    <div class="subscibe-wrapper">
+        <div class="content-wrap">
+            <div class="icon">
+                <img src="@iconImage" alt="">
+            </div>
+            <div class="content">
+                <h4 class="title">@((MarkupString)(title ?? string.Empty))</h4>
+                <p>
+                    @((MarkupString)(prompt ?? string.Empty))
+                </p>
+            </div>
+
+        </div>
+        <div class="subscribe-form">
+            <div class="form-group">
+                <input type="text" name="fname" placeholder="Enter your Email..." class="form-control" required=""
+                    aria-required="true">
+                <div class="btn-wrap">
+                    <a href="@buttonLink" class="subscribe-btn">
+                        <img src="buttonIcon" alt="">
+                        @((MarkupString)(buttonText ?? string.Empty))
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string? iconImage { get; set; }
+    [Parameter]
+    public string? title { get; set; }
+    [Parameter]
+    public string? prompt { get; set; }
+    [Parameter]
+    public string? buttonText { get; set; }
+    [Parameter]
+    public string? buttonLink { get; set; }
+    [Parameter]
+    public string? buttonIcon { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        var data = ObjectFromJson(Content);
+        if (data == null) return;
+        iconImage = ValueFromJson<string>(data, "iconImage");
+        title = ValueFromJson<string>(data, "title");
+        prompt = ValueFromJson<string>(data, "prompt");
+        buttonText = ValueFromJson<string>(data, "buttonText");
+        buttonLink = ValueFromJson<string>(data, "buttonLink");
+        buttonIcon = ValueFromJson<string>(data, "buttonIcon");
+    }
+}
