@@ -61,6 +61,8 @@ public class HomeRoot : RootBuildHelpers
 
                     new About().Build(),
 
+                    new Categories().Build(),
+
                     new Steps().Build(),
 
                     new News().Build(),

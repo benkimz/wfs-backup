@@ -1,0 +1,46 @@
+﻿@using System.Text.Json;
+
+@namespace eduplan.homekit.categories.widgets
+@inherits WireFrameBase
+
+@if (tabs is not null)
+{
+    int i = 0;
+    foreach (var tab in tabs)
+    {
+        string? tabId = ValueFromJson<string>(tab, "tabId");
+        List<JsonElement>? tabItems = ValueFromJson<List<JsonElement>>(tab, "tabItems");
+
+        <div class="tab-pane fade @(i==0?"show active":"")" id="@tabId">
+    <div class="destination-items-wrap">
+        @if (tabItems != null)
+                {
+                    foreach (var tabItem in tabItems)
+                    {
+                        string? thumbnail = ValueFromJson<string>(tabItem, "thumbnail"),
+                        name = ValueFromJson<string>(tabItem, "name");
+
+                        <div class="destination-single-item style-01">
+                            <div class="thumbnail">
+                                <img src="@thumbnail" alt="">
+                            </div>
+                            <h6 class="name">@((MarkupString)(name ?? ""))</h6>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        i++;
+    }
+}
+
+@code {
+    [Parameter]
+    public List<JsonDocument>? tabs { get; set; }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (Content == null) return;
+        tabs = CustomObjectFromJson<List<JsonDocument>>(Content);
+    }
+}

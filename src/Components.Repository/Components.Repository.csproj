@@ -17,8 +17,4 @@
   <ItemGroup>
     <ProjectReference Include="..\WireFrames.Core\WireFrames.Core.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="EduplanTemplate/PageComponents/HomePageKit/WChildWidgets/WCategoriesSection/" />
-  </ItemGroup>
 </Project>
