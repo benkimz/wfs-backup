@@ -1,4 +1,6 @@
-﻿@json
+﻿<pre style="word-wrap: break-word; white-space: pre-wrap;">
+    @json
+</pre>
 
 @code {
     [Parameter]
@@ -13,7 +15,9 @@
 
         if (response.IsSuccessStatusCode)
         {
-            json = await response.Content.ReadAsStringAsync();
+            var result = await response.Content.ReadAsStringAsync();
+            json = result.ToString();
         }
     }
+
 }

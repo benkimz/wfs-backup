@@ -17,7 +17,6 @@ builder.Services.AddTransient<IPrimeRootRepository, PrimeRootRepository>();
 builder.Services.AddTransient<IRecursiveRootReader, RecursiveRootReader>();
 builder.Services.AddScoped<WireFramesRepository>();
 builder.Services.AddScoped<PrimeRootRepository>();
-// ~ benkimz: end of custom services
 
 var app = builder.Build();
 
