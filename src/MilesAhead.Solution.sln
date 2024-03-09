@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Components.Repository", "Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WireFrames.Core", "WireFrames.Core\WireFrames.Core.csproj", "{BBECDD2D-521D-4502-9FF0-8294CF94E01A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WireFrames.API", "WireFrames.API\WireFrames.API.csproj", "{AF269727-96BF-4016-8251-792CC58A3CE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{BBECDD2D-521D-4502-9FF0-8294CF94E01A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBECDD2D-521D-4502-9FF0-8294CF94E01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBECDD2D-521D-4502-9FF0-8294CF94E01A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF269727-96BF-4016-8251-792CC58A3CE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF269727-96BF-4016-8251-792CC58A3CE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF269727-96BF-4016-8251-792CC58A3CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF269727-96BF-4016-8251-792CC58A3CE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

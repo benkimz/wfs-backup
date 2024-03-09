@@ -1,0 +1,14 @@
+@WireFrames.API_HostAddress = http://localhost:5123
+
+GET {{WireFrames.API_HostAddress}}/wfs/
+Accept: application/json
+
+###
+
+POST {{WireFrames.API_HostAddress}}/wfs/
+Accept: application/json
+
+###
+
+GET {{WireFrames.API_HostAddress}}/prs/
+Accept: application/json
