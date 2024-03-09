@@ -66,7 +66,7 @@ app.MapPut("/wfs", async ([FromBody] WireFrame wireFrame) =>
 .WithName("UpdateWireFrame")
 .WithOpenApi();
 
-app.MapGet("/prs{id}", (int id) =>
+app.MapGet("/prs/{id}", (int id) =>
 {
     using (var serviceScope = app.Services.CreateScope())
     {

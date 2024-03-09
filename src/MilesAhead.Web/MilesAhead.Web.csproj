@@ -17,5 +17,4 @@
     <ProjectReference Include="..\WireFrames.Core\WireFrames.Core.csproj" />
     <ProjectReference Include="..\Components.Repository\Components.Repository.csproj" />
   </ItemGroup>
-
 </Project>
