@@ -6,6 +6,9 @@
 @inject IPrimeRootRepository PrimeRootRepository
 @inject IRecursiveRootReader RecursiveRootReader
 
+
+<Components.Repository.SharedComponents.FetchAsJsonView url="http://localhost:5123/wfs/2" />
+
 @code {
     private PrimeRoot? Root { get; set; }
     protected override void OnInitialized()

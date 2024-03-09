@@ -4,7 +4,7 @@ namespace WireFrames.Core;
 
 public class WireFrame : BaseWireFrame
 {
-    public virtual List<WireFrame> Children { get; set; } = [];
+    public List<WireFrame> Children { get; set; } = [];
 
     public void AddChild(WireFrame child) => Children.Add(child);
     public void RemoveChild(WireFrame child) => Children.Remove(child);
