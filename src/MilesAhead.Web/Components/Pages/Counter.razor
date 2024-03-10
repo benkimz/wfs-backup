@@ -4,7 +4,7 @@
 
 @inject IJSRuntime JSRuntime
 @inject IPrimeRootRepository PrimeRootRepository
-@inject IRecursiveRootReader RecursiveRootReader
+@inject IRecursiveReader RecursiveReader
 
 
 <Components.Repository.SharedComponents.JsonResultsView url="http://localhost:5123/wfs/3" />
@@ -25,8 +25,8 @@ return System.Text.Json.JsonSerializer.Serialize(obj);
 var t = AsJson(Root);
 Console.WriteLine($"\n\n Root: {Root.Guid.ToString()} {t} \n\n");
 WireframeParser.CapturePrimeRootId("home", Root.Guid.ToString());
-var d = await RecursiveRootReader.BuildAsync(WireframeParser.GetPrimeRootId("home"));
-Console.WriteLine($"\n\n RecursiveRootReader: {d} \n\n");
+var d = await RecursiveReader.BuildAsync(WireframeParser.GetPrimeRootId("home"));
+Console.WriteLine($"\n\n RecursiveReader: {d} \n\n");
 }
 else
 {

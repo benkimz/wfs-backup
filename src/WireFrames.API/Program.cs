@@ -14,9 +14,10 @@ builder.Services.AddDbContext<WireFramesDbContext>(options =>
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddTransient<IWireFramesRepository, WireFramesRepository>();
 builder.Services.AddTransient<IPrimeRootRepository, PrimeRootRepository>();
-builder.Services.AddTransient<IRecursiveRootReader, RecursiveRootReader>();
+builder.Services.AddTransient<IRecursiveReader, RecursiveReader>();
 builder.Services.AddScoped<WireFramesRepository>();
 builder.Services.AddScoped<PrimeRootRepository>();
+builder.Services.AddScoped<RecursiveReader>();
 
 var app = builder.Build();
 
@@ -33,9 +34,9 @@ app.MapGet("/wfs/{id}", (int id) =>
 {
     using (var serviceScope = app.Services.CreateScope())
     {
-        var wfsRepo = serviceScope.ServiceProvider.GetRequiredService<WireFramesRepository>();
-        if (wfsRepo == null) return null;
-        return wfsRepo.GetById(id);
+        var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveReader>();
+        if (recursor == null) return null;
+        return recursor.GetWfsById(id);
     }
 })
 .WithName("GetWireFrameById")
@@ -65,13 +66,26 @@ app.MapPut("/wfs", async ([FromBody] WireFrame wireFrame) =>
 .WithName("UpdateWireFrame")
 .WithOpenApi();
 
+app.MapDelete("/wfs/{id}", (int id) =>
+{
+    using (var serviceScope = app.Services.CreateScope())
+    {
+        var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveReader>();
+        if (recursor == null) return null;
+        recursor.DeleteWfsById(id);
+        return new { Message = "Deleted" };
+    }
+})
+.WithName("DeleteWireFrame")
+.WithOpenApi();
+
 app.MapGet("/prs/{id}", (int id) =>
 {
     using (var serviceScope = app.Services.CreateScope())
     {
-        var prsRepo = serviceScope.ServiceProvider.GetRequiredService<PrimeRootRepository>();
-        if (prsRepo == null) return null;
-        return prsRepo.GetById(id);
+        var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveReader>();
+        if (recursor == null) return null;
+        return recursor.GetRootById(id);
     }
 })
 .WithName("GetPrimeRootById")
@@ -99,6 +113,19 @@ app.MapPut("/prs", async ([FromBody] PrimeRoot primeRoot) =>
     }
 })
 .WithName("UpdatePrimeRoot")
+.WithOpenApi();
+
+app.MapDelete("/prs/{id}", (int id) =>
+{
+    using (var serviceScope = app.Services.CreateScope())
+    {
+        var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveReader>();
+        if (recursor == null) return null;
+        recursor.DeleteRootById(id);
+        return new { Message = "Deleted" };
+    }
+})
+.WithName("DeletePrimeRoot")
 .WithOpenApi();
 
 app.Run();

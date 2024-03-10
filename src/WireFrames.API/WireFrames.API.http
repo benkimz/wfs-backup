@@ -5,10 +5,15 @@ Accept: application/json
 
 ###
 
-POST {{WireFrames.API_HostAddress}}/wfs/
+POST {{WireFrames.API_HostAddress}}/wfs
 Accept: application/json
 
 ###
 
 GET {{WireFrames.API_HostAddress}}/prs/
+Accept: application/json
+
+###
+
+POST {{WireFrames.API_HostAddress}}/prs
 Accept: application/json
