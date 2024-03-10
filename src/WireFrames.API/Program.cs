@@ -17,6 +17,7 @@ builder.Services.AddTransient<IPrimeRootRepository, PrimeRootRepository>();
 builder.Services.AddTransient<IRecursiveRootReader, RecursiveRootReader>();
 builder.Services.AddScoped<WireFramesRepository>();
 builder.Services.AddScoped<PrimeRootRepository>();
+builder.Services.AddScoped<RecursiveRootReader>();
 
 var app = builder.Build();
 
@@ -69,9 +70,9 @@ app.MapGet("/prs/{id}", (int id) =>
 {
     using (var serviceScope = app.Services.CreateScope())
     {
-        var prsRepo = serviceScope.ServiceProvider.GetRequiredService<PrimeRootRepository>();
-        if (prsRepo == null) return null;
-        return prsRepo.GetById(id);
+        var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveRootReader>();
+        if (recursor == null) return null;
+        return recursor.GetById(id);
     }
 })
 .WithName("GetPrimeRootById")
