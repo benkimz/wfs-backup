@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MilesAhead.Web.Migrations
 {
     /// <inheritdoc />
-    public partial class Alpha : Migration
+    public partial class TestPhase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -24,8 +24,8 @@ namespace MilesAhead.Web.Migrations
                     Discriminator = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
                     WireFrameId = table.Column<int>(type: "int", nullable: true),
                     Guid = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    PageTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FaviconUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PageTitle = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    FaviconUrl = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     ExternalStyleSheets = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     HeadScripts = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BodyScripts = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -33,7 +33,7 @@ namespace MilesAhead.Web.Migrations
                     Segment = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     IsBlazorComponent = table.Column<bool>(type: "bit", nullable: false),
                     IsVisible = table.Column<bool>(type: "bit", nullable: false),
-                    Attributes = table.Column<string>(type: "nvarchar(720)", maxLength: 720, nullable: true),
+                    Attributes = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DataSource = table.Column<int>(type: "int", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FetchData = table.Column<string>(type: "nvarchar(max)", nullable: true)

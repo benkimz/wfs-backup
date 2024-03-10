@@ -20,6 +20,10 @@ builder.Services.AddTransient<IWireFramesRepository, WireFramesRepository>();
 builder.Services.AddTransient<IPrimeRootRepository, PrimeRootRepository>();
 builder.Services.AddTransient<IRecursiveReader, RecursiveReader>();
 
+builder.Services.AddScoped<WireFramesRepository>();
+builder.Services.AddScoped<PrimeRootRepository>();
+builder.Services.AddScoped<RecursiveReader>();
+
 builder.Services.AddSingleton<WireframeParser>();
 // ~ benkimz: end custom services
 

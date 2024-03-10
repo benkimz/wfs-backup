@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot/assets/custom/dev-links.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
 
@@ -16,5 +20,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WireFrames.Core\WireFrames.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot/assets/custom/css/" />
   </ItemGroup>
 </Project>

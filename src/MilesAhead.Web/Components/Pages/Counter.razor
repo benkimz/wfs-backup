@@ -3,36 +3,21 @@
 @layout PlainLayout
 
 @inject IJSRuntime JSRuntime
-@inject IPrimeRootRepository PrimeRootRepository
 @inject IRecursiveReader RecursiveReader
 
-
-<Components.Repository.SharedComponents.JsonResultsView url="http://localhost:5123/wfs/3" />
+@inject WireframeParser wfsparser
 
 @code {
     private PrimeRoot? Root { get; set; }
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        base.OnInitialized();
-        @* Root = new HomePrimeRoot().Build(); *@
-        @* Root = await PrimeRootRepository.Add(rt);
-if (Root != null)
-{
-string? AsJson<T>(T obj)
-{
-return System.Text.Json.JsonSerializer.Serialize(obj);
-}
-var t = AsJson(Root);
-Console.WriteLine($"\n\n Root: {Root.Guid.ToString()} {t} \n\n");
-WireframeParser.CapturePrimeRootId("home", Root.Guid.ToString());
-var d = await RecursiveReader.BuildAsync(WireframeParser.GetPrimeRootId("home"));
-Console.WriteLine($"\n\n RecursiveReader: {d} \n\n");
-}
-else
-{
-Console.WriteLine("\n\n >> Root is null \n\n");
-} *@
-        @* PrimeRootRepository.Add(Root).GetAwaiter().GetResult(); *@
+        await base.OnInitializedAsync();
+        var root = new HomeRoot().Build();
+        @* Root = await wfsparser.PersistRoot(
+root: root,
+name: "Home-Page"
+); *@
+        Root = root;
     }
 }
 
