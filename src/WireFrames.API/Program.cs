@@ -34,9 +34,9 @@ app.MapGet("/wfs/{id}", (int id) =>
 {
     using (var serviceScope = app.Services.CreateScope())
     {
-        var wfsRepo = serviceScope.ServiceProvider.GetRequiredService<WireFramesRepository>();
-        if (wfsRepo == null) return null;
-        return wfsRepo.GetById(id);
+        var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveRootReader>();
+        if (recursor == null) return null;
+        return recursor.GetWfsById(id);
     }
 })
 .WithName("GetWireFrameById")
@@ -66,13 +66,26 @@ app.MapPut("/wfs", async ([FromBody] WireFrame wireFrame) =>
 .WithName("UpdateWireFrame")
 .WithOpenApi();
 
+app.MapDelete("/wfs/{id}", (int id) =>
+{
+    using (var serviceScope = app.Services.CreateScope())
+    {
+        var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveRootReader>();
+        if (recursor == null) return null;
+        recursor.DeleteWfsById(id);
+        return new { Message = "Deleted" };
+    }
+})
+.WithName("DeleteWireFrame")
+.WithOpenApi();
+
 app.MapGet("/prs/{id}", (int id) =>
 {
     using (var serviceScope = app.Services.CreateScope())
     {
         var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveRootReader>();
         if (recursor == null) return null;
-        return recursor.GetById(id);
+        return recursor.GetRootById(id);
     }
 })
 .WithName("GetPrimeRootById")
@@ -108,7 +121,7 @@ app.MapDelete("/prs/{id}", (int id) =>
     {
         var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveRootReader>();
         if (recursor == null) return null;
-        recursor.DeleteById(id);
+        recursor.DeleteRootById(id);
         return new { Message = "Deleted" };
     }
 })
