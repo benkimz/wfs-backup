@@ -1,6 +1,6 @@
 ﻿namespace WireFrames.Core;
 
-public interface IRecursiveRootReader
+public interface IRecursiveReader
 {
     Task<PrimeRoot?> BuildAsync(string rootGuid);
 

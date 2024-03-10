@@ -2,11 +2,11 @@
 
 namespace WireFrames.Core;
 
-public class RecursiveRootReader : IRecursiveRootReader
+public class RecursiveReader : IRecursiveReader
 {
     private readonly WireFramesDbContext _context;
 
-    public RecursiveRootReader(WireFramesDbContext context)
+    public RecursiveReader(WireFramesDbContext context)
     {
         _context = context;
     }

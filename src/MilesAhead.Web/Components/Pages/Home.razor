@@ -4,14 +4,14 @@
 
 @inject WireframeParser WireframeParser
 @inject IJSRuntime JSRuntime
-@inject IRecursiveRootReader RecursiveRootReader
+@inject IRecursiveReader RecursiveReader
 
 @code {
     private PrimeRoot? Root { get; set; }
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        @* Root = await RecursiveRootReader.BuildAsync("HomeRoot"); *@
+        @* Root = await RecursiveReader.BuildAsync("HomeRoot"); *@
         Root = new HomeRoot().Build();
     }
 }

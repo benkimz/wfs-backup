@@ -14,10 +14,10 @@ builder.Services.AddDbContext<WireFramesDbContext>(options =>
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddTransient<IWireFramesRepository, WireFramesRepository>();
 builder.Services.AddTransient<IPrimeRootRepository, PrimeRootRepository>();
-builder.Services.AddTransient<IRecursiveRootReader, RecursiveRootReader>();
+builder.Services.AddTransient<IRecursiveReader, RecursiveReader>();
 builder.Services.AddScoped<WireFramesRepository>();
 builder.Services.AddScoped<PrimeRootRepository>();
-builder.Services.AddScoped<RecursiveRootReader>();
+builder.Services.AddScoped<RecursiveReader>();
 
 var app = builder.Build();
 
@@ -34,7 +34,7 @@ app.MapGet("/wfs/{id}", (int id) =>
 {
     using (var serviceScope = app.Services.CreateScope())
     {
-        var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveRootReader>();
+        var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveReader>();
         if (recursor == null) return null;
         return recursor.GetWfsById(id);
     }
@@ -70,7 +70,7 @@ app.MapDelete("/wfs/{id}", (int id) =>
 {
     using (var serviceScope = app.Services.CreateScope())
     {
-        var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveRootReader>();
+        var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveReader>();
         if (recursor == null) return null;
         recursor.DeleteWfsById(id);
         return new { Message = "Deleted" };
@@ -83,7 +83,7 @@ app.MapGet("/prs/{id}", (int id) =>
 {
     using (var serviceScope = app.Services.CreateScope())
     {
-        var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveRootReader>();
+        var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveReader>();
         if (recursor == null) return null;
         return recursor.GetRootById(id);
     }
@@ -119,7 +119,7 @@ app.MapDelete("/prs/{id}", (int id) =>
 {
     using (var serviceScope = app.Services.CreateScope())
     {
-        var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveRootReader>();
+        var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveReader>();
         if (recursor == null) return null;
         recursor.DeleteRootById(id);
         return new { Message = "Deleted" };
