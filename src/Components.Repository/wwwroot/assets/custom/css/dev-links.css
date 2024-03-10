@@ -1,0 +1,30 @@
+.wfs-dev-link {
+    position: relative!important; padding: 0px!important; margin: 0px!important; z-index: 50;
+    height: 0px!important; width: 0px!important; overflow: hidden!important
+}
+
+.wfs-dev-link::after {
+    content: 'dev';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 4px 8px;
+    background-color: #46e060 !important;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+    z-index: 50;
+}
+
+.wfs-dev-link::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 20px;
+    left: 30px;
+    padding: 4px8px;
+    background-color: #46e060 !important;
+    z-index: 50;
+    transform: skewX(-45deg) rotate(135deg);
+}

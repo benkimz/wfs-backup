@@ -19,6 +19,14 @@ public class WireframeParser
         return builder =>
         {
             if (wireFrame.IsVisible != true) return;
+
+            /// dev-mode
+            // builder.OpenElement(0, "a");
+            // builder.AddAttribute(1, "href", $"wfs/{wireFrame.Name}");
+            // builder.AddAttribute(2, "class", "wfs-dev-link");
+            // builder.CloseComponent();
+            ///
+
             if (wireFrame.IsBlazorComponent == true)
             {
                 Type? razorNodeType = ComponentType(wireFrame.Segment);
