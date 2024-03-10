@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WireFrames.Core;
 
@@ -8,10 +9,13 @@ namespace wireframes.render.services;
 public class WireframeParser
 {
     private readonly IServiceProvider _serviceProvider;
-
-    public WireframeParser(IServiceProvider serviceProvider)
+    private readonly IConfiguration _configuration;
+    public static WireframeParser? instance { get; private set; }
+    public WireframeParser(IServiceProvider serviceProvider, IConfiguration configuration)
     {
         _serviceProvider = serviceProvider;
+        _configuration = configuration;
+        if (instance == null) instance = this;
     }
 
     public static RenderFragment RenderWireFrame<T>(T wireFrame) where T : WireFrame
@@ -20,12 +24,21 @@ public class WireframeParser
         {
             if (wireFrame.IsVisible != true) return;
 
-            /// dev-mode
-            // builder.OpenElement(0, "a");
-            // builder.AddAttribute(1, "href", $"wfs/{wireFrame.Name}");
-            // builder.AddAttribute(2, "class", "wfs-dev-link");
-            // builder.CloseComponent();
-            ///
+            // ~ dev mode
+            if (instance is not null)
+            {
+                if (instance._configuration["wfs-mode"] == "dev")
+                {
+                    builder.OpenElement(0, "a");
+                    if (wireFrame is PrimeRoot)
+                        builder.AddAttribute(1, "href", $"http://localhost:5123/prs/{wireFrame.Id}");
+                    else
+                        builder.AddAttribute(1, "href", $"http://localhost:5123/wfs/{wireFrame.Id}");
+                    builder.AddAttribute(2, "class", "wfs-dev-link");
+                    builder.AddAttribute(3, "target", "_blank");
+                    builder.CloseComponent();
+                }
+            } // ~ end of dev mode
 
             if (wireFrame.IsBlazorComponent == true)
             {
