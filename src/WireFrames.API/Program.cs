@@ -102,4 +102,17 @@ app.MapPut("/prs", async ([FromBody] PrimeRoot primeRoot) =>
 .WithName("UpdatePrimeRoot")
 .WithOpenApi();
 
+app.MapDelete("/prs/{id}", (int id) =>
+{
+    using (var serviceScope = app.Services.CreateScope())
+    {
+        var recursor = serviceScope.ServiceProvider.GetRequiredService<RecursiveRootReader>();
+        if (recursor == null) return null;
+        recursor.DeleteById(id);
+        return new { Message = "Deleted" };
+    }
+})
+.WithName("DeletePrimeRoot")
+.WithOpenApi();
+
 app.Run();

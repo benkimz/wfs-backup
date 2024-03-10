@@ -86,4 +86,30 @@ public class RecursiveRootReader : IRecursiveRootReader
         }
         return Task.FromResult(root);
     }
+
+    public void DeleteById(int id)
+    {
+        _context.Database.ExecuteSqlRaw(@"
+        WITH tree AS (
+            SELECT 
+                wf.*
+            FROM 
+                render.WireFrames AS wf
+            WHERE 
+                wf.Discriminator = 'PrimeRoot' AND wf.Id = {0}
+
+            UNION ALL
+
+            SELECT 
+                wf.*
+            FROM 
+                render.WireFrames AS wf
+            INNER JOIN 
+                tree ON wf.WireFrameId = tree.Id
+        )
+        DELETE FROM render.WireFrames WHERE Id IN (SELECT Id FROM tree)", id);
+        _context.SaveChanges();
+    }
+
+
 }
