@@ -12,7 +12,7 @@ using WireFrames.Core;
 namespace MilesAhead.Web.Migrations
 {
     [DbContext(typeof(WireFramesDbContext))]
-    [Migration("20240308152423_Alpha")]
+    [Migration("20240310080249_Alpha")]
     partial class Alpha
     {
         /// <inheritdoc />
