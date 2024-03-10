@@ -8,11 +8,11 @@
 
 @code {
     private PrimeRoot? Root { get; set; }
-    protected override void OnInitialized()
+
+    protected override async Task OnInitializedAsync()
     {
-        base.OnInitialized();
-        @* Root = await RecursiveReader.BuildAsync("HomeRoot"); *@
-        Root = new HomeRoot().Build();
+        await base.OnInitializedAsync();
+        Root = await RecursiveReader.BuildAsync(WireframeParser.GetPrimeRootId("Home-Page") ?? "");
     }
 }
 

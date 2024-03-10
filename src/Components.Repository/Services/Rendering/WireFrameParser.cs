@@ -1,11 +1,19 @@
 ﻿using System.Text.Json;
 using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.DependencyInjection;
 using WireFrames.Core;
 
 namespace wireframes.render.services;
 
 public class WireframeParser
 {
+    private readonly IServiceProvider _serviceProvider;
+
+    public WireframeParser(IServiceProvider serviceProvider)
+    {
+        _serviceProvider = serviceProvider;
+    }
+
     public static RenderFragment RenderWireFrame<T>(T wireFrame) where T : WireFrame
     {
         return builder =>
@@ -128,6 +136,19 @@ public class WireframeParser
         var data = CustomObjectFromJson<Dictionary<string, object>>(File.ReadAllText(path));
         if (data != null && data.ContainsKey(property)) return data[property].ToString();
         return null;
+    }
+
+    // ~ helper method to persit a root to the database and capture its id
+    public async Task<PrimeRoot?> PersistRoot(PrimeRoot root, string name)
+    {
+        using (var scope = _serviceProvider.CreateScope())
+        {
+            var prsRepo = scope.ServiceProvider.GetRequiredService<PrimeRootRepository>();
+            if (prsRepo == null) return null;
+            var result = await prsRepo.Add(root);
+            if (result != null) CapturePrimeRootId(name, result.Guid.ToString());
+            return result;
+        }
     }
 
 }

@@ -12,8 +12,8 @@ using WireFrames.Core;
 namespace MilesAhead.Web.Migrations
 {
     [DbContext(typeof(WireFramesDbContext))]
-    [Migration("20240310080249_Alpha")]
-    partial class Alpha
+    [Migration("20240310084417_TestPhase")]
+    partial class TestPhase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,8 +35,7 @@ namespace MilesAhead.Web.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Attributes")
-                        .HasMaxLength(720)
-                        .HasColumnType("nvarchar(720)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
@@ -95,7 +94,8 @@ namespace MilesAhead.Web.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FaviconUrl")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<Guid>("Guid")
                         .HasColumnType("uniqueidentifier");
@@ -105,7 +105,8 @@ namespace MilesAhead.Web.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PageTitle")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasDiscriminator().HasValue("PrimeRoot");
                 });

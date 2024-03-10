@@ -4,7 +4,10 @@ namespace MilesAhead.Web;
 
 public class HomeRoot : RootBuildHelpers
 {
-    private PrimeRoot Root { get; set; } = new PrimeRoot();
+    private PrimeRoot Root { get; set; } = new PrimeRoot
+    {
+        Name = $"Miles Ahead: {nameof(HomeRoot)}"
+    };
 
     public PrimeRoot Build()
     {
