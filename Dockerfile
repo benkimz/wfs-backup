@@ -2,15 +2,19 @@ FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0-alpine3.19 AS bu
 
 COPY . /source
 
-WORKDIR /source/src/WireFrames.API
+WORKDIR /source/src/MilesAhead.Web
 
-RUN  dotnet run
+ARG TARGETARCH
 
-WORKDIR /source/src/MilesAhead.Web    
+RUN --mount=type=cache,id=nuget,target=/root/.nuget/packages \
+    dotnet publish -a ${TARGETARCH/amd64/x64} --use-current-runtime --self-contained false -o /app
 
-ENTRYPOINT ["dotnet", "watch", "--wfs-mode=dev"]
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine3.19 AS final
+
+WORKDIR /app
+
+COPY --from=build /app .
 
 USER $APP_UID
 
-CMD [ "echo", "Okay"]
-
+ENTRYPOINT ["dotnet", "MilesAhead.Web.dll"]
