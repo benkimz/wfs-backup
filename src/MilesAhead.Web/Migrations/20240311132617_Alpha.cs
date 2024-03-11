@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MilesAhead.Web.Migrations
 {
     /// <inheritdoc />
-    public partial class TestPhase : Migration
+    public partial class Alpha : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

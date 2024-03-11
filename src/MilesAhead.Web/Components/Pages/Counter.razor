@@ -1,4 +1,4 @@
-﻿@page "/counter"
+﻿@* @page "/counter"
 @rendermode InteractiveServer
 @layout PlainLayout
 
@@ -8,37 +8,37 @@
 @inject WireframeParser wfsparser
 
 @code {
-    private PrimeRoot? Root { get; set; }
-    protected override async Task OnInitializedAsync()
-    {
-        await base.OnInitializedAsync();
-        var root = new HomeRoot().Build();
-        @* Root = await wfsparser.PersistRoot(
+private PrimeRoot? Root { get; set; }
+protected override async Task OnInitializedAsync()
+{
+await base.OnInitializedAsync();
+var root = new HomeRoot().Build();
+Root = await wfsparser.PersistRoot(
 root: root,
 name: "Home-Page"
-); *@
-        Root = root;
-    }
+);
+Root = root;
+}
 }
 
 @if (Root is not null)
 {
-    <HeadContent>
-    @foreach (string css in Root.ExternalStyleSheets)
-        {
-            <link href="@css" rel="stylesheet" />
-        }
-    </HeadContent>
-    @if (Root.PageTitle is not null)
-    {
-        <PageTitle>@Root.PageTitle</PageTitle>
-    }
-
-    @WireframeParser.RenderWireFrame(Root)
-
-
-    @foreach (var script in Root.BodyScripts)
-    {
-        <script src="@script" type="text/javascript"></script>
-    }
+<HeadContent>
+@foreach (string css in Root.ExternalStyleSheets)
+{
+<link href="@css" rel="stylesheet" />
 }
+</HeadContent>
+@if (Root.PageTitle is not null)
+{
+<PageTitle>@Root.PageTitle</PageTitle>
+}
+
+@WireframeParser.RenderWireFrame(Root)
+
+
+@foreach (var script in Root.BodyScripts)
+{
+<script src="@script" type="text/javascript"></script>
+}
+} *@

@@ -12,8 +12,8 @@ using WireFrames.Core;
 namespace MilesAhead.Web.Migrations
 {
     [DbContext(typeof(WireFramesDbContext))]
-    [Migration("20240310084417_TestPhase")]
-    partial class TestPhase
+    [Migration("20240311132617_Alpha")]
+    partial class Alpha
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

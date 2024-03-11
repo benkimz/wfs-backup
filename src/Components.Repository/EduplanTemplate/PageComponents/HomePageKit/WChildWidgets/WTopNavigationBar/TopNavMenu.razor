@@ -12,8 +12,11 @@
             {
                 if (KeyExists(item.Value, "url"))
                 {
-                    <li class="menu-item-has-children @(item.Key == "home" ? "current-menu-item" : "")">
-                        <a href="@(() => ValueFromJson<string>(item.Value, "url"))">@((MarkupString)(ToTitleCase(item.Key)))</a>
+                    <li class="menu-item-has-children @(item.Key == "home" || item.Key == "welcome" ? "current-menu-item" : "")">
+                        @{
+                            var url = ValueFromJson<string>(item.Value, "url");
+                        }
+                        <a href="@url">@((MarkupString)(ToTitleCase(item.Key)))</a>
                         @if (KeyExists(item.Value, "subUrls"))
                         {
                             var subMenu = ValueFromJson<Dictionary<string, string>>(item.Value, "subUrls");
